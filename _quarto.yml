@@ -8,6 +8,7 @@ author-meta: "Dr. Boris Shor"
 
 website:
   title: "Dr. Boris Shor"
+  site-url: "https://bshor.github.io" # <-- Update this
   image: "https://quarto.org/quarto.png"
   description: "Quarto Academic Website"
  
@@ -44,7 +45,7 @@ website:
 
     right: 
       - text: CV
-        href: files/shor-cv.pdf
+        href: files/shor_cv.pdf
       - icon: github
         href: https://github.com/bshor
         target: _blank
