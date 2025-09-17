@@ -8,7 +8,6 @@ author-meta: "Dr. Boris Shor"
 
 website:
   title: "Dr. Boris Shor"
-  site-url: "https://bshor.github.io" # <-- Update this
   image: "https://quarto.org/quarto.png"
   description: "Quarto Academic Website"
  
@@ -80,7 +79,7 @@ website:
 
   draft-mode: unlinked
   
-  repo-url: https://github.com/drganghe/quarto-academic-website-template
+  repo-url: https://github.com/bshor/bshor.github.io
 #  repo-actions: [edit, issue, source]
   
   open-graph: true
@@ -88,13 +87,19 @@ website:
   twitter-card: true 
 #  card-style: summary      
   
-  site-url: "https://bshor.github.io/quarto-website"
+  #site-url: "https://bshor.github.io/quarto-website"
+  site-url: "https://bshor.github.io"
+
   
   google-analytics:
     tracking-id: ""  # Please delete or replace with your own tracking ID
     anonymize-ip: true 
 
 bibliography: references.bib  # Add references.bib to the root folder to enable the bibliography function
+csl: apsr-reverse.csl  # Add a CSL file to the root folder to enable the citation style function
+#bibliography-sort: [year, title]  # Sort by date first, then title
+#bibliography-order: desc          # Reverse chronological order
+#bibliography-sort-override: true  # Add this line
 
 format:
   html:

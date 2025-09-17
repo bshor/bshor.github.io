@@ -1,1 +1,1 @@
-Sitemap: https://bshor.github.io/quarto-website/sitemap.xml
+Sitemap: https://bshor.github.io/sitemap.xml
