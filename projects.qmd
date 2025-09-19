@@ -1,27 +1,20 @@
 ---
-title: "Projects"
-subtitle: "Funded projects"
+title: "Grants"
 page-layout: full
 listing: 
 - id: projects
   sort: "started desc"
   type: table
-  fields: [image, title, author, subtitle, description, funding, started, ended]
-  grid-item-align: left
-  grid-columns: 3
+  fields: [image, title, subtitle, author, funding, started, ended]
   image-height: 30px
   field-display-names: 
       title: "Title"
-      author: "Team"
+      author: "Role"
       subtitle: "Funder"
       started: "Start"
       ended: "End"
       funding: "Funding"
-#  categories: true
-#  sort-ui: true
-#  filter-ui: true
   contents: 
-#    - projects/ 
     - projects.yml 
 ---
 
@@ -29,7 +22,28 @@ listing:
 :::{#projects}
 :::
 
+<style>
+/* Make the table fill the available space and enforce column widths */
+#projects .quarto-listing-contents table {
+  width: 100%;
+  table-layout: fixed;
+}
 
-<!--Include social share buttons-->
+/* Set width for Title column (2nd) */
+#projects .quarto-listing-contents th:nth-child(2),
+#projects .quarto-listing-contents td:nth-child(2) {
+  width: 25%;
+}
 
-{{< include /files/includes/_socialshare.qmd >}}
+/* Set width for Funder column (3rd) */
+#projects .quarto-listing-contents th:nth-child(3),
+#projects .quarto-listing-contents td:nth-child(3) {
+  width: 35%;
+}
+
+/* Set width for Role column (4th) */
+#projects .quarto-listing-contents th:nth-child(4),
+#projects .quarto-listing-contents td:nth-child(4) {
+  width: 15%;
+}
+</style>

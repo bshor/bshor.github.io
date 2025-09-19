@@ -1,0 +1,15 @@
+---
+title: "Data"
+---
+
+All of my publicly available data and replication data and code for published articles can be found on my [Harvard Dataverse page](https://dvn.iq.harvard.edu/dvn/dv/bshor).
+
+---
+
+### Aggregate State Legislative Ideology Data, 1993-2022
+* **Total Downloads:** Over 18,000 since 2012
+* **Last Update:** [January 2025](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/T53FFK)
+
+### Individual Level State Legislator Ideology Data, 1993-2022
+* **Total Downloads:** Over 11,000 since 2012
+* **Last Update:** [January 2025](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/SGOQ7G)

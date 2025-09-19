@@ -17,8 +17,12 @@ about:
     #   href: https://www.github.com
     #   target: _blank
     - icon: globe
-      text: Uprofile
-      href: https://www.uh.edu
+      text: Political Science
+      href: https://www.uh.edu/class/political-science/
+      target: _blank
+    - icon: globe
+      text: Hobby School
+      href: https://www.uh.edu/hobby/
       target: _blank
     - icon: envelope
       text: E-mail
@@ -32,7 +36,7 @@ about:
     #   href: https://www.youtube.com     
     #   target: _blank 
     - text: "{{< ai orcid >}} ORCID"   # use academic icons, "" are needed, you also need to install the fontawesome extension
-      href: https://orcid.org
+      href: https://orcid.org/0000-0002-4983-0166
       target: _blank
     # - text: "{{< ai clarivate >}} Web of Science"
     #   href: https://www.webofscience.com  
@@ -43,6 +47,10 @@ about:
     - text: "{{< ai google-scholar >}} Google Scholar"
       href: https://scholar.google.com
       target: _blank
+    - text: "{{< ai ssrn >}} SSRN"
+      href: https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=858121
+      target: _blank
+
 #    - text: "{{< ai researchgate >}} Research Gate"
 #      href: https://www.researchgate.net
 #      target: _blank
@@ -66,10 +74,10 @@ about:
 ---
 
 ::: {#hero-heading}
-I am an Associate Professor at the [Department of Political Science](http://www.uh.edu/class/political-science/) and the [Hobby School of Public Affairs](https://www.uh.edu/hobby/) at the [University of Houston](http://www.uh.edu/).
+I am the Pauline Yelderman Chair and Associate Professor at the [Department of Political Science](http://www.uh.edu/class/political-science/) with a joint appointment at the [Hobby School of Public Affairs](https://www.uh.edu/hobby/) at the [University of Houston](http://www.uh.edu/).
 
-The major parts of my research agenda are linked above. You can find my [Google Scholar citations here](https://scholar.google.com/citations?hl=en&user=ShUul74AAAAJ), and [my SSRN page here](http://ssrn.com/author=858121) (with my working papers).
+<!-- The major parts of my research agenda are linked above. You can find my [Google Scholar citations here](https://scholar.google.com/citations?hl=en&user=ShUul74AAAAJ), and [my SSRN page here](http://ssrn.com/author=858121) (with my working papers). -->
 
-Visit my [Dataverse](https://dataverse.harvard.edu/dataverse/bshor), which has my state legislative ideology data for all 50 states–at the state and individual legislator level–for 1993-2022.
+<!-- Visit my [Dataverse](https://dataverse.harvard.edu/dataverse/bshor), which has my state legislative ideology data for all 50 states–at the state and individual legislator level–for 1993-2022. -->
 
 :::

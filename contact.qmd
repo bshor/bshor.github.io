@@ -1,24 +1,21 @@
 ---
-title: "Contact"
-description-meta: "Reach out to me with questions and comments"
-title-block-banner: false
+title: "Boris Shor, PhD"
+image: "files/images/shor-headshot.jpg"
+about:
+  id: hero-heading
+  template: trestles
+  image-width: 70%
+  links:
+    - icon: globe
+      text: Website
+      href: http://bshor.github.io
+    - icon: envelope
+      text: E-mail
+      href: mailto:bshor@uh.edu
+    - text: "{{< ai google-scholar >}} Google Scholar"
+      href: http://goo.gl/kxQvm
+    - text: "{{< ai dataverse >}} Dataverse"
+      href: http://dvn.iq.harvard.edu/dvn/dv/bshor
+    - text: "{{< ai ssrn >}} SSRN"
+      href: http://bit.ly/ssrn-bshor
 ---
-
-<center>
-
-**Quarto Academic**
-
-School
-
-College
-
-University
-
-Address: 
-
-Phone: 
-
-E-mail: 
-
-
-</center>

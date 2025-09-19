@@ -17,22 +17,27 @@ website:
     left:   # You can comment out all navigation items here if you just like to keep the index page only
      # - text: Home
      #   href: index.qmd
-      - text: About
-        menu:
+      # - text: About
+        # menu:
           # - text: News
           #   href: posts.qmd#category=news
           # - text: Events
           #   href: posts.qmd#category=event      
-          - text: Contact
-            href: contact.qmd             
-      - text: Research
-        menu:
-          - text: List of Publications
-            href: publications.qmd
+          # - text: Contact
+            # href: contact.qmd             
+      - text: Publications
+        href: publications.qmd
+      - text: Data
+        href: data.qmd
+      - text: Working Papers
+        href: working.qmd
+
+        # menu:
+        #   - text: Publications
           # - text: Selected Papers
           #   href: posts.qmd#category=paper
-          - text: Grants
-            href: projects.qmd                                
+      - text: Grants
+        href: projects.qmd                                
       - text: Teaching # Comment the Teaching part out to remove the Teaching page
         href: teaching.qmd
       # - text: Outreach
@@ -97,9 +102,8 @@ website:
 
 bibliography: references.bib  # Add references.bib to the root folder to enable the bibliography function
 csl: apsr-reverse.csl  # Add a CSL file to the root folder to enable the citation style function
-#bibliography-sort: [year, title]  # Sort by date first, then title
-#bibliography-order: desc          # Reverse chronological order
-#bibliography-sort-override: true  # Add this line
+# filters:
+#   - abstract-filter.lua
 
 format:
   html:
@@ -117,3 +121,4 @@ format:
     link-external-filter: '^(?:http:|https:)\/\/bshor\.github\.io\/custom'
     include-in-header: "files/includes/_academic.qmd"
 
+  

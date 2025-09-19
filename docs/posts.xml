@@ -14,7 +14,7 @@
 <title>Dr. Boris Shor</title>
 <link>https://bshor.github.io/posts.html</link>
 </image>
-<generator>quarto-1.7.34</generator>
+<generator>quarto-1.8.24</generator>
 <lastBuildDate>Tue, 15 Oct 2024 05:00:00 GMT</lastBuildDate>
 <item>
   <title>Quarto Academic Website Examples and Tips</title>
@@ -140,10 +140,9 @@ https://badge.dimensions.ai/
   langid = {en}
 }
 </code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-einstein1935" class="csl-entry quarto-appendix-citeas">
-Einstein, Albert, Boris Podolsky, and Nathan Rosen. 1935. <span>“Can
-quantum-mechanical description of physical reality be considered
-complete?”</span> <em>Physical Review</em> 47(7938) May 1935: 777–80.
-Available at: <a href="https://journals.aps.org/pr/pdf/10.1103/PhysRev.47.777">https://journals.aps.org/pr/pdf/10.1103/PhysRev.47.777</a>.
+Einstein, Albert, Boris Podolsky, and Nathan Rosen. 1935. <span>“<a href="https://doi.org/10.1103/PhysRev.47.777">Can Quantum-Mechanical
+Description of Physical Reality Be Considered Complete?</a>”</span>
+<em>Physical Review</em> 47(7938): 777–80.
 </div></div></section></div> ]]></description>
   <category>paper</category>
   <guid>https://bshor.github.io/posts/paper-title/</guid>

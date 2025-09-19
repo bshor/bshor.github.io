@@ -5,7 +5,7 @@
     <id>http://www.zotero.org/styles/apsr-reverse</id>
     <link href="http://www.zotero.org/styles/american-political-science-association" rel="template"/>
     <author>
-      <name>Custom Style</name>
+      <n>Custom Style</n>
     </author>
     <category citation-format="author-date"/>
     <category field="political_science"/>
@@ -14,24 +14,12 @@
     <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
   </info>
 
-  <macro name="editor">
-    <names variable="editor" delimiter=", ">
-      <name and="text" initialize-with=". " delimiter=", "/>
-      <label form="short" prefix=", "/>
-    </names>
-  </macro>
-
-  <macro name="anon">
-    <text term="anonymous" form="short" text-case="capitalize-first" strip-periods="true"/>
-  </macro>
-
   <macro name="author">
     <names variable="author">
       <name name-as-sort-order="first" and="text" sort-separator=", " delimiter=", " delimiter-precedes-last="always"/>
-      <label form="short" prefix=" "/>
       <substitute>
         <names variable="editor"/>
-        <text macro="anon"/>
+        <text term="anonymous" form="short" text-case="capitalize-first"/>
       </substitute>
     </names>
   </macro>
@@ -41,45 +29,20 @@
       <name form="short" and="text" delimiter=", " initialize-with=". "/>
       <substitute>
         <names variable="editor"/>
-        <names variable="translator"/>
-        <text macro="anon"/>
+        <text term="anonymous" form="short"/>
       </substitute>
     </names>
-  </macro>
-
-  <macro name="access">
-    <choose>
-      <if variable="URL">
-        <text value="Available at:" suffix=" "/>
-        <text variable="URL"/>
-        <group prefix=" [" suffix="]">
-          <text term="accessed" text-case="capitalize-first" suffix=" "/>
-          <date variable="accessed">
-            <date-part name="month" suffix=" "/>
-            <date-part name="day" suffix=", "/>
-            <date-part name="year"/>
-          </date>
-        </group>
-      </if>
-    </choose>
   </macro>
 
   <macro name="title">
     <choose>
       <if type="bill book graphic legal_case legislation motion_picture report song" match="any">
-        <text variable="title" font-style="italic"/>
+        <text variable="title" font-style="italic" text-case="title"/>
       </if>
       <else>
-        <text variable="title" quotes="true"/>
+        <text variable="title" quotes="true" text-case="title"/>
       </else>
     </choose>
-  </macro>
-
-  <macro name="publisher">
-    <group delimiter=": ">
-      <text variable="publisher-place"/>
-      <text variable="publisher"/>
-    </group>
   </macro>
 
   <macro name="year-date">
@@ -95,133 +58,77 @@
     </choose>
   </macro>
 
-  <macro name="published-date">
-    <choose>
-      <if type="article-newspaper">
-        <date variable="issued">
-          <date-part name="month" form="long" suffix=" "/>
-          <date-part name="day" suffix=", "/>
-          <date-part name="year"/>
-        </date>
-      </if>
-      <else-if type="article-journal article-magazine" match="any">
-        <date variable="issued">
-          <date-part name="month" form="long" suffix=" "/>
-          <date-part name="year"/>
-        </date>
-      </else-if>
-      <else>
-        <date variable="issued">
-          <date-part name="year"/>
-        </date>
-      </else>
-    </choose>
+  <macro name="publisher">
+    <group delimiter=": ">
+      <text variable="publisher-place"/>
+      <text variable="publisher"/>
+    </group>
   </macro>
 
-  <macro name="pages">
+  <macro name="container-title">
     <choose>
-      <if type="article-journal article-magazine article-newspaper" match="any">
-        <text variable="page" prefix=": "/>
-      </if>
-      <else>
+      <if type="chapter paper-conference" match="any">
         <group>
-          <label variable="page" form="short" suffix=" "/>
-          <text variable="page"/>
+          <text term="in" text-case="capitalize-first" suffix=" "/>
+          <text variable="container-title" font-style="italic" text-case="title"/>
         </group>
+      </if>
+      <else>
+        <text variable="container-title" font-style="italic" text-case="title"/>
       </else>
     </choose>
   </macro>
 
-  <macro name="issue">
+  <macro name="volume-issue">
     <choose>
-      <if type="article-journal article-magazine" match="any">
+      <if type="article-journal">
+        <group>
+          <text variable="volume"/>
+          <text variable="issue" prefix="(" suffix=")"/>
+        </group>
+      </if>
+      <else>
         <text variable="volume"/>
-        <text variable="issue" prefix="(" suffix=")"/>
-      </if>
-      <else>
-        <group delimiter=", ">
-          <text variable="volume" prefix="Vol. "/>
-          <text variable="issue" prefix="No. "/>
-        </group>
       </else>
     </choose>
   </macro>
 
-  <macro name="edition">
-    <choose>
-      <if is-numeric="edition">
-        <group delimiter=" ">
-          <number variable="edition" form="ordinal"/>
-          <text term="edition" form="short"/>
-        </group>
-      </if>
-      <else>
-        <text variable="edition" suffix="."/>
-      </else>
-    </choose>
-  </macro>
-
-  <citation et-al-min="4" et-al-use-first="1" et-al-subsequent-min="3" et-al-subsequent-use-first="1" disambiguate-add-year-suffix="true" disambiguate-add-names="true" disambiguate-add-givenname="true" collapse="year">
+  <citation et-al-min="3" et-al-use-first="1" disambiguate-add-year-suffix="true" collapse="year">
     <layout prefix="(" suffix=")" delimiter="; ">
-      <group delimiter=", ">
-        <group delimiter=" ">
-          <text macro="author-short"/>
-          <text macro="year-date"/>
-        </group>
-        <text variable="locator"/>
+      <group delimiter=" ">
+        <text macro="author-short"/>
+        <text macro="year-date"/>
       </group>
     </layout>
   </citation>
 
-  <bibliography hanging-indent="true" et-al-min="6" et-al-use-first="6" line-spacing="2" entry-spacing="1">
+  <bibliography hanging-indent="true" entry-spacing="0">
     <sort>
       <key variable="issued" sort="descending"/>
       <key macro="author"/>
+      <key variable="title"/>
     </sort>
-    <layout>
-      <text macro="author" suffix="."/>
-      <date variable="issued" prefix=" " suffix=".">
-        <date-part name="year"/>
-      </date>
+    <layout suffix=".">
+      <group delimiter=". ">
+        <text macro="author"/>
+        <text macro="year-date"/>
+        <text macro="title"/>
+        <group delimiter=" ">
+          <text macro="container-title"/>
+          <group>
+            <text macro="volume-issue"/>
+            <text variable="page" prefix=": "/>
+          </group>
+        </group>
+        <text macro="publisher"/>
+      </group>
       <choose>
-        <if type="bill book graphic legal_case legislation motion_picture report song" match="any">
-          <group prefix=" " delimiter=". " suffix=".">
-            <text macro="title"/>
-            <text macro="edition"/>
-            <text macro="editor"/>
-            <text macro="publisher"/>
-          </group>
+        <if variable="abstract">
+          <text value=" [ABSTRACT-START]" suffix=""/>
+          <text variable="abstract" suffix=""/>
+          <text value="[ABSTRACT-END]" suffix=""/>
         </if>
-        <else-if type="chapter paper-conference" match="any">
-          <text macro="title" prefix=" " suffix="."/>
-          <group prefix=" " delimiter=" ">
-            <text term="in" text-case="capitalize-first"/>
-            <text variable="container-title" font-style="italic" suffix=","/>
-            <text variable="collection-title" suffix="."/>
-            <text macro="editor"/>
-            <group suffix=".">
-              <text macro="published-date"/>
-              <text macro="pages"/>
-            </group>
-            <text prefix=" " macro="publisher"/>
-          </group>
-        </else-if>
-        <else>
-          <group suffix=".">
-            <text macro="title" prefix=" "/>
-            <text macro="editor" prefix=" "/>
-          </group>
-          <group prefix=" " suffix=".">
-            <text variable="container-title" font-style="italic"/>
-            <group prefix=" ">
-              <text macro="issue"/>
-              <text macro="published-date" prefix=" "/>
-              <text macro="pages"/>
-            </group>
-          </group>
-        </else>
       </choose>
-      <text prefix=" " macro="access" suffix="."/>
     </layout>
   </bibliography>
 </style>

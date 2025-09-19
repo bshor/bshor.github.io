@@ -1,67 +1,67 @@
 ---
 title: "Teaching"
-subtitle: "I teach."
-title-block-banner: false
 ---
 
+# University of Houston
 
-## Class 1
+## Undergraduate Courses
 
+### POLS 3375 - Health Care Policy and Politics
 ::: {.grid}
-
-::: {.g-col-12 .g-col-md-2}
-![](files/images/placeholder1.jpg)
-
+::: {.g-col-12 .g-col-md-12}
+Last taught in 2023.
+:::
 :::
 
-::: {.g-col-12 .g-col-md-10}
-
-[Fall 2024](https://www.google.com), &nbsp; [Fall 2023](https://www.google.com)
-
-Class 1 introduction.
-
-:::
-
-:::
-
-
-## Class 2
-
+### POLS 3319 - Politics of Social Policy
 ::: {.grid}
-
-::: {.g-col-12 .g-col-md-2}
-![](files/images/placeholder2.JPG)
-
+::: {.g-col-12 .g-col-md-12}
+[Fall 2025 Syllabus](https://uh.simplesyllabus.com/doc/ur5hghi4b/Fall-2025-POLS-3319-17788-Politics-of-Social-Policy?mode=view)
+:::
 :::
 
-::: {.g-col-12 .g-col-md-10}
-
-[Spring 2025](https://www.google.com), &nbsp; [Fall 2023](https://www.google.com)
-
-Class 2 introduction.
-
-:::
-
-:::
-
-
-## Class 3
-
+### POLS 1337/GOVT 2305 - American and Texas Government II
 ::: {.grid}
-
-::: {.g-col-12 .g-col-md-2}
-![](files/images/placeholder3.JPG)
-
+::: {.g-col-12 .g-col-md-12}
+[Fall 2025 Syllabus](https://uh.simplesyllabus.com/doc/bqxopkugl/Fall-2025-GOVT-2305-21835-US-Government%3A-Congress%2C-President%2C-%26-Courts?mode=view)
+:::
 :::
 
-::: {.g-col-12 .g-col-md-10}
+---
 
-[Spring 2025](https://www.google.com), &nbsp; [Spring 2024](https://www.google.com)
+## Graduate Courses
 
-Class 3 introduction. 
-
+### POLS 63xx - Data Science for Social Scientists
+::: {.grid}
+::: {.g-col-12 .g-col-md-12}
+Scheduled for 2026.
+:::
 :::
 
+### POLS 6316 - Health Care Politics and Policy
+::: {.grid}
+::: {.g-col-12 .g-col-md-12}
+Last taught in 2024.
+:::
 :::
 
+### POLS 6360 - State Politics
+::: {.grid}
+::: {.g-col-12 .g-col-md-12}
+Last taught in 2023.
+:::
+:::
 
+### POLS 6312 - American Politics Field Survey
+::: {.grid}
+::: {.g-col-12 .g-col-md-12}
+Scheduled for 2026.
+:::
+:::
+
+### POLS 6366 - Political Parties
+::: {.grid}
+::: {.g-col-12 .g-col-md-12}
+Last taught in 2017.
+:::
+:::

@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.34">
+<meta name="generator" content="quarto-1.8.24">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Dr.&nbsp;Boris Shor">
 <meta name="description" content="Quarto Academic Website">
 
-<title>Projects – Dr.&nbsp;Boris Shor</title>
+<title>Grants – Dr.&nbsp;Boris Shor</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -36,14 +36,15 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-6957ec2732917c3acd9217c3064faa9e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-5e6bd0f431d9db1b2e65cd770f46ab1a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -80,9 +81,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-image','listing-title','listing-author','listing-subtitle','listing-description','listing-funding','listing-started','listing-ended',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-title-sort'] }],
+      valueNames: ['listing-image','listing-title','listing-subtitle','listing-author','listing-funding','listing-started','listing-ended',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-title-sort'] }],
       
-      searchColumns: ["listing-image","listing-title","listing-author","listing-subtitle","listing-description","listing-started","listing-ended","listing-funding"],
+      searchColumns: ["listing-title","listing-author","listing-subtitle","listing-description","listing-started","listing-ended","listing-funding"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -143,7 +144,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -160,13 +161,11 @@ window.Quarto = {
 </script>
 
 <link rel="stylesheet" href="styles.css">
-<meta property="og:title" content="Projects – Dr.&nbsp;Boris Shor">
-<meta property="og:description" content="Funded projects">
-<meta property="og:image" content="https://nsf-gov-resources.nsf.gov/styles/featured_content_tablet/s3/2023-10/NSF_Official_logo_Med_Res_600ppi_rectangle.png">
+<meta property="og:title" content="Grants – Dr.&nbsp;Boris Shor">
+<meta property="og:image" content="https://quarto.org/quarto.png">
 <meta property="og:site_name" content="Dr. Boris Shor">
-<meta name="twitter:title" content="Projects – Dr.&nbsp;Boris Shor">
-<meta name="twitter:description" content="Funded projects">
-<meta name="twitter:image" content="https://nsf-gov-resources.nsf.gov/styles/featured_content_tablet/s3/2023-10/NSF_Official_logo_Med_Res_600ppi_rectangle.png">
+<meta name="twitter:title" content="Grants – Dr.&nbsp;Boris Shor">
+<meta name="twitter:image" content="https://quarto.org/quarto.png">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -177,6 +176,8 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    </a>
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Dr.&nbsp;Boris Shor</span>
     </a>
@@ -187,32 +188,22 @@ window.Quarto = {
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-about" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">About</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-about">    
-        <li>
-    <a class="dropdown-item" href="./contact.html">
- <span class="dropdown-text">Contact</span></a>
+  <li class="nav-item">
+    <a class="nav-link" href="./publications.html"> 
+<span class="menu-text">Publications</span></a>
   </li>  
-    </ul>
-  </li>
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-research" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Research</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-research">    
-        <li>
-    <a class="dropdown-item" href="./publications.html">
- <span class="dropdown-text">List of Publications</span></a>
+  <li class="nav-item">
+    <a class="nav-link" href="./data.html"> 
+<span class="menu-text">Data</span></a>
   </li>  
-        <li>
-    <a class="dropdown-item" href="./projects.html">
- <span class="dropdown-text">Grants</span></a>
+  <li class="nav-item">
+    <a class="nav-link" href="./working.html"> 
+<span class="menu-text">Working Papers</span></a>
   </li>  
-    </ul>
-  </li>
+  <li class="nav-item">
+    <a class="nav-link active" href="./projects.html" aria-current="page"> 
+<span class="menu-text">Grants</span></a>
+  </li>  
   <li class="nav-item">
     <a class="nav-link" href="./teaching.html"> 
 <span class="menu-text">Teaching</span></a>
@@ -252,8 +243,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Projects</h1>
-<p class="subtitle lead">Funded projects</p>
+<h1 class="title">Grants</h1>
 </div>
 
 
@@ -277,19 +267,14 @@ window.Quarto = {
     <select id="listing-projects-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-projects'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
       <option value="" disabled="" selected="" hidden="">Order By</option>
       <option value="index" data-direction="asc">Default</option>
-      <option value="listing-image" data-direction="asc">
-      </option>
       <option value="listing-title-sort" data-direction="asc">
         Title
       </option>
       <option value="listing-author" data-direction="asc">
-        Team
+        Role
       </option>
       <option value="listing-subtitle" data-direction="asc">
         Funder
-      </option>
-      <option value="listing-description" data-direction="asc">
-        Description
       </option>
       <option value="listing-started" data-direction="asc">
         Start
@@ -312,7 +297,7 @@ window.Quarto = {
 <tr>
 
 <th>
-<a class="sort" data-sort="listing-image" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;"> </a>
+ 
 </th>
 
 <th>
@@ -320,15 +305,11 @@ window.Quarto = {
 </th>
 
 <th>
-<a class="sort" data-sort="listing-author" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Team</a>
-</th>
-
-<th>
 <a class="sort" data-sort="listing-subtitle" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Funder</a>
 </th>
 
 <th>
-<a class="sort" data-sort="listing-description" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Description</a>
+<a class="sort" data-sort="listing-author" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Role</a>
 </th>
 
 <th>
@@ -347,30 +328,302 @@ window.Quarto = {
 </thead>
 <tbody class="list">
 
-<tr data-index="0" data-listing-title-sort="Exploring ">
+<tr data-index="0" data-listing-title-sort="Research Grant">
 <td>
-<span class="listing-image"><img loading="lazy" src="https://nsf-gov-resources.nsf.gov/styles/featured_content_tablet/s3/2023-10/NSF_Official_logo_Med_Res_600ppi_rectangle.png" style="height: 30px;"></span>
+<span class="listing-image">&nbsp;</span>
 </td>
 <td>
-<a href="https://www.nsf.gov/" class="title listing-title">Exploring </a>
+<span class="listing-title">Research Grant</span>
 </td>
 <td>
-<span class="listing-author">Academic Website</span>
+<span class="listing-subtitle">Energy Transition Institute</span>
 </td>
 <td>
-<span class="listing-subtitle">Funder</span>
+<span class="listing-author">PI</span>
 </td>
 <td>
-<span class="listing-description">The goal of this project is to investigate .</span>
+<span class="listing-funding">$95,160</span>
 </td>
 <td>
-<span class="listing-funding">$0</span>
+<span class="listing-started">2023</span>
 </td>
 <td>
-<span class="listing-started">2024</span>
+<span class="listing-ended">2024</span>
+</td>
+
+</tr>
+
+<tr data-index="1" data-listing-title-sort="Research Grant">
+<td>
+<span class="listing-image">&nbsp;</span>
 </td>
 <td>
-<span class="listing-ended">2025</span>
+<span class="listing-title">Research Grant</span>
+</td>
+<td>
+<span class="listing-subtitle">Russell Sage Foundation</span>
+</td>
+<td>
+<span class="listing-author">PI</span>
+</td>
+<td>
+<span class="listing-funding">$174,998</span>
+</td>
+<td>
+<span class="listing-started">2019</span>
+</td>
+<td>
+<span class="listing-ended">2024</span>
+</td>
+
+</tr>
+
+<tr data-index="2" data-listing-title-sort="Research Grant">
+<td>
+<span class="listing-image">&nbsp;</span>
+</td>
+<td>
+<span class="listing-title">Research Grant</span>
+</td>
+<td>
+<span class="listing-subtitle">Kleinman Center for Energy Policy (University of Pennsylvania)</span>
+</td>
+<td>
+<span class="listing-author">Co-PI</span>
+</td>
+<td>
+<span class="listing-funding">$15,000</span>
+</td>
+<td>
+<span class="listing-started">2018</span>
+</td>
+<td>
+<span class="listing-ended">2019</span>
+</td>
+
+</tr>
+
+<tr data-index="3" data-listing-title-sort="Small Grant Award">
+<td>
+<span class="listing-image">&nbsp;</span>
+</td>
+<td>
+<span class="listing-title">Small Grant Award</span>
+</td>
+<td>
+<span class="listing-subtitle">UH Division of Research</span>
+</td>
+<td>
+<span class="listing-author">PI</span>
+</td>
+<td>
+<span class="listing-funding">$4,500</span>
+</td>
+<td>
+<span class="listing-started">2018</span>
+</td>
+<td>
+<span class="listing-ended">2019</span>
+</td>
+
+</tr>
+
+<tr data-index="4" data-listing-title-sort="Research Grant">
+<td>
+<span class="listing-image">&nbsp;</span>
+</td>
+<td>
+<span class="listing-title">Research Grant</span>
+</td>
+<td>
+<span class="listing-subtitle">Center on Democracy, Development, and the Rule of Law (Stanford)</span>
+</td>
+<td>
+<span class="listing-author">Co-PI</span>
+</td>
+<td>
+<span class="listing-funding">$10,000</span>
+</td>
+<td>
+<span class="listing-started">2017</span>
+</td>
+<td>
+<span class="listing-ended">2017</span>
+</td>
+
+</tr>
+
+<tr data-index="5" data-listing-title-sort="Research Grant">
+<td>
+<span class="listing-image">&nbsp;</span>
+</td>
+<td>
+<span class="listing-title">Research Grant</span>
+</td>
+<td>
+<span class="listing-subtitle">Laura and John Arnold Foundation</span>
+</td>
+<td>
+<span class="listing-author">Co-PI</span>
+</td>
+<td>
+<span class="listing-funding">$157,856</span>
+</td>
+<td>
+<span class="listing-started">2013</span>
+</td>
+<td>
+<span class="listing-ended">2015</span>
+</td>
+
+</tr>
+
+<tr data-index="6" data-listing-title-sort="Research Grant">
+<td>
+<span class="listing-image">&nbsp;</span>
+</td>
+<td>
+<span class="listing-title">Research Grant</span>
+</td>
+<td>
+<span class="listing-subtitle">Center for the American Governor (Rutgers University)</span>
+</td>
+<td>
+<span class="listing-author">PI</span>
+</td>
+<td>
+<span class="listing-funding">$5,000</span>
+</td>
+<td>
+<span class="listing-started">2013</span>
+</td>
+<td>
+<span class="listing-ended">2014</span>
+</td>
+
+</tr>
+
+<tr data-index="7" data-listing-title-sort="Pilot Grant">
+<td>
+<span class="listing-image">&nbsp;</span>
+</td>
+<td>
+<span class="listing-title">Pilot Grant</span>
+</td>
+<td>
+<span class="listing-subtitle">Robert Wood Johnson Foundation</span>
+</td>
+<td>
+<span class="listing-author">Co-PI</span>
+</td>
+<td>
+<span class="listing-funding">$12,000</span>
+</td>
+<td>
+<span class="listing-started">2012</span>
+</td>
+<td>
+<span class="listing-ended">2012</span>
+</td>
+
+</tr>
+
+<tr data-index="8" data-listing-title-sort="Research Grant">
+<td>
+<span class="listing-image">&nbsp;</span>
+</td>
+<td>
+<span class="listing-title">Research Grant</span>
+</td>
+<td>
+<span class="listing-subtitle">Murray Weidenbaum Center on the Economy, Government, and Public Policy</span>
+</td>
+<td>
+<span class="listing-author">Co-PI</span>
+</td>
+<td>
+<span class="listing-funding">$49,333</span>
+</td>
+<td>
+<span class="listing-started">2012</span>
+</td>
+<td>
+<span class="listing-ended">2012</span>
+</td>
+
+</tr>
+
+<tr data-index="9" data-listing-title-sort="Collaborative Research: The Ideological Mapping of American Legislatures">
+<td>
+<span class="listing-image">&nbsp;</span>
+</td>
+<td>
+<span class="listing-title">Collaborative Research: The Ideological Mapping of American Legislatures</span>
+</td>
+<td>
+<span class="listing-subtitle">National Science Foundation, Political Science Program</span>
+</td>
+<td>
+<span class="listing-author">Co-PI</span>
+</td>
+<td>
+<span class="listing-funding">$434,451</span>
+</td>
+<td>
+<span class="listing-started">2011</span>
+</td>
+<td>
+<span class="listing-ended">2014</span>
+</td>
+
+</tr>
+
+<tr data-index="10" data-listing-title-sort="Dean's Grant for Survey Research">
+<td>
+<span class="listing-image">&nbsp;</span>
+</td>
+<td>
+<span class="listing-title">Dean’s Grant for Survey Research</span>
+</td>
+<td>
+<span class="listing-subtitle">Dean’s Grant</span>
+</td>
+<td>
+<span class="listing-author">PI</span>
+</td>
+<td>
+<span class="listing-funding">$22,000</span>
+</td>
+<td>
+<span class="listing-started">2008</span>
+</td>
+<td>
+<span class="listing-ended">2008</span>
+</td>
+
+</tr>
+
+<tr data-index="11" data-listing-title-sort="Program on Political Institutions Research Grant">
+<td>
+<span class="listing-image">&nbsp;</span>
+</td>
+<td>
+<span class="listing-title">Program on Political Institutions Research Grant</span>
+</td>
+<td>
+<span class="listing-subtitle">Program on Political Institutions</span>
+</td>
+<td>
+<span class="listing-author">PI</span>
+</td>
+<td>
+<span class="listing-funding">$2,500</span>
+</td>
+<td>
+<span class="listing-started">2007</span>
+</td>
+<td>
+<span class="listing-ended">2007</span>
 </td>
 
 </tr>
@@ -379,16 +632,31 @@ window.Quarto = {
 </table>
 <div class="listing-no-matching d-none">No matching items</div>
 </div>
-<!--Include social share buttons-->
-<!-- 
-AddToAny check more: https://www.addtoany.com/buttons/for/website 
-Using includes will make edits easier, will only need to add or remove button here if needed.
-https://quarto.org/docs/authoring/includes.html
--->
-<div class="a2a_kit a2a_kit_size_32 a2a_default_style">
-<p><a class="a2a_dd" href="https://www.addtoany.com/share"></a> <a class="a2a_button_linkedin"></a> <a class="a2a_button_bluesky"></a> <a class="a2a_button_facebook"></a> <a class="a2a_button_copy_link"></a> <a class="a2a_button_email"></a></p>
-</div>
-<script async="" src="https://static.addtoany.com/menu/page.js"></script>
+<style>
+/* Make the table fill the available space and enforce column widths */
+#projects .quarto-listing-contents table {
+  width: 100%;
+  table-layout: fixed;
+}
+
+/* Set width for Title column (2nd) */
+#projects .quarto-listing-contents th:nth-child(2),
+#projects .quarto-listing-contents td:nth-child(2) {
+  width: 25%;
+}
+
+/* Set width for Funder column (3rd) */
+#projects .quarto-listing-contents th:nth-child(3),
+#projects .quarto-listing-contents td:nth-child(3) {
+  width: 35%;
+}
+
+/* Set width for Role column (4th) */
+#projects .quarto-listing-contents th:nth-child(4),
+#projects .quarto-listing-contents td:nth-child(4) {
+  width: 15%;
+}
+</style>
 
 
 
@@ -445,13 +713,14 @@ https://quarto.org/docs/authoring/includes.html
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

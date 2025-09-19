@@ -1,1 +1,54 @@
-/* css styles */
+.abstract-toggle {
+  margin: 0.5em 0;
+}
+
+.abstract-button {
+  cursor: pointer;
+  color: #0066cc;
+  font-size: 0.85em;
+  font-weight: 600;
+  text-decoration: underline;
+  user-select: none;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+.abstract-button:hover {
+  color: #004499;
+}
+
+.abstract-content {
+  margin: 0;
+  padding: 1.2em;
+  background-color: #f8f9fa;
+  border-left: 4px solid #0066cc;
+  font-style: italic;
+  line-height: 1.5;
+  font-size: 0.9em;
+  border-radius: 0 4px 4px 0;
+  text-indent: 0 !important; /* Fix indentation */
+}
+
+/* Force no indentation on any content inside abstract */
+.abstract-content * {
+  text-indent: 0 !important;
+  margin: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* First paragraph gets top/bottom padding only */
+.abstract-content p:first-child {
+  padding-top: 0;
+  margin-top: 0;
+}
+
+.abstract-content p:last-child {
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.csl-entry {
+  margin-bottom: 1.5em;
+}

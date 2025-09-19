@@ -1,10 +1,12 @@
 ---
-title: "Publications"
-#description-meta: "Information, pdfs, and social metrics of papers"
+title: "Working Papers"
+#description-meta: "Current research and papers under review"
 #page-layout: full
 #back-to-top-navigation: true
 title-block-banner: false
-#css: custom.cssc
+#css: custom.css
+bibliography: working.bib
+csl: apsr-reverse.csl
 nocite: '@*' # <-- Add this line to cite everything
 ---
 
@@ -12,14 +14,12 @@ nocite: '@*' # <-- Add this line to cite everything
 <!--Include academic icons or buttons-->
 {{< include /files/includes/_academic.qmd >}}
 
-<!-- Notes: \* corresponding author; <sup>GS</sup> graduate student advisee; <sup>VS</sup> visiting scholar; ![](https://drganghe.github.io/files/images/highly-cited-paper-badge.png "ESI Highly Cited Paper"){width=20 fig-alt="Highly cited paper"} ESI [Highly Cited Paper](https://webofscience.help.clarivate.com/en-us/Content/esi-highly-cited-papers.html) (top 1%); ![](https://drganghe.github.io/files/images/hot-paper-badge.png "ESI Hot Paper"){width=20 fig-alt="Hot paper"} ESI [Hot Paper](https://webofscience.help.clarivate.com/en-us/Content/esi-hot-papers.html) (top 0.1%)  -->
-
-- [Google Scholar](https://scholar.google.com/citations?hl=en&user=ShUul74AAAAJ)
+<!-- Notes: Papers listed here are in various stages of development, from under review to early drafts. -->
 
 ::: {#refs}
 :::
 
-<!-- ## Selected Work -->
+<!-- ## Working Papers -->
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
