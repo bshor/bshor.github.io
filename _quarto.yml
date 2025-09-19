@@ -121,4 +121,3 @@ format:
     link-external-filter: '^(?:http:|https:)\/\/bshor\.github\.io\/custom'
     include-in-header: "files/includes/_academic.qmd"
 
-  
