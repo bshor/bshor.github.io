@@ -53,6 +53,9 @@ website:
       - icon: github
         href: https://github.com/bshor
         target: _blank
+      - text: "{{< fa brands x-twitter >}}"
+        href: https://x.com/bshor
+        target: _blank
       # - text: "{{< fa brands bluesky >}}"
       #   href: https://bsky.app
       #   target: _blank      
