@@ -2,7 +2,7 @@
 title: "Data"
 ---
 
-All of my publicly available data and replication data and code for published articles can be found on my [Harvard Dataverse page](https://dvn.iq.harvard.edu/dvn/dv/bshor).
+All of my publicly available data and replication data and code for published articles can be found on my [Harvard Dataverse page](https://dataverse.harvard.edu/dataverse/bshor).
 
 ---
 
