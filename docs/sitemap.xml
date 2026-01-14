@@ -1,51 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://bshor.github.io/working.html</loc>
-    <lastmod>2025-09-19T02:19:50.666Z</lastmod>
+    <loc>https://bshor.github.io/GEMINI.html</loc>
+    <lastmod>2026-01-14T16:50:49.052Z</lastmod>
   </url>
   <url>
     <loc>https://bshor.github.io/teaching.html</loc>
-    <lastmod>2025-09-19T02:28:10.610Z</lastmod>
+    <lastmod>2026-01-14T16:53:15.550Z</lastmod>
   </url>
   <url>
     <loc>https://bshor.github.io/projects.html</loc>
-    <lastmod>2025-09-18T02:14:42.384Z</lastmod>
-  </url>
-  <url>
-    <loc>https://bshor.github.io/posts/news-title/index.html</loc>
-    <lastmod>2025-09-11T02:19:37.384Z</lastmod>
-  </url>
-  <url>
-    <loc>https://bshor.github.io/posts.html</loc>
-    <lastmod>2025-09-11T02:19:37.383Z</lastmod>
-  </url>
-  <url>
-    <loc>https://bshor.github.io/index.html</loc>
-    <lastmod>2025-09-19T01:47:44.016Z</lastmod>
-  </url>
-  <url>
-    <loc>https://bshor.github.io/contact.html</loc>
-    <lastmod>2025-09-18T02:48:17.645Z</lastmod>
-  </url>
-  <url>
-    <loc>https://bshor.github.io/people.html</loc>
-    <lastmod>2025-09-11T02:19:37.383Z</lastmod>
-  </url>
-  <url>
-    <loc>https://bshor.github.io/posts/event-title/index.html</loc>
-    <lastmod>2025-09-11T02:19:37.384Z</lastmod>
-  </url>
-  <url>
-    <loc>https://bshor.github.io/posts/paper-title/index.html</loc>
-    <lastmod>2025-09-11T02:19:37.385Z</lastmod>
+    <lastmod>2025-09-18T02:14:42.000Z</lastmod>
   </url>
   <url>
     <loc>https://bshor.github.io/publications.html</loc>
-    <lastmod>2025-09-18T01:36:54.750Z</lastmod>
+    <lastmod>2025-09-18T01:36:54.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://bshor.github.io/people.html</loc>
+    <lastmod>2025-09-11T02:19:37.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://bshor.github.io/posts.html</loc>
+    <lastmod>2025-09-11T02:19:37.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://bshor.github.io/posts/news-title/index.html</loc>
+    <lastmod>2025-09-11T02:19:37.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://bshor.github.io/posts/event-title/index.html</loc>
+    <lastmod>2025-09-11T02:19:37.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://bshor.github.io/posts/paper-title/index.html</loc>
+    <lastmod>2025-09-11T02:19:37.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://bshor.github.io/contact.html</loc>
+    <lastmod>2025-09-18T02:48:17.000Z</lastmod>
   </url>
   <url>
     <loc>https://bshor.github.io/data.html</loc>
-    <lastmod>2025-09-26T12:57:14.907Z</lastmod>
+    <lastmod>2025-09-26T12:57:14.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://bshor.github.io/working.html</loc>
+    <lastmod>2025-09-19T02:19:50.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://bshor.github.io/index.html</loc>
+    <lastmod>2025-09-19T01:47:44.000Z</lastmod>
   </url>
 </urlset>

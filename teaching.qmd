@@ -16,6 +16,8 @@ title: "Teaching"
 ### GOVT 2305 - American and Texas Government II
 ::: {.grid}
 ::: {.g-col-12 .g-col-md-12}
+[Spring 2026 Syllabus](https://uh.simplesyllabus.com/doc/2bnw026cj/Spring-2026-GOVT-2305-15615-US-Government%3A-Congress%2C-President%2C-%26-Courts?mode=view)
+
 [Fall 2025 Syllabus](https://uh.simplesyllabus.com/doc/bqxopkugl/Fall-2025-GOVT-2305-21835-US-Government%3A-Congress%2C-President%2C-%26-Courts?mode=view)
 :::
 :::
