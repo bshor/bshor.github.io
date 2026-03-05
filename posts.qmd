@@ -10,9 +10,9 @@ listing:
   sort-ui: true
   filter-ui: true
   feed: true
-  contents: 
+  contents:
       - posts
-      - posts/post-links.yml  # Use this file to add external links
+      # - posts/post-links.yml  # Uncomment to include external links
 #      categories: [] 
 
 #page-layout: full

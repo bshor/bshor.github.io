@@ -1,9 +1,10 @@
-
-    - path: https://drganghe.github.io/quarto-academic-site-examples.html
-      image: "/files/images/placeholder1.jpg"
-      title: "Quarto Academic Website Examples and Tips"
-      author: "Dr. Gang He"
-      description: "Examples and tips for Quarto Academic Website"
-      date: "2024-10-15"
-      categories: [news] 
-
+# External post links — add entries here to include external links in the posts listing
+# Format:
+# - path: https://example.com
+#   image: "/files/images/placeholder1.jpg"
+#   title: "Post Title"
+#   author: "Author Name"
+#   description: "Short description"
+#   date: "YYYY-MM-DD"
+#   categories: [news]
+[]

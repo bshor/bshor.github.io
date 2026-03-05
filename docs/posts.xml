@@ -8,23 +8,14 @@
 <title>Dr. Boris Shor</title>
 <link>https://bshor.github.io/posts.html</link>
 <atom:link href="https://bshor.github.io/posts.xml" rel="self" type="application/rss+xml"/>
-<description>Quarto Academic Website</description>
+<description>Boris Shor, political scientist at the University of Houston studying legislative polarization, health policy, and state politics.</description>
 <image>
-<url>https://quarto.org/quarto.png</url>
+<url>https://bshor.github.io/files/images/shor-headshot.jpg</url>
 <title>Dr. Boris Shor</title>
 <link>https://bshor.github.io/posts.html</link>
 </image>
-<generator>quarto-1.8.26</generator>
-<lastBuildDate>Tue, 15 Oct 2024 05:00:00 GMT</lastBuildDate>
-<item>
-  <title>Quarto Academic Website Examples and Tips</title>
-  <link>https://bshor.github.io/</link>
-  <description>Examples and tips for Quarto Academic Website</description>
-  <category>news</category>
-  <guid>https://bshor.github.io/</guid>
-  <pubDate>Tue, 15 Oct 2024 05:00:00 GMT</pubDate>
-  <media:content url="https://bshor.github.io/files/images/placeholder1.jpg" medium="image" type="image/jpeg"/>
-</item>
+<generator>quarto-1.8.27</generator>
+<lastBuildDate>Tue, 03 Sep 2024 05:00:00 GMT</lastBuildDate>
 <item>
   <title>Event item</title>
   <dc:creator>Event </dc:creator>

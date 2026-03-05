@@ -33,10 +33,10 @@ Last taught in 2023.
 
 ## Graduate Courses
 
-### POLS 6312 - American Politics Field Survey
+### POLS 6309 - American Politics Field Survey
 ::: {.grid}
 ::: {.g-col-12 .g-col-md-12}
-Scheduled for 2026.
+[Spring 2026 Syllabus](files/pols6309_syllabus_spring2026.pdf)
 :::
 :::
 

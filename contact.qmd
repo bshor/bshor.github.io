@@ -13,9 +13,9 @@ about:
       text: E-mail
       href: mailto:bshor@uh.edu
     - text: "{{< ai google-scholar >}} Google Scholar"
-      href: http://goo.gl/kxQvm
+      href: https://scholar.google.com/citations?hl=en&user=ShUul74AAAAJ
     - text: "{{< ai dataverse >}} Dataverse"
-      href: http://dvn.iq.harvard.edu/dvn/dv/bshor
+      href: https://dataverse.harvard.edu/dataverse/bshor
     - text: "{{< ai ssrn >}} SSRN"
-      href: http://bit.ly/ssrn-bshor
+      href: https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=858121
 ---

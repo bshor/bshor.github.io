@@ -46,6 +46,15 @@ quarto render     # Build full site to docs/
 
 After rendering, commit and push `docs/` to deploy via GitHub Pages.
 
+## CLI Tools
+
+Two separate CLIs are used — do not conflate them:
+
+- **`gh`** — GitHub CLI for GitHub-specific operations: browsing repos, managing issues/PRs, releases, checking Actions runs. Authentication is handled here (credentials flow through to git automatically). Does **not** have a push command.
+- **`git`** — Standard git CLI for all local VCS operations and pushing/pulling: `git add`, `git commit`, `git push origin main`, etc.
+
+Use `gh` for GitHub interaction; use `git` for everything version-control related.
+
 ## Content Management Patterns
 
 ### Publications
