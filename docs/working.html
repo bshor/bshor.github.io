@@ -232,13 +232,13 @@ https://badge.dimensions.ai/
 <!-- Notes: Papers listed here are in various stages of development, from under review to early drafts. -->
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-Voorheis:2025" class="csl-entry" role="listitem">
-Eldes, Ayse, Nolan McCarty, Boris Shor, and John Voorheis. 2026. <span>“<a href="https://bshor.github.io/files/papers/eldes_mccarty_shor_voorheis_inequality_2026.pdf">Unequal Incomes, Ideology and Gridlock: How Rising Inequality Increases Political Polarization</a>.”</span>
+Eldes, Ayse, Nolan McCarty, Boris Shor, and John Voorheis. 2026. <span>“Unequal Incomes, Ideology and Gridlock: How Rising Inequality Increases Political Polarization”</span> [PDF-URL:<a href="https://bshor.github.io/files/papers/eldes_mccarty_shor_voorheis_inequality_2026.pdf">https://bshor.github.io/files/papers/eldes_mccarty_shor_voorheis_inequality_2026.pdf</a>].
 </div>
 <div id="ref-Kennedy:2026" class="csl-entry" role="listitem">
-Kennedy, Ryan, Boris Shor, and Amanda Austin. 2026. <span>“<a href="https://bshor.github.io/files/papers/kennedy_shor_austin_llm_stereotyping_2026.pdf">Inference, Memory, or Stereotypes? Understanding LLM Roleplaying of Policy Opinions</a>.”</span>
+Kennedy, Ryan, Boris Shor, and Amanda Austin. 2026. <span>“Inference, Memory, or Stereotypes? Understanding LLM Roleplaying of Policy Opinions”</span> [PDF-URL:<a href="https://bshor.github.io/files/papers/kennedy_shor_austin_llm_stereotyping_2026.pdf">https://bshor.github.io/files/papers/kennedy_shor_austin_llm_stereotyping_2026.pdf</a>].
 </div>
 <div id="ref-Shor:2025ps" class="csl-entry" role="listitem">
-Shor, Boris. 2025. <span>“<a href="https://bshor.github.io/files/papers/shor_switchers_2025.pdf">Out of Step, Out of Party: Party Switching in American State Legislatures</a>.”</span>
+Shor, Boris. 2025. <span>“Out of Step, Out of Party: Party Switching in American State Legislatures”</span> [PDF-URL:<a href="https://bshor.github.io/files/papers/shor_switchers_2025.pdf">https://bshor.github.io/files/papers/shor_switchers_2025.pdf</a>].
 </div>
 </div>
 <!-- ## Working Papers -->
@@ -247,27 +247,25 @@ document.addEventListener('DOMContentLoaded', function() {
   const refsDiv = document.getElementById('refs');
   if (refsDiv) {
     let html = refsDiv.innerHTML;
-    if (html.includes('[ABSTRACT-START]')) {
-      html = html.replace(/\[ABSTRACT-START\](.*?)\[ABSTRACT-END\]/gs, 
-        '<div class="abstract-toggle"><span class="abstract-button">▶ Abstract</span><div class="abstract-content" style="display:none;">$1</div></div>');
-      refsDiv.innerHTML = html;
-      
-      // Add click handlers
-      document.querySelectorAll('.abstract-button').forEach(button => {
-        button.addEventListener('click', function() {
-          const content = this.nextElementSibling;
-          const isOpen = content.style.display !== 'none';
-          
-          if (isOpen) {
-            content.style.display = 'none';
-            this.innerHTML = '▶ Abstract';
-          } else {
-            content.style.display = 'block';
-            this.innerHTML = '▼ Abstract';
-          }
-        });
+
+    // Replace PDF URL markers with visible links (Pandoc may auto-link the URL inside)
+    html = html.replace(/\[PDF-URL:(?:<a [^>]+>)?((https?:\/\/)[^<\]]+)(?:<\/a>)?\]/g,
+      '<a href="$1" class="pdf-link" target="_blank">[PDF]</a>');
+
+    // Replace abstract markers with collapsible toggles
+    html = html.replace(/\[ABSTRACT-START\](.*?)\[ABSTRACT-END\]/gs,
+      '<div class="abstract-toggle"><span class="abstract-button">▶ Abstract</span><div class="abstract-content" style="display:none;">$1</div></div>');
+
+    refsDiv.innerHTML = html;
+
+    document.querySelectorAll('.abstract-button').forEach(button => {
+      button.addEventListener('click', function() {
+        const content = this.nextElementSibling;
+        const isOpen = content.style.display !== 'none';
+        content.style.display = isOpen ? 'none' : 'block';
+        this.innerHTML = isOpen ? '▶ Abstract' : '▼ Abstract';
       });
-    }
+    });
   }
 });
 </script>

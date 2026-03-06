@@ -52,3 +52,16 @@
 .csl-entry {
   margin-bottom: 1.5em;
 }
+
+.pdf-link {
+  font-size: 0.85em;
+  font-weight: 600;
+  color: #0066cc;
+  text-decoration: none;
+  margin-left: 0.4em;
+}
+
+.pdf-link:hover {
+  color: #004499;
+  text-decoration: underline;
+}

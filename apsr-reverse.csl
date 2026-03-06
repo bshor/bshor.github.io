@@ -123,6 +123,13 @@
         <text macro="publisher"/>
       </group>
       <choose>
+        <if variable="URL">
+          <text value=" [PDF-URL:" prefix=""/>
+          <text variable="URL"/>
+          <text value="]" suffix=""/>
+        </if>
+      </choose>
+      <choose>
         <if variable="abstract">
           <text value=" [ABSTRACT-START]" suffix=""/>
           <text variable="abstract" suffix=""/>
