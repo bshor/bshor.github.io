@@ -6,10 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Dr.&nbsp;Boris Shor">
-<meta name="description" content="Boris Shor, political scientist at the University of Houston studying legislative polarization, health policy, and state politics.">
+<meta name="author" content="Boris Shor">
+<meta name="dcterms.date" content="2026-04-23">
 
-<title>Teaching – Dr.&nbsp;Boris Shor</title>
+<title>Odum 2026: Data Visualization in R</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -35,6 +35,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./01-workflow-and-data.html" rel="next">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -44,14 +45,12 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-31eaf266902e15e6572a3934ae2616ee.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-ec8eff129d6f50c8392963982e963180.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
-  "location": "navbar",
+  "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "end",
+  "panel-placement": "start",
   "type": "textbox",
   "limit": 50,
   "keyboard-shortcut": [
@@ -59,6 +58,7 @@ ul.task-list li input[type="checkbox"] {
     "/",
     "s"
   ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -74,130 +74,100 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-<!-- 
-Load Academicons v1: https://jpswalsh.github.io/academicons/
--->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-
-
-<!---
-The following code are needed to show dimension citation and altmetrics.
-https://api.altmetric.com/embeds.html
-https://badge.dimensions.ai/
---->
-
-<script type="text/javascript" src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script>
-
-<script async="" src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script>
-
-<script type="text/javascript" src="//cdn.plu.mx/widget-popup.js"></script>
-
-
-<link rel="stylesheet" href="styles.css">
-<meta property="og:title" content="Teaching – Dr.&nbsp;Boris Shor">
-<meta property="og:image" content="https://bshor.github.io/files/images/shor-headshot.jpg">
-<meta property="og:site_name" content="Dr.&nbsp;Boris Shor">
-<meta name="twitter:title" content="Teaching – Dr.&nbsp;Boris Shor">
-<meta name="twitter:image" content="https://bshor.github.io/files/images/shor-headshot.jpg">
-<meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-sidebar floating quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Dr.&nbsp;Boris Shor</span>
-    </a>
-  </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-  <span class="navbar-toggler-icon"></span>
-</button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="./publications.html"> 
-<span class="menu-text">Publications</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./data.html"> 
-<span class="menu-text">Data</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./working.html"> 
-<span class="menu-text">Working Papers</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./projects.html"> 
-<span class="menu-text">Grants</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link active" href="./teaching.html" aria-current="page"> 
-<span class="menu-text">Teaching</span></a>
-  </li>  
-</ul>
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="./files/shor_cv.pdf"> 
-<span class="menu-text">CV</span></a>
-  </li>  
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/bshor" target="_blank"> <i class="bi bi-github" role="img">
-</i> 
-<span class="menu-text"></span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="https://x.com/bshor" target="_blank"> 
-<span class="menu-text"><i class="fa-brands fa-x-twitter" aria-label="x-twitter"></i></span></a>
-  </li>  
-</ul>
-          </div> <!-- /navcollapse -->
-            <div class="quarto-navbar-tools">
-  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
-  <div class="quarto-reader-toggle-btn">
-  <i class="bi"></i>
-  </div>
-</a>
-</div>
-      </div> <!-- /container-fluid -->
-    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Odum 2026</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Odum 2026: Data Visualization in R</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Odum 2026</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-workflow-and-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Workflow and Quarto</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-tidyverse-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The Tidyverse: Importing and Tidying Data</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-core-ggplot2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Core ggplot2</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-comparing-and-separating-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Comparing and Separating Data</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-from-question-to-final-figure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">From Question to Final Figure</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-storytelling-dashboards-and-ai.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Extra: Dashboards and Agentic AI</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
+    <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#university-of-houston" id="toc-university-of-houston" class="nav-link active" data-scroll-target="#university-of-houston">University of Houston</a>
-  <ul class="collapse">
-  <li><a href="#undergraduate-courses" id="toc-undergraduate-courses" class="nav-link" data-scroll-target="#undergraduate-courses">Undergraduate Courses</a>
-  <ul class="collapse">
-  <li><a href="#pols-3319---politics-of-social-policy" id="toc-pols-3319---politics-of-social-policy" class="nav-link" data-scroll-target="#pols-3319---politics-of-social-policy">POLS 3319 - Politics of Social Policy</a></li>
-  <li><a href="#govt-2305---american-and-texas-government-ii" id="toc-govt-2305---american-and-texas-government-ii" class="nav-link" data-scroll-target="#govt-2305---american-and-texas-government-ii">GOVT 2305 - American and Texas Government II</a></li>
-  <li><a href="#pols-3375---health-care-policy-and-politics" id="toc-pols-3375---health-care-policy-and-politics" class="nav-link" data-scroll-target="#pols-3375---health-care-policy-and-politics">POLS 3375 - Health Care Policy and Politics</a></li>
-  </ul></li>
-  <li><a href="#graduate-courses" id="toc-graduate-courses" class="nav-link" data-scroll-target="#graduate-courses">Graduate Courses</a>
-  <ul class="collapse">
-  <li><a href="#pols-6309---american-politics-field-survey" id="toc-pols-6309---american-politics-field-survey" class="nav-link" data-scroll-target="#pols-6309---american-politics-field-survey">POLS 6309 - American Politics Field Survey</a></li>
-  <li><a href="#pols-63xx---data-science-for-social-scientists" id="toc-pols-63xx---data-science-for-social-scientists" class="nav-link" data-scroll-target="#pols-63xx---data-science-for-social-scientists">POLS 63xx - Data Science for Social Scientists</a></li>
-  <li><a href="#pols-6316---health-care-politics-and-policy" id="toc-pols-6316---health-care-politics-and-policy" class="nav-link" data-scroll-target="#pols-6316---health-care-politics-and-policy">POLS 6316 - Health Care Politics and Policy</a></li>
-  <li><a href="#pols-6360---state-politics" id="toc-pols-6360---state-politics" class="nav-link" data-scroll-target="#pols-6360---state-politics">POLS 6360 - State Politics</a></li>
-  <li><a href="#pols-6366---political-parties" id="toc-pols-6366---political-parties" class="nav-link" data-scroll-target="#pols-6366---political-parties">POLS 6366 - Political Parties</a></li>
-  </ul></li>
-  <li><a href="#outside-teaching" id="toc-outside-teaching" class="nav-link" data-scroll-target="#outside-teaching">Outside Teaching</a>
-  <ul class="collapse">
-  <li><a href="#odum-2026---data-visualization-in-r" id="toc-odum-2026---data-visualization-in-r" class="nav-link" data-scroll-target="#odum-2026---data-visualization-in-r">Odum 2026 - Data Visualization in R</a></li>
-  </ul></li>
-  </ul></li>
+  <li><a href="#schedule" id="toc-schedule" class="nav-link active" data-scroll-target="#schedule"><span class="header-section-number">0.1</span> Schedule</a></li>
+  <li><a href="#how-to-use-this-book" id="toc-how-to-use-this-book" class="nav-link" data-scroll-target="#how-to-use-this-book"><span class="header-section-number">0.2</span> How To Use This Book</a></li>
+  <li><a href="#end-of-day-outcomes" id="toc-end-of-day-outcomes" class="nav-link" data-scroll-target="#end-of-day-outcomes"><span class="header-section-number">0.3</span> End-Of-Day Outcomes</a></li>
+  <li><a href="#before-class" id="toc-before-class" class="nav-link" data-scroll-target="#before-class"><span class="header-section-number">0.4</span> Before Class</a></li>
+  <li><a href="#navigation" id="toc-navigation" class="nav-link" data-scroll-target="#navigation"><span class="header-section-number">0.5</span> Navigation</a></li>
   </ul>
 </nav>
     </div>
@@ -206,14 +176,27 @@ https://badge.dimensions.ai/
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Teaching</h1>
+<h1 class="title">Odum 2026: Data Visualization in R</h1>
+<p class="subtitle lead">Interactive textbook for a one-day course</p>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Boris Shor </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">April 23, 2026</p>
+    </div>
+  </div>
   
     
   </div>
@@ -223,97 +206,132 @@ https://badge.dimensions.ai/
 </header>
 
 
-<section id="university-of-houston" class="level1">
-<h1>University of Houston</h1>
-<section id="undergraduate-courses" class="level2">
-<h2 class="anchored" data-anchor-id="undergraduate-courses">Undergraduate Courses</h2>
-<section id="pols-3319---politics-of-social-policy" class="level3">
-<h3 class="anchored" data-anchor-id="pols-3319---politics-of-social-policy">POLS 3319 - Politics of Social Policy</h3>
-<div class="grid">
-<div class="g-col-12 g-col-md-12">
-<p><a href="https://uh.simplesyllabus.com/doc/ur5hghi4b/Fall-2025-POLS-3319-17788-Politics-of-Social-Policy?mode=view">Fall 2025 Syllabus</a></p>
-</div>
-</div>
+<p>This book is the core text for the Odum 2026 one-day visualization workshop. It is meant to be used during class, revisited afterward, and adapted into later work.</p>
+<p>The point of visualization is not decoration. It is to make structure visible. A good figure helps answer questions that are harder to answer in a raw table: what is rising or falling, which groups differ, where the distribution is concentrated, whether two variables move together, and which comparison deserves attention first. Visualization is therefore part of analysis as much as presentation. It is also an exercise in emphasis: deciding what should stand out, what can stay in the background, and what should be omitted altogether so the main comparison becomes easier to see.</p>
+<p>This course uses R as the main programming environment. Within R, the tidyverse is the central workflow framework for importing, reshaping, summarizing, and preparing data. <code>ggplot2</code>, which is part of the tidyverse, is the main plotting system used to turn those prepared data into figures whose structure can be built and revised deliberately rather than all at once.</p>
+<p>The main goal is not only to produce a few example figures. The larger goal is to show how workflow, import, tidying, plotting, revision, export, and light automation fit together as one coherent process.</p>
+<p>The course is organized from that macro perspective. It begins with workflow and document structure, then moves into data import and tidying, then into the core logic of <code>ggplot2</code>, then into comparison choices across chart types, and finally into a longer case study that moves from question to final figure. The extra chapter on storytelling, dashboards, and agentic AI sits on top of those fundamentals rather than replacing them. The underlying argument of the course is simple: clear graphics come from clear workflow, clear questions, and deliberate choices.</p>
+<p>The materials are organized by theme rather than by clock time:</p>
+<ol type="1">
+<li>Workflow and Quarto</li>
+<li>Importing and tidying data</li>
+<li>Core <code>ggplot2</code></li>
+<li>Comparing and separating data</li>
+<li>From question to final figure</li>
+<li>Extra: storytelling, dashboards, and agentic AI</li>
+</ol>
+<section id="schedule" class="level2" data-number="0.1">
+<h2 data-number="0.1" class="anchored" data-anchor-id="schedule"><span class="header-section-number">0.1</span> Schedule</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Block</th>
+<th style="text-align: right;">Eastern Time</th>
+<th style="text-align: right;">Central Time</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Work Session 1</td>
+<td style="text-align: right;">10:00 AM - 11:10 AM</td>
+<td style="text-align: right;">9:00 AM - 10:10 AM</td>
+</tr>
+<tr class="even">
+<td>Morning Break</td>
+<td style="text-align: right;">11:10 AM - 11:20 AM</td>
+<td style="text-align: right;">10:10 AM - 10:20 AM</td>
+</tr>
+<tr class="odd">
+<td>Work Session 2</td>
+<td style="text-align: right;">11:20 AM - 12:30 PM</td>
+<td style="text-align: right;">10:20 AM - 11:30 AM</td>
+</tr>
+<tr class="even">
+<td>Lunch Break</td>
+<td style="text-align: right;">12:30 PM - 1:30 PM</td>
+<td style="text-align: right;">11:30 AM - 12:30 PM</td>
+</tr>
+<tr class="odd">
+<td>Work Session 3</td>
+<td style="text-align: right;">1:30 PM - 2:40 PM</td>
+<td style="text-align: right;">12:30 PM - 1:40 PM</td>
+</tr>
+<tr class="even">
+<td>Afternoon Break</td>
+<td style="text-align: right;">2:40 PM - 2:50 PM</td>
+<td style="text-align: right;">1:40 PM - 1:50 PM</td>
+</tr>
+<tr class="odd">
+<td>Work Session 4</td>
+<td style="text-align: right;">2:50 PM - 4:00 PM</td>
+<td style="text-align: right;">1:50 PM - 3:00 PM</td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="govt-2305---american-and-texas-government-ii" class="level3">
-<h3 class="anchored" data-anchor-id="govt-2305---american-and-texas-government-ii">GOVT 2305 - American and Texas Government II</h3>
-<div class="grid">
-<div class="g-col-12 g-col-md-12">
-<p><a href="https://uh.simplesyllabus.com/doc/2bnw026cj/Spring-2026-GOVT-2305-15615-US-Government%3A-Congress%2C-President%2C-%26-Courts?mode=view">Spring 2026 Syllabus</a></p>
-<p><a href="https://uh.simplesyllabus.com/doc/bqxopkugl/Fall-2025-GOVT-2305-21835-US-Government%3A-Congress%2C-President%2C-%26-Courts?mode=view">Fall 2025 Syllabus</a></p>
-</div>
-</div>
+<section id="how-to-use-this-book" class="level2" data-number="0.2">
+<h2 data-number="0.2" class="anchored" data-anchor-id="how-to-use-this-book"><span class="header-section-number">0.2</span> How To Use This Book</h2>
+<p>Each chapter is meant to function as an interactive textbook.</p>
+<ul>
+<li>Read the narrative first.</li>
+<li>Run the code chunks in order.</li>
+<li>Pause at the exercises before looking ahead.</li>
+<li>Keep notes directly in copied <code>.qmd</code> files or in a separate script.</li>
+</ul>
+<p>The narrative is intentionally more detailed than a live presentation. That makes the book more useful later, when adapting a pattern to a new dataset or trying to recover the logic behind a plotting choice.</p>
 </section>
-<section id="pols-3375---health-care-policy-and-politics" class="level3">
-<h3 class="anchored" data-anchor-id="pols-3375---health-care-policy-and-politics">POLS 3375 - Health Care Policy and Politics</h3>
-<div class="grid">
-<div class="g-col-12 g-col-md-12">
-<p>Last taught in 2023.</p>
-</div>
-</div>
-<hr>
+<section id="end-of-day-outcomes" class="level2" data-number="0.3">
+<h2 data-number="0.3" class="anchored" data-anchor-id="end-of-day-outcomes"><span class="header-section-number">0.3</span> End-Of-Day Outcomes</h2>
+<p>By the end of the workshop, the core tasks covered in the materials include:</p>
+<ul>
+<li>import a simple dataset into R</li>
+<li>reshape and summarize data with the tidyverse</li>
+<li>build clear static plots with <code>ggplot2</code></li>
+<li>compare groups with color, facets, line charts, bar charts, and distributions</li>
+<li>improve a plot with labels, scales, ordering, and themes</li>
+<li>move from raw data to one finished figure</li>
+<li>understand how agentic AI tools can help without replacing human judgment</li>
+</ul>
 </section>
+<section id="before-class" class="level2" data-number="0.4">
+<h2 data-number="0.4" class="anchored" data-anchor-id="before-class"><span class="header-section-number">0.4</span> Before Class</h2>
+<p>In Posit Cloud, the workshop packages will already be installed.</p>
+<p>If the project is moved to a local machine later, the setup can be automated with:</p>
+<ul>
+<li><code>install_packages.R</code></li>
+<li><code>check_setup.R</code> can be used afterward to confirm that the local setup is ready to render and run the examples.</li>
+</ul>
 </section>
-<section id="graduate-courses" class="level2">
-<h2 class="anchored" data-anchor-id="graduate-courses">Graduate Courses</h2>
-<section id="pols-6309---american-politics-field-survey" class="level3">
-<h3 class="anchored" data-anchor-id="pols-6309---american-politics-field-survey">POLS 6309 - American Politics Field Survey</h3>
-<div class="grid">
-<div class="g-col-12 g-col-md-12">
-<p><a href="files/pols6309_syllabus_spring2026.pdf">Spring 2026 Syllabus</a></p>
-</div>
-</div>
-</section>
-<section id="pols-63xx---data-science-for-social-scientists" class="level3">
-<h3 class="anchored" data-anchor-id="pols-63xx---data-science-for-social-scientists">POLS 63xx - Data Science for Social Scientists</h3>
-<div class="grid">
-<div class="g-col-12 g-col-md-12">
-<p>Scheduled for 2026.</p>
-</div>
-</div>
-</section>
-<section id="pols-6316---health-care-politics-and-policy" class="level3">
-<h3 class="anchored" data-anchor-id="pols-6316---health-care-politics-and-policy">POLS 6316 - Health Care Politics and Policy</h3>
-<div class="grid">
-<div class="g-col-12 g-col-md-12">
-<p>Last taught in 2024.</p>
-</div>
-</div>
-</section>
-<section id="pols-6360---state-politics" class="level3">
-<h3 class="anchored" data-anchor-id="pols-6360---state-politics">POLS 6360 - State Politics</h3>
-<div class="grid">
-<div class="g-col-12 g-col-md-12">
-<p>Last taught in 2023.</p>
-</div>
-</div>
-</section>
-<section id="pols-6366---political-parties" class="level3">
-<h3 class="anchored" data-anchor-id="pols-6366---political-parties">POLS 6366 - Political Parties</h3>
-<div class="grid">
-<div class="g-col-12 g-col-md-12">
-<p>Last taught in 2017.</p>
-</div>
-</div>
-<hr>
-</section>
-</section>
-<section id="outside-teaching" class="level2">
-<h2 class="anchored" data-anchor-id="outside-teaching">Outside Teaching</h2>
-<section id="odum-2026---data-visualization-in-r" class="level3">
-<h3 class="anchored" data-anchor-id="odum-2026---data-visualization-in-r">Odum 2026 - Data Visualization in R</h3>
-<div class="grid">
-<div class="g-col-12 g-col-md-12">
-<p><a href="odum-2026/">Course book</a></p>
-</div>
-</div>
+<section id="navigation" class="level2" data-number="0.5">
+<h2 data-number="0.5" class="anchored" data-anchor-id="navigation"><span class="header-section-number">0.5</span> Navigation</h2>
+<p>The next chapter begins Chapter 1.</p>
 
 
-</section>
-</section>
 </section>
 
 </main> <!-- /main -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".chapter-number").forEach(function (el) {
+    const raw = (el.textContent || "").trim();
+    const n = Number.parseInt(raw, 10);
+    if (!Number.isNaN(n)) {
+      el.textContent = String(n - 1);
+    }
+  });
+
+  document.querySelectorAll(".header-section-number").forEach(function (el) {
+    const raw = (el.textContent || "").trim();
+    const match = raw.match(/^(\d+)(\..*)$/);
+    if (!match) return;
+
+    const first = Number.parseInt(match[1], 10);
+    if (Number.isNaN(first) || first === 0) return;
+
+    el.textContent = String(first - 1) + match[2];
+  });
+});
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -387,7 +405,7 @@ https://badge.dimensions.ai/
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("^(?:http:|https:)\/\/bshor\.github\.io\/custom");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -401,11 +419,6 @@ https://badge.dimensions.ai/
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
-            // target, if specified
-            link.setAttribute("target", "_blank");
-            if (link.getAttribute("rel") === null) {
-              link.setAttribute("rel", "noopener");
-            }
         }
       }
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
@@ -719,28 +732,16 @@ https://badge.dimensions.ai/
     }
   });
   </script>
-</div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
-    <div class="nav-footer-left">
-<a href="https://github.com/bshor">Boris Shor</a> ©
-<script>document.write(new Date().getFullYear())</script>
-</div>   
-    <div class="nav-footer-center">
-      &nbsp;
-    </div>
-    <div class="nav-footer-right">
-      <ul class="footer-items list-unstyled">
-    <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/bshor" target="_blank">
-      <i class="bi bi-github" role="img">
-</i> 
-    </a>
-  </li>  
-</ul>
-    </div>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
   </div>
-</footer>
+  <div class="nav-page nav-page-next">
+      <a href="./01-workflow-and-data.html" class="pagination-link" aria-label="Workflow and Quarto">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Workflow and Quarto</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
 
 
 

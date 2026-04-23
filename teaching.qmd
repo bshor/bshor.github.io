@@ -68,3 +68,14 @@ Last taught in 2023.
 Last taught in 2017.
 :::
 :::
+
+---
+
+## Outside Teaching
+
+### Odum 2026 - Data Visualization in R
+::: {.grid}
+::: {.g-col-12 .g-col-md-12}
+[Course book](odum-2026/)
+:::
+:::

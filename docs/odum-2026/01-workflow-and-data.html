@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>2&nbsp; Workflow and Quarto – Odum 2026: Data Visualization in R</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./02-tidyverse-data.html" rel="next">
+<link href="./index.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-ec8eff129d6f50c8392963982e963180.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-workflow-and-data.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Workflow and Quarto</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Odum 2026: Data Visualization in R</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Odum 2026</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-workflow-and-data.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Workflow and Quarto</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-tidyverse-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The Tidyverse: Importing and Tidying Data</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-core-ggplot2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Core ggplot2</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-comparing-and-separating-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Comparing and Separating Data</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-from-question-to-final-figure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">From Question to Final Figure</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-storytelling-dashboards-and-ai.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Extra: Dashboards and Agentic AI</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#learning-goals" id="toc-learning-goals" class="nav-link active" data-scroll-target="#learning-goals"><span class="header-section-number">2.1</span> Learning Goals</a></li>
+  <li><a href="#the-big-picture" id="toc-the-big-picture" class="nav-link" data-scroll-target="#the-big-picture"><span class="header-section-number">2.2</span> The Big Picture</a></li>
+  <li><a href="#why-literate-programming-matters" id="toc-why-literate-programming-matters" class="nav-link" data-scroll-target="#why-literate-programming-matters"><span class="header-section-number">2.3</span> Why Literate Programming Matters</a></li>
+  <li><a href="#what-quarto-is" id="toc-what-quarto-is" class="nav-link" data-scroll-target="#what-quarto-is"><span class="header-section-number">2.4</span> What Quarto Is</a></li>
+  <li><a href="#formatting-basics" id="toc-formatting-basics" class="nav-link" data-scroll-target="#formatting-basics"><span class="header-section-number">2.5</span> Formatting Basics</a></li>
+  <li><a href="#code-chunks" id="toc-code-chunks" class="nav-link" data-scroll-target="#code-chunks"><span class="header-section-number">2.6</span> Code Chunks</a></li>
+  <li><a href="#rendering-and-previewing" id="toc-rendering-and-previewing" class="nav-link" data-scroll-target="#rendering-and-previewing"><span class="header-section-number">2.7</span> Rendering And Previewing</a></li>
+  <li><a href="#demo-files" id="toc-demo-files" class="nav-link" data-scroll-target="#demo-files"><span class="header-section-number">2.8</span> Demo Files</a></li>
+  <li><a href="#rstudio-and-posit-cloud-setup" id="toc-rstudio-and-posit-cloud-setup" class="nav-link" data-scroll-target="#rstudio-and-posit-cloud-setup"><span class="header-section-number">2.9</span> RStudio And Posit Cloud Setup</a>
+  <ul class="collapse">
+  <li><a href="#fonts" id="toc-fonts" class="nav-link" data-scroll-target="#fonts"><span class="header-section-number">2.9.1</span> Fonts</a></li>
+  <li><a href="#pane-layout" id="toc-pane-layout" class="nav-link" data-scroll-target="#pane-layout"><span class="header-section-number">2.9.2</span> Pane Layout</a></li>
+  <li><a href="#table-of-contents-and-outline" id="toc-table-of-contents-and-outline" class="nav-link" data-scroll-target="#table-of-contents-and-outline"><span class="header-section-number">2.9.3</span> Table Of Contents And Outline</a></li>
+  <li><a href="#source-and-visual-mode" id="toc-source-and-visual-mode" class="nav-link" data-scroll-target="#source-and-visual-mode"><span class="header-section-number">2.9.4</span> Source And Visual Mode</a></li>
+  </ul></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">2.10</span> Exercises</a></li>
+  <li><a href="#what-comes-next" id="toc-what-comes-next" class="nav-link" data-scroll-target="#what-comes-next"><span class="header-section-number">2.11</span> What Comes Next</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Workflow and Quarto</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="learning-goals" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="learning-goals"><span class="header-section-number">2.1</span> Learning Goals</h2>
+<p>By the end of this chapter, the main goals are:</p>
+<ul>
+<li>explain why reproducible workflows matter</li>
+<li>understand what Quarto does in a visualization workflow</li>
+<li>recognize the basic structure of a <code>.qmd</code> file</li>
+<li>render and navigate the course materials comfortably</li>
+</ul>
+</section>
+<section id="the-big-picture" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="the-big-picture"><span class="header-section-number">2.2</span> The Big Picture</h2>
+<p>Most social science projects involve the same broad sequence:</p>
+<ol type="1">
+<li>Get data</li>
+<li>Clean and reshape it</li>
+<li>Explore it with plots and models</li>
+<li>Communicate results in a form other people can understand</li>
+</ol>
+<p>The problem is that many workflows split those tasks across too many tools. Data cleaning might happen in one script, a figure might be exported as an image, a table might be copied into Word, and the same chart might be pasted into PowerPoint. A small change to a variable definition can then force manual updates across several files. That is inefficient, error-prone, and easy to forget.</p>
+<p>The painful part is not just the clicking. It is the uncertainty. After a few rounds of copying, pasting, and editing, it becomes hard to know whether the slide deck, the paper, the handout, and the latest code all still agree with one another. A figure can look polished while silently reflecting an old version of the data.</p>
+<p>This course uses a unified workflow:</p>
+<ul>
+<li>use R to import and clean data</li>
+<li>use <code>ggplot2</code> to visualize it</li>
+<li>keep code, output, and explanation together in one document</li>
+</ul>
+<p>That last point often matters most. A large share of research time is spent not on running commands, but on remembering what was done, checking whether an old figure still matches the current data, and updating outputs after a change in coding decisions. A workflow that keeps code and explanation together reduces those opportunities for silent inconsistency.</p>
+<p>This is also where reuse becomes powerful. The same code that creates a plot for a chapter can often be reused in a slide deck, a dashboard, or a paper. If the data change, or if the code is improved, the updated result can be rendered again rather than manually rebuilt in several different programs.</p>
+<p>Even in a short course, that is one of the most important ideas to keep. A well-structured workflow does not merely save time in the moment. It makes later revision, collaboration, and reuse much less fragile.</p>
+</section>
+<section id="why-literate-programming-matters" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="why-literate-programming-matters"><span class="header-section-number">2.3</span> Why Literate Programming Matters</h2>
+<p>The core idea is simple: keep notes, code, and results in one document. That makes the work easier to understand later and much easier to revise.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A reproducible document is a durable record of the work and the logic behind it.</p>
+</div>
+</div>
+<p>In practice, literate programming helps with two recurring problems. First, it reduces the separation between analysis and communication. Second, it makes revision safer. When the code that creates a figure sits next to the explanation of what the figure means, it becomes easier to catch outdated claims, stale numbers, and missing updates.</p>
+<p>It also makes replication much easier. Replication is not only something an outside reviewer or reader might do. It is also something that happens when work is reopened months later, when a coauthor tries to understand the analysis, or when a new version of the data arrives. Code by itself can show what happened mechanically, but surrounding text explains why those steps made sense. Writing that explanation down forces assumptions, choices, and interpretations to become explicit.</p>
+<p>That discipline matters because many decisions feel obvious in the moment and disappear later. Why one year was filtered, why one case was excluded, why a variable was logged, or why a particular chart type was chosen may all be clear during the original work. After a long break, those choices can become mysterious. Literate programming preserves the reasoning while it is still fresh enough to write down.</p>
+<p>Traditional office workflows often force a separation between analysis and communication. Code lives in one place, figures are saved somewhere else, and the final interpretation is written in Word or PowerPoint. That can work for a one-time task, but it becomes painful when the analysis changes. Updating a dataset may require regenerating a figure, finding the right file, replacing an image in a document, replacing the same image in slides, checking the caption, and then hoping every version stayed synchronized.</p>
+<p>Literate programming changes the default. The text, code, figure, and caption can live together. Rendering the document reruns the code and refreshes the output. The same idea can then be reused across multiple formats: a chapter for teaching, a slide deck for presenting, a paper for writing, or a dashboard for browsing.</p>
+</section>
+<section id="what-quarto-is" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="what-quarto-is"><span class="header-section-number">2.4</span> What Quarto Is</h2>
+<p>Quarto is the document system used throughout this course.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> A Quarto file typically has the extension <code>.qmd</code> and combines three things in one place:</p>
+<ul>
+<li>ordinary prose written in Markdown</li>
+<li>executable code chunks</li>
+<li>document options in a YAML header at the top of the file</li>
+</ul>
+<p>When a Quarto document is rendered, the code runs and the results are inserted into the final output. That makes the source file both a working notebook and a reproducible record of the analysis.</p>
+<p>Quarto can produce several kinds of output from the same basic source, including:</p>
+<ul>
+<li>HTML pages</li>
+<li>PDF documents</li>
+<li>slide decks</li>
+<li>dashboards</li>
+</ul>
+<p>For this course, the most important idea is simple: the same file can hold explanation, code, figures, and output settings together. That is what makes it useful as both a teaching document and a reusable workflow template.</p>
+<p>Quarto is flexible because the source file and the output format are separate. The source file contains the prose, code, and document structure. The YAML header tells Quarto what kind of output to build. That means the same basic workflow can support very different products without starting over in a different program.</p>
+<p>The contrast with Word and PowerPoint is practical. In a manual workflow, a plot is often exported, copied, pasted, resized, and then copied again into another document. If the underlying data change, that process has to be repeated. In a Quarto workflow, the plot-generating code can be rerun and the document can be rendered again. The goal is not to avoid all manual judgment; the goal is to avoid unnecessary manual synchronization.</p>
+<p>A plain <code>.R</code> script is still useful for quick exploratory work, utility code, or small one-off tasks. A <code>.qmd</code> file becomes more useful when code, explanation, and output need to stay together as one readable record.</p>
+</section>
+<section id="formatting-basics" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="formatting-basics"><span class="header-section-number">2.5</span> Formatting Basics</h2>
+<p>Quarto uses Markdown for ordinary text. It begins with just plain text for normal, unadorned text.</p>
+<p>When you want special styles, a few small conventions cover most routine needs:</p>
+<ul>
+<li><code>#</code> for headings</li>
+<li><code>**bold**</code> for bold text</li>
+<li><code>*italic*</code> for italic text</li>
+<li><code>-</code> for bullet points</li>
+<li><code>[link text](URL)</code> for links</li>
+<li><code>text^[footnote text]</code> for footnotes</li>
+</ul>
+<p>The idea is that Quarto documents should be very easy to input, modify, and read as they are just text with some simple formatting codes.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+</section>
+<section id="code-chunks" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="code-chunks"><span class="header-section-number">2.6</span> Code Chunks</h2>
+<p>Code chunks are the sections where executable R code goes. A chunk begins with an opening line such as <code><code>{r}&lt;/code&gt;, places R code underneath it, and ends with a closing &lt;code&gt;</code></code>.</p>
+<p>Chunk headers can also include a label, which is just a short name for the chunk. For example, the opening line might be <code>```{r setup}</code>.</p>
+<p>In the source <code>.qmd</code> file, literal chunk examples are sometimes wrapped very simply so Quarto does not try to execute them. That wrapping is only a source-level device. The important part is the inner chunk syntax itself.</p>
+<p>Labels are useful for keeping chunks identifiable. They should be unique within the file and are easiest to manage when they are short and descriptive.</p>
+<p>Three chunk options cover a large share of everyday use:</p>
+<ul>
+<li><code>echo: true</code> shows the code</li>
+<li><code>eval: false</code> shows the code without running it</li>
+<li><code>include: false</code> runs the code without showing code or output</li>
+</ul>
+<p>The next chunk uses <code>echo: true</code>, so both the code and its output appear in the rendered document.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mtcars<span class="sc">$</span>mpg)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  10.40   15.43   19.20   20.09   22.80   33.90 </code></pre>
+</div>
+</div>
+<p>The next chunk uses <code>eval: false</code> together with <code>echo: true</code>, so the code appears but no output is produced.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mtcars<span class="sc">$</span>mpg)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>The next chunk uses <code>include: false</code>, so it runs quietly in the background and creates an object without displaying either code or output. The short chunk after it shows the resulting object.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>example_mean_mpg</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 20.09062</code></pre>
+</div>
+</div>
+</section>
+<section id="rendering-and-previewing" class="level2" data-number="2.7">
+<h2 data-number="2.7" class="anchored" data-anchor-id="rendering-and-previewing"><span class="header-section-number">2.7</span> Rendering And Previewing</h2>
+<p>If coming from R Markdown, it is reasonable to think of rendering as the Quarto version of knitting. The idea is the same: execute the code, collect the results, and build the output document.</p>
+<p>Rendering matters for several reasons:</p>
+<ul>
+<li>it reruns code and refreshes figures and tables</li>
+<li>it catches errors that might not show up from running code piecemeal in the console</li>
+<li>it rebuilds the document as a reader will actually see it</li>
+</ul>
+<p>In RStudio or Positron, the usual action is the <strong>Render</strong> button rather than a <strong>Knit</strong> button.</p>
+<p>For this project, there are three especially useful patterns:</p>
+<ul>
+<li>Render the current chapter while editing it.</li>
+<li>Use the editor preview to see the rendered result as it will appear to a reader.</li>
+<li>Re-render the full project when major structural settings have changed.</li>
+</ul>
+<p>Because this project is organized as a Quarto book, it is still possible to work chapter by chapter. Rendering a single file such as <code>01-workflow-and-data.qmd</code> updates the book incrementally rather than requiring every chapter to be rebuilt from scratch each time. But if global settings change, such as <code>_quarto.yml</code> or included scripts, re-rendering the whole project is the safer choice.</p>
+<p>The Render menu can also be used to choose an output format.</p>
+<ul>
+<li>Open <code>index.qmd</code> and choose <strong>Render</strong> for the whole book.</li>
+<li>Open an individual chapter file and choose <strong>Render</strong> for that chapter.</li>
+<li>Use the Render menu options to choose HTML or PDF when both formats are available.</li>
+</ul>
+<p>HTML is the easiest format for day-to-day editing and preview. PDF is useful for printing, offline reading, or sharing a fixed-layout version of the materials. PDF output also depends on a working TeX installation, so HTML is usually the safer first choice if a machine is not fully configured yet.</p>
+<p>If the materials are later moved off Posit Cloud, <code>check_setup.R</code> provides a quick way to confirm that the local machine has the needed R packages and rendering tools available.</p>
+</section>
+<section id="demo-files" class="level2" data-number="2.8">
+<h2 data-number="2.8" class="anchored" data-anchor-id="demo-files"><span class="header-section-number">2.8</span> Demo Files</h2>
+<p>The <code>Demos</code> folder contains small standalone examples of other Quarto output formats. They use the same basic source-file structure as the book chapters, but render to different kinds of documents.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Presentation Demo
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Open <code>Demos/presentation-demo.qmd</code> to see a Quarto slide deck. It shows code and output slides, theme choices, two-column layouts, incremental bullets, interactive <code>plotly</code> output, and a zoomable map.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Paper Demo
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Open <code>Demos/paper-example.qmd</code> to see a paper-style Quarto document. It includes a title, abstract, footnotes, citations from <code>Demos/paper-example.bib</code>, inline R code that evaluates in the text, and a figure reference.</p>
+</div>
+</div>
+<p>These demo files are not required for the main workflow, but they show the broader point: Quarto is not just for textbook chapters. The same approach can produce slides, papers, dashboards, and other shareable outputs.</p>
+</section>
+<section id="rstudio-and-posit-cloud-setup" class="level2" data-number="2.9">
+<h2 data-number="2.9" class="anchored" data-anchor-id="rstudio-and-posit-cloud-setup"><span class="header-section-number">2.9</span> RStudio And Posit Cloud Setup</h2>
+<p>These materials can be used through two closely related interfaces.</p>
+<p><code>RStudio</code> is the desktop application. It runs locally on a machine and provides the editor, console, files pane, plots pane, and render tools in one interface.</p>
+<p><code>Posit Cloud</code> provides a similar interface through the web browser. Instead of installing and configuring everything locally, the project runs on Posit’s servers and opens in a browser tab. For teaching, that makes setup much easier and keeps the working environment more consistent across machines.</p>
+<p>The core workflow is the same in both places: open a <code>.qmd</code> file, read and edit in the source pane, run code chunks, and render output. The main differences are whether the environment is local or web-based, and how much setup has already been handled in advance.</p>
+<p>Three interface features matter here: font size, pane layout, and fast navigation through the document outline.</p>
+<section id="fonts" class="level3" data-number="2.9.1">
+<h3 data-number="2.9.1" class="anchored" data-anchor-id="fonts"><span class="header-section-number">2.9.1</span> Fonts</h3>
+<p>In RStudio, font settings are available in <code>Tools -&gt; Global Options -&gt; Appearance</code>.</p>
+<p>Useful adjustments include:</p>
+<ul>
+<li>increasing the editor font size</li>
+<li>choosing a font that remains easy to read for both prose and code</li>
+</ul>
+</section>
+<section id="pane-layout" class="level3" data-number="2.9.2">
+<h3 data-number="2.9.2" class="anchored" data-anchor-id="pane-layout"><span class="header-section-number">2.9.2</span> Pane Layout</h3>
+<p>In RStudio, pane layout settings are available in <code>Tools -&gt; Global Options -&gt; Pane Layout</code>.</p>
+<p>A practical arrangement is:</p>
+<ul>
+<li>Source: top right</li>
+<li>Console: bottom left</li>
+<li>Environment and History: top left</li>
+<li>Files, Plots, Packages, Help, and Viewer: bottom right</li>
+</ul>
+</section>
+<section id="table-of-contents-and-outline" class="level3" data-number="2.9.3">
+<h3 data-number="2.9.3" class="anchored" data-anchor-id="table-of-contents-and-outline"><span class="header-section-number">2.9.3</span> Table Of Contents And Outline</h3>
+<p>In the source editor, the table of contents tool at the bottom of the source pane can jump quickly to section headings within the current <code>.qmd</code> file.</p>
+<p>The outline on the right side of the editor is also useful for fast movement through the file. It makes it easy to jump not only to sections and subsections, but also to labeled code chunks.</p>
+<p>That becomes more valuable as a chapter grows. Instead of scrolling through a long file, the outline and table of contents make it possible to move directly to the section or chunk that needs revision.</p>
+</section>
+<section id="source-and-visual-mode" class="level3" data-number="2.9.4">
+<h3 data-number="2.9.4" class="anchored" data-anchor-id="source-and-visual-mode"><span class="header-section-number">2.9.4</span> Source And Visual Mode</h3>
+<p>Quarto files can usually be viewed in either <strong>Source</strong> mode or <strong>Visual</strong> mode.</p>
+<p>Source mode shows the raw Markdown and chunk syntax directly. That is the main working mode for this course because it keeps the document structure, chunk options, and code fully visible.</p>
+<p>Visual mode presents the document more like a formatted editor. It can be useful for brief checks of headings, lists, and prose formatting, or for quick editing when the raw Markdown is not important.</p>
+<p>Most work here will stay in Source mode, with occasional jumps to Visual mode when it is useful to inspect the document more like a rendered page.</p>
+</section>
+</section>
+<section id="exercises" class="level2" data-number="2.10">
+<h2 data-number="2.10" class="anchored" data-anchor-id="exercises"><span class="header-section-number">2.10</span> Exercises</h2>
+<ol type="1">
+<li>Open one chapter <code>.qmd</code> file and identify the prose, the code chunks, and the YAML header.</li>
+<li>Find one chunk that uses <code>eval: false</code> and one chunk that uses <code>include: false</code>.</li>
+<li>Render one chapter and then locate the rendered result in the book preview.</li>
+</ol>
+</section>
+<section id="what-comes-next" class="level2" data-number="2.11">
+<h2 data-number="2.11" class="anchored" data-anchor-id="what-comes-next"><span class="header-section-number">2.11</span> What Comes Next</h2>
+<p>The next chapter turns from workflow structure to data import, reshaping, and the core tidyverse operations needed for plotting.</p>
+
+
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>Quarto can be understood as the successor to R Markdown: it keeps the same basic idea of combining prose and executable code, while extending it into a broader and more modern publishing system.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>As plain text, they are also easy to revise with AI tools and easy to track in revision-control systems such as Git.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".chapter-number").forEach(function (el) {
+    const raw = (el.textContent || "").trim();
+    const n = Number.parseInt(raw, 10);
+    if (!Number.isNaN(n)) {
+      el.textContent = String(n - 1);
+    }
+  });
+
+  document.querySelectorAll(".header-section-number").forEach(function (el) {
+    const raw = (el.textContent || "").trim();
+    const match = raw.match(/^(\d+)(\..*)$/);
+    if (!match) return;
+
+    const first = Number.parseInt(match[1], 10);
+    if (Number.isNaN(first) || first === 0) return;
+
+    el.textContent = String(first - 1) + match[2];
+  });
+});
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./index.html" class="pagination-link" aria-label="Odum 2026">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Odum 2026</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./02-tidyverse-data.html" class="pagination-link" aria-label="The Tidyverse: Importing and Tidying Data">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The Tidyverse: Importing and Tidying Data</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
