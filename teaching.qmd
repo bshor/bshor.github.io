@@ -77,5 +77,11 @@ Last taught in 2017.
 ::: {.grid}
 ::: {.g-col-12 .g-col-md-12}
 [Course book](odum-2026/)
+
+[Paper example (PDF)](odum-2026/demos/paper-example.pdf)
+
+[Dashboard example (HTML)](odum-2026/demos/dashboard-demo-quarto.html)
+
+[Presentation example (HTML)](odum-2026/demos/presentation-demo.html)
 :::
 :::
