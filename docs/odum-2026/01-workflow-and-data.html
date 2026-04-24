@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>2&nbsp; Workflow and Quarto – Odum 2026: Data Visualization in R</title>
+<title>2&nbsp; A Unified Visualization Workflow – Odum 2026: Data Visualization in R</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -120,7 +120,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-workflow-and-data.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Workflow and Quarto</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-workflow-and-data.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">A Unified Visualization Workflow</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -154,7 +154,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./01-workflow-and-data.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Workflow and Quarto</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">A Unified Visualization Workflow</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -184,7 +184,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./06-storytelling-dashboards-and-ai.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Extra: Dashboards and Agentic AI</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Dashboards, Slides, and Agentic AI</span></span></a>
   </div>
 </li>
     </ul>
@@ -198,20 +198,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#learning-goals" id="toc-learning-goals" class="nav-link active" data-scroll-target="#learning-goals"><span class="header-section-number">2.1</span> Learning Goals</a></li>
-  <li><a href="#the-big-picture" id="toc-the-big-picture" class="nav-link" data-scroll-target="#the-big-picture"><span class="header-section-number">2.2</span> The Big Picture</a></li>
-  <li><a href="#why-literate-programming-matters" id="toc-why-literate-programming-matters" class="nav-link" data-scroll-target="#why-literate-programming-matters"><span class="header-section-number">2.3</span> Why Literate Programming Matters</a></li>
-  <li><a href="#what-quarto-is" id="toc-what-quarto-is" class="nav-link" data-scroll-target="#what-quarto-is"><span class="header-section-number">2.4</span> What Quarto Is</a></li>
-  <li><a href="#formatting-basics" id="toc-formatting-basics" class="nav-link" data-scroll-target="#formatting-basics"><span class="header-section-number">2.5</span> Formatting Basics</a></li>
-  <li><a href="#code-chunks" id="toc-code-chunks" class="nav-link" data-scroll-target="#code-chunks"><span class="header-section-number">2.6</span> Code Chunks</a></li>
-  <li><a href="#rendering-and-previewing" id="toc-rendering-and-previewing" class="nav-link" data-scroll-target="#rendering-and-previewing"><span class="header-section-number">2.7</span> Rendering And Previewing</a></li>
-  <li><a href="#demo-files" id="toc-demo-files" class="nav-link" data-scroll-target="#demo-files"><span class="header-section-number">2.8</span> Demo Files</a></li>
-  <li><a href="#rstudio-and-posit-cloud-setup" id="toc-rstudio-and-posit-cloud-setup" class="nav-link" data-scroll-target="#rstudio-and-posit-cloud-setup"><span class="header-section-number">2.9</span> RStudio And Posit Cloud Setup</a>
+  <li><a href="#rstudio-and-posit-cloud-setup" id="toc-rstudio-and-posit-cloud-setup" class="nav-link" data-scroll-target="#rstudio-and-posit-cloud-setup"><span class="header-section-number">2.2</span> RStudio And Posit Cloud Setup</a>
   <ul class="collapse">
-  <li><a href="#fonts" id="toc-fonts" class="nav-link" data-scroll-target="#fonts"><span class="header-section-number">2.9.1</span> Fonts</a></li>
-  <li><a href="#pane-layout" id="toc-pane-layout" class="nav-link" data-scroll-target="#pane-layout"><span class="header-section-number">2.9.2</span> Pane Layout</a></li>
-  <li><a href="#table-of-contents-and-outline" id="toc-table-of-contents-and-outline" class="nav-link" data-scroll-target="#table-of-contents-and-outline"><span class="header-section-number">2.9.3</span> Table Of Contents And Outline</a></li>
-  <li><a href="#source-and-visual-mode" id="toc-source-and-visual-mode" class="nav-link" data-scroll-target="#source-and-visual-mode"><span class="header-section-number">2.9.4</span> Source And Visual Mode</a></li>
+  <li><a href="#fonts" id="toc-fonts" class="nav-link" data-scroll-target="#fonts"><span class="header-section-number">2.2.1</span> Fonts</a></li>
+  <li><a href="#pane-layout" id="toc-pane-layout" class="nav-link" data-scroll-target="#pane-layout"><span class="header-section-number">2.2.2</span> Pane Layout</a></li>
+  <li><a href="#table-of-contents-and-outline" id="toc-table-of-contents-and-outline" class="nav-link" data-scroll-target="#table-of-contents-and-outline"><span class="header-section-number">2.2.3</span> Table Of Contents And Outline</a></li>
+  <li><a href="#source-and-visual-mode" id="toc-source-and-visual-mode" class="nav-link" data-scroll-target="#source-and-visual-mode"><span class="header-section-number">2.2.4</span> Source And Visual Mode</a></li>
   </ul></li>
+  <li><a href="#the-big-picture" id="toc-the-big-picture" class="nav-link" data-scroll-target="#the-big-picture"><span class="header-section-number">2.3</span> The Big Picture</a></li>
+  <li><a href="#why-literate-programming-matters" id="toc-why-literate-programming-matters" class="nav-link" data-scroll-target="#why-literate-programming-matters"><span class="header-section-number">2.4</span> Why Literate Programming Matters</a></li>
+  <li><a href="#what-quarto-is" id="toc-what-quarto-is" class="nav-link" data-scroll-target="#what-quarto-is"><span class="header-section-number">2.5</span> What Quarto Is</a></li>
+  <li><a href="#formatting-basics" id="toc-formatting-basics" class="nav-link" data-scroll-target="#formatting-basics"><span class="header-section-number">2.6</span> Formatting Basics</a></li>
+  <li><a href="#code-chunks" id="toc-code-chunks" class="nav-link" data-scroll-target="#code-chunks"><span class="header-section-number">2.7</span> Code Chunks</a></li>
+  <li><a href="#rendering-and-previewing" id="toc-rendering-and-previewing" class="nav-link" data-scroll-target="#rendering-and-previewing"><span class="header-section-number">2.8</span> Rendering And Previewing</a></li>
+  <li><a href="#demo-files" id="toc-demo-files" class="nav-link" data-scroll-target="#demo-files"><span class="header-section-number">2.9</span> Demo Files</a></li>
   <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">2.10</span> Exercises</a></li>
   <li><a href="#what-comes-next" id="toc-what-comes-next" class="nav-link" data-scroll-target="#what-comes-next"><span class="header-section-number">2.11</span> What Comes Next</a></li>
   </ul>
@@ -222,7 +222,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Workflow and Quarto</span></h1>
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">A Unified Visualization Workflow</span></h1>
 </div>
 
 
@@ -249,8 +249,49 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>render and navigate the course materials comfortably</li>
 </ul>
 </section>
-<section id="the-big-picture" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="the-big-picture"><span class="header-section-number">2.2</span> The Big Picture</h2>
+<section id="rstudio-and-posit-cloud-setup" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="rstudio-and-posit-cloud-setup"><span class="header-section-number">2.2</span> RStudio And Posit Cloud Setup</h2>
+<p>These materials can be used through two closely related interfaces.</p>
+<p><code>RStudio</code> is the desktop application. It runs locally on a machine and provides the editor, console, files pane, plots pane, and render tools in one interface.</p>
+<p><code>Posit Cloud</code> provides a similar interface through the web browser. Instead of installing and configuring everything locally, the project runs on Posit’s servers and opens in a browser tab. For teaching, that makes setup much easier and keeps the working environment more consistent across machines.</p>
+<p>The core workflow is the same in both places: open a file, read and edit in the source pane, run code chunks, and render output. The main differences are whether the environment is local or web-based, and how much setup has already been handled in advance.</p>
+<p>Three interface features matter here: font size, pane layout, and fast navigation through the document outline.</p>
+<section id="fonts" class="level3" data-number="2.2.1">
+<h3 data-number="2.2.1" class="anchored" data-anchor-id="fonts"><span class="header-section-number">2.2.1</span> Fonts</h3>
+<p>In RStudio, font settings are available in <code>Tools -&gt; Global Options -&gt; Appearance</code>.</p>
+<p>Useful adjustments include:</p>
+<ul>
+<li>increasing the editor font size</li>
+<li>choosing a font that remains easy to read for both prose and code</li>
+</ul>
+</section>
+<section id="pane-layout" class="level3" data-number="2.2.2">
+<h3 data-number="2.2.2" class="anchored" data-anchor-id="pane-layout"><span class="header-section-number">2.2.2</span> Pane Layout</h3>
+<p>In RStudio, pane layout settings are available in <code>Tools -&gt; Global Options -&gt; Pane Layout</code>.</p>
+<p>A practical arrangement is:</p>
+<ul>
+<li>Source: top right</li>
+<li>Console: bottom left</li>
+<li>Environment and History: top left</li>
+<li>Files, Plots, Packages, Help, and Viewer: bottom right</li>
+</ul>
+</section>
+<section id="table-of-contents-and-outline" class="level3" data-number="2.2.3">
+<h3 data-number="2.2.3" class="anchored" data-anchor-id="table-of-contents-and-outline"><span class="header-section-number">2.2.3</span> Table Of Contents And Outline</h3>
+<p>In the source editor, the table of contents tool at the bottom of the source pane can jump quickly to section headings within the current <code>.qmd</code> file.</p>
+<p>The outline on the right side of the editor is also useful for fast movement through the file. It makes it easy to jump not only to sections and subsections, but also to labeled code chunks.</p>
+<p>That becomes more valuable as a chapter grows. Instead of scrolling through a long file, the outline and table of contents make it possible to move directly to the section or chunk that needs revision.</p>
+</section>
+<section id="source-and-visual-mode" class="level3" data-number="2.2.4">
+<h3 data-number="2.2.4" class="anchored" data-anchor-id="source-and-visual-mode"><span class="header-section-number">2.2.4</span> Source And Visual Mode</h3>
+<p>Quarto files can usually be viewed in either <strong>Source</strong> mode or <strong>Visual</strong> mode.</p>
+<p>Source mode shows the raw Markdown and chunk syntax directly. That is the main working mode for this course because it keeps the document structure, chunk options, and code fully visible.</p>
+<p>Visual mode presents the document more like a formatted editor. It can be useful for brief checks of headings, lists, and prose formatting, or for quick editing when the raw Markdown is not important.</p>
+<p>Most work here will stay in Source mode, with occasional jumps to Visual mode when it is useful to inspect the document more like a rendered page.</p>
+</section>
+</section>
+<section id="the-big-picture" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="the-big-picture"><span class="header-section-number">2.3</span> The Big Picture</h2>
 <p>Most social science projects involve the same broad sequence:</p>
 <ol type="1">
 <li>Get data</li>
@@ -259,19 +300,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Communicate results in a form other people can understand</li>
 </ol>
 <p>The problem is that many workflows split those tasks across too many tools. Data cleaning might happen in one script, a figure might be exported as an image, a table might be copied into Word, and the same chart might be pasted into PowerPoint. A small change to a variable definition can then force manual updates across several files. That is inefficient, error-prone, and easy to forget.</p>
-<p>The painful part is not just the clicking. It is the uncertainty. After a few rounds of copying, pasting, and editing, it becomes hard to know whether the slide deck, the paper, the handout, and the latest code all still agree with one another. A figure can look polished while silently reflecting an old version of the data.</p>
+<p>The painful part is not just the clicking. It is the difficulty and uncertainty in holding it all together. After a few rounds of copying, pasting, and editing, it becomes hard to know whether the slide deck, the paper, the handout, and the latest code all still agree with one another. A figure can look polished while silently reflecting an old version of the data.</p>
 <p>This course uses a unified workflow:</p>
 <ul>
 <li>use R to import and clean data</li>
 <li>use <code>ggplot2</code> to visualize it</li>
-<li>keep code, output, and explanation together in one document</li>
+<li>use Quarto to keep code, output, and explanation together in one document</li>
 </ul>
 <p>That last point often matters most. A large share of research time is spent not on running commands, but on remembering what was done, checking whether an old figure still matches the current data, and updating outputs after a change in coding decisions. A workflow that keeps code and explanation together reduces those opportunities for silent inconsistency.</p>
 <p>This is also where reuse becomes powerful. The same code that creates a plot for a chapter can often be reused in a slide deck, a dashboard, or a paper. If the data change, or if the code is improved, the updated result can be rendered again rather than manually rebuilt in several different programs.</p>
 <p>Even in a short course, that is one of the most important ideas to keep. A well-structured workflow does not merely save time in the moment. It makes later revision, collaboration, and reuse much less fragile.</p>
 </section>
-<section id="why-literate-programming-matters" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="why-literate-programming-matters"><span class="header-section-number">2.3</span> Why Literate Programming Matters</h2>
+<section id="why-literate-programming-matters" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="why-literate-programming-matters"><span class="header-section-number">2.4</span> Why Literate Programming Matters</h2>
 <p>The core idea is simple: keep notes, code, and results in one document. That makes the work easier to understand later and much easier to revise.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -289,12 +330,12 @@ Note
 <p>In practice, literate programming helps with two recurring problems. First, it reduces the separation between analysis and communication. Second, it makes revision safer. When the code that creates a figure sits next to the explanation of what the figure means, it becomes easier to catch outdated claims, stale numbers, and missing updates.</p>
 <p>It also makes replication much easier. Replication is not only something an outside reviewer or reader might do. It is also something that happens when work is reopened months later, when a coauthor tries to understand the analysis, or when a new version of the data arrives. Code by itself can show what happened mechanically, but surrounding text explains why those steps made sense. Writing that explanation down forces assumptions, choices, and interpretations to become explicit.</p>
 <p>That discipline matters because many decisions feel obvious in the moment and disappear later. Why one year was filtered, why one case was excluded, why a variable was logged, or why a particular chart type was chosen may all be clear during the original work. After a long break, those choices can become mysterious. Literate programming preserves the reasoning while it is still fresh enough to write down.</p>
-<p>Traditional office workflows often force a separation between analysis and communication. Code lives in one place, figures are saved somewhere else, and the final interpretation is written in Word or PowerPoint. That can work for a one-time task, but it becomes painful when the analysis changes. Updating a dataset may require regenerating a figure, finding the right file, replacing an image in a document, replacing the same image in slides, checking the caption, and then hoping every version stayed synchronized.</p>
+<p>Traditional social science workflows often force a separation between analysis and communication. Code lives in one place, figures are saved somewhere else, and the final interpretation is written in Word or PowerPoint. That can work for a one-time task, but it becomes painful when the analysis changes. Updating a dataset may require regenerating a figure, finding the right file, replacing an image in a document, replacing the same image in slides, checking the caption, and then hoping every version stayed synchronized.</p>
 <p>Literate programming changes the default. The text, code, figure, and caption can live together. Rendering the document reruns the code and refreshes the output. The same idea can then be reused across multiple formats: a chapter for teaching, a slide deck for presenting, a paper for writing, or a dashboard for browsing.</p>
 </section>
-<section id="what-quarto-is" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="what-quarto-is"><span class="header-section-number">2.4</span> What Quarto Is</h2>
-<p>Quarto is the document system used throughout this course.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> A Quarto file typically has the extension <code>.qmd</code> and combines three things in one place:</p>
+<section id="what-quarto-is" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="what-quarto-is"><span class="header-section-number">2.5</span> What Quarto Is</h2>
+<p>Quarto is the document system used to enable literate programming throughout this course.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> A Quarto file typically has the extension <code>.qmd</code> and combines three things in one place:</p>
 <ul>
 <li>ordinary prose written in Markdown</li>
 <li>executable code chunks</li>
@@ -313,8 +354,8 @@ Note
 <p>The contrast with Word and PowerPoint is practical. In a manual workflow, a plot is often exported, copied, pasted, resized, and then copied again into another document. If the underlying data change, that process has to be repeated. In a Quarto workflow, the plot-generating code can be rerun and the document can be rendered again. The goal is not to avoid all manual judgment; the goal is to avoid unnecessary manual synchronization.</p>
 <p>A plain <code>.R</code> script is still useful for quick exploratory work, utility code, or small one-off tasks. A <code>.qmd</code> file becomes more useful when code, explanation, and output need to stay together as one readable record.</p>
 </section>
-<section id="formatting-basics" class="level2" data-number="2.5">
-<h2 data-number="2.5" class="anchored" data-anchor-id="formatting-basics"><span class="header-section-number">2.5</span> Formatting Basics</h2>
+<section id="formatting-basics" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="formatting-basics"><span class="header-section-number">2.6</span> Formatting Basics</h2>
 <p>Quarto uses Markdown for ordinary text. It begins with just plain text for normal, unadorned text.</p>
 <p>When you want special styles, a few small conventions cover most routine needs:</p>
 <ul>
@@ -327,12 +368,13 @@ Note
 </ul>
 <p>The idea is that Quarto documents should be very easy to input, modify, and read as they are just text with some simple formatting codes.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
 </section>
-<section id="code-chunks" class="level2" data-number="2.6">
-<h2 data-number="2.6" class="anchored" data-anchor-id="code-chunks"><span class="header-section-number">2.6</span> Code Chunks</h2>
+<section id="code-chunks" class="level2" data-number="2.7">
+<h2 data-number="2.7" class="anchored" data-anchor-id="code-chunks"><span class="header-section-number">2.7</span> Code Chunks</h2>
 <p>Code chunks are the sections where executable R code goes. A chunk begins with an opening line such as <code><code>{r}&lt;/code&gt;, places R code underneath it, and ends with a closing &lt;code&gt;</code></code>.</p>
 <p>Chunk headers can also include a label, which is just a short name for the chunk. For example, the opening line might be <code>```{r setup}</code>.</p>
 <p>In the source <code>.qmd</code> file, literal chunk examples are sometimes wrapped very simply so Quarto does not try to execute them. That wrapping is only a source-level device. The important part is the inner chunk syntax itself.</p>
 <p>Labels are useful for keeping chunks identifiable. They should be unique within the file and are easiest to manage when they are short and descriptive.</p>
+<p>The play button (right pointing triangle) ‘runs’ a single snippet of code.</p>
 <p>Three chunk options cover a large share of everyday use:</p>
 <ul>
 <li><code>echo: true</code> shows the code</li>
@@ -359,16 +401,16 @@ Note
 </div>
 </div>
 </section>
-<section id="rendering-and-previewing" class="level2" data-number="2.7">
-<h2 data-number="2.7" class="anchored" data-anchor-id="rendering-and-previewing"><span class="header-section-number">2.7</span> Rendering And Previewing</h2>
-<p>If coming from R Markdown, it is reasonable to think of rendering as the Quarto version of knitting. The idea is the same: execute the code, collect the results, and build the output document.</p>
+<section id="rendering-and-previewing" class="level2" data-number="2.8">
+<h2 data-number="2.8" class="anchored" data-anchor-id="rendering-and-previewing"><span class="header-section-number">2.8</span> Rendering And Previewing</h2>
+<p>Rendering is the Quarto term for compiling documents into an output format all in one: load add-on libraries, import data, process it, execute the code including visualizations, collect the results, and build the output document.</p>
 <p>Rendering matters for several reasons:</p>
 <ul>
 <li>it reruns code and refreshes figures and tables</li>
 <li>it catches errors that might not show up from running code piecemeal in the console</li>
 <li>it rebuilds the document as a reader will actually see it</li>
 </ul>
-<p>In RStudio or Positron, the usual action is the <strong>Render</strong> button rather than a <strong>Knit</strong> button.</p>
+<p>In RStudio or Positron, the usual action is the <strong>Render</strong> button.</p>
 <p>For this project, there are three especially useful patterns:</p>
 <ul>
 <li>Render the current chapter while editing it.</li>
@@ -385,22 +427,10 @@ Note
 <p>HTML is the easiest format for day-to-day editing and preview. PDF is useful for printing, offline reading, or sharing a fixed-layout version of the materials. PDF output also depends on a working TeX installation, so HTML is usually the safer first choice if a machine is not fully configured yet.</p>
 <p>If the materials are later moved off Posit Cloud, <code>check_setup.R</code> provides a quick way to confirm that the local machine has the needed R packages and rendering tools available.</p>
 </section>
-<section id="demo-files" class="level2" data-number="2.8">
-<h2 data-number="2.8" class="anchored" data-anchor-id="demo-files"><span class="header-section-number">2.8</span> Demo Files</h2>
+<section id="demo-files" class="level2" data-number="2.9">
+<h2 data-number="2.9" class="anchored" data-anchor-id="demo-files"><span class="header-section-number">2.9</span> Demo Files</h2>
+<p>We’ll be working in the ‘interactive textbook’ output format of this class. However, I wanted to show you some additional output formats.</p>
 <p>The <code>Demos</code> folder contains small standalone examples of other Quarto output formats. They use the same basic source-file structure as the book chapters, but render to different kinds of documents.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Presentation Demo
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Open <code>Demos/presentation-demo.qmd</code> to see a Quarto slide deck. It shows code and output slides, theme choices, two-column layouts, incremental bullets, interactive <code>plotly</code> output, and a zoomable map.</p>
-</div>
-</div>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -415,53 +445,39 @@ Note
 </div>
 </div>
 <p>These demo files are not required for the main workflow, but they show the broader point: Quarto is not just for textbook chapters. The same approach can produce slides, papers, dashboards, and other shareable outputs.</p>
-</section>
-<section id="rstudio-and-posit-cloud-setup" class="level2" data-number="2.9">
-<h2 data-number="2.9" class="anchored" data-anchor-id="rstudio-and-posit-cloud-setup"><span class="header-section-number">2.9</span> RStudio And Posit Cloud Setup</h2>
-<p>These materials can be used through two closely related interfaces.</p>
-<p><code>RStudio</code> is the desktop application. It runs locally on a machine and provides the editor, console, files pane, plots pane, and render tools in one interface.</p>
-<p><code>Posit Cloud</code> provides a similar interface through the web browser. Instead of installing and configuring everything locally, the project runs on Posit’s servers and opens in a browser tab. For teaching, that makes setup much easier and keeps the working environment more consistent across machines.</p>
-<p>The core workflow is the same in both places: open a <code>.qmd</code> file, read and edit in the source pane, run code chunks, and render output. The main differences are whether the environment is local or web-based, and how much setup has already been handled in advance.</p>
-<p>Three interface features matter here: font size, pane layout, and fast navigation through the document outline.</p>
-<section id="fonts" class="level3" data-number="2.9.1">
-<h3 data-number="2.9.1" class="anchored" data-anchor-id="fonts"><span class="header-section-number">2.9.1</span> Fonts</h3>
-<p>In RStudio, font settings are available in <code>Tools -&gt; Global Options -&gt; Appearance</code>.</p>
-<p>Useful adjustments include:</p>
-<ul>
-<li>increasing the editor font size</li>
-<li>choosing a font that remains easy to read for both prose and code</li>
-</ul>
-</section>
-<section id="pane-layout" class="level3" data-number="2.9.2">
-<h3 data-number="2.9.2" class="anchored" data-anchor-id="pane-layout"><span class="header-section-number">2.9.2</span> Pane Layout</h3>
-<p>In RStudio, pane layout settings are available in <code>Tools -&gt; Global Options -&gt; Pane Layout</code>.</p>
-<p>A practical arrangement is:</p>
-<ul>
-<li>Source: top right</li>
-<li>Console: bottom left</li>
-<li>Environment and History: top left</li>
-<li>Files, Plots, Packages, Help, and Viewer: bottom right</li>
-</ul>
-</section>
-<section id="table-of-contents-and-outline" class="level3" data-number="2.9.3">
-<h3 data-number="2.9.3" class="anchored" data-anchor-id="table-of-contents-and-outline"><span class="header-section-number">2.9.3</span> Table Of Contents And Outline</h3>
-<p>In the source editor, the table of contents tool at the bottom of the source pane can jump quickly to section headings within the current <code>.qmd</code> file.</p>
-<p>The outline on the right side of the editor is also useful for fast movement through the file. It makes it easy to jump not only to sections and subsections, but also to labeled code chunks.</p>
-<p>That becomes more valuable as a chapter grows. Instead of scrolling through a long file, the outline and table of contents make it possible to move directly to the section or chunk that needs revision.</p>
-</section>
-<section id="source-and-visual-mode" class="level3" data-number="2.9.4">
-<h3 data-number="2.9.4" class="anchored" data-anchor-id="source-and-visual-mode"><span class="header-section-number">2.9.4</span> Source And Visual Mode</h3>
-<p>Quarto files can usually be viewed in either <strong>Source</strong> mode or <strong>Visual</strong> mode.</p>
-<p>Source mode shows the raw Markdown and chunk syntax directly. That is the main working mode for this course because it keeps the document structure, chunk options, and code fully visible.</p>
-<p>Visual mode presents the document more like a formatted editor. It can be useful for brief checks of headings, lists, and prose formatting, or for quick editing when the raw Markdown is not important.</p>
-<p>Most work here will stay in Source mode, with occasional jumps to Visual mode when it is useful to inspect the document more like a rendered page.</p>
-</section>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Presentation Demo
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Open <code>Demos/presentation-demo.qmd</code> to see a Quarto slide deck. It shows code and output slides, theme choices, two-column layouts, incremental bullets, interactive <code>plotly</code> output, and a zoomable map.</p>
+<p>Published version: <a href="https://bshor.github.io/odum-2026/demos/presentation-demo.html#/title-slide" class="uri">https://bshor.github.io/odum-2026/demos/presentation-demo.html#/title-slide</a></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Dashboard Demo
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Open <code>Demos/dashboard-demo-quarto.qmd</code> to see a Quarto dashboard with cards, plots, and an interactive table.</p>
+<p>Published version: <a href="https://bshor.github.io/odum-2026/demos/dashboard-demo-quarto.html" class="uri">https://bshor.github.io/odum-2026/demos/dashboard-demo-quarto.html</a></p>
+</div>
+</div>
 </section>
 <section id="exercises" class="level2" data-number="2.10">
 <h2 data-number="2.10" class="anchored" data-anchor-id="exercises"><span class="header-section-number">2.10</span> Exercises</h2>
 <ol type="1">
 <li>Open one chapter <code>.qmd</code> file and identify the prose, the code chunks, and the YAML header.</li>
-<li>Find one chunk that uses <code>eval: false</code> and one chunk that uses <code>include: false</code>.</li>
 <li>Render one chapter and then locate the rendered result in the book preview.</li>
 </ol>
 </section>

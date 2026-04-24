@@ -154,7 +154,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./01-workflow-and-data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Workflow and Quarto</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">A Unified Visualization Workflow</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -184,7 +184,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./06-storytelling-dashboards-and-ai.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Extra: Dashboards and Agentic AI</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Dashboards, Slides, and Agentic AI</span></span></a>
   </div>
 </li>
     </ul>
@@ -206,7 +206,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#excel" id="toc-excel" class="nav-link" data-scroll-target="#excel"><span class="header-section-number">3.4.2</span> Excel</a></li>
   <li><a href="#stata" id="toc-stata" class="nav-link" data-scroll-target="#stata"><span class="header-section-number">3.4.3</span> Stata</a></li>
   <li><a href="#spss" id="toc-spss" class="nav-link" data-scroll-target="#spss"><span class="header-section-number">3.4.4</span> SPSS</a></li>
-  <li><a href="#survey-and-course-platforms" id="toc-survey-and-course-platforms" class="nav-link" data-scroll-target="#survey-and-course-platforms"><span class="header-section-number">3.4.5</span> Survey And Course Platforms</a></li>
+  <li><a href="#sas" id="toc-sas" class="nav-link" data-scroll-target="#sas"><span class="header-section-number">3.4.5</span> SAS</a></li>
+  <li><a href="#survey-and-course-platforms" id="toc-survey-and-course-platforms" class="nav-link" data-scroll-target="#survey-and-course-platforms"><span class="header-section-number">3.4.6</span> Survey And Course Platforms</a></li>
   </ul></li>
   <li><a href="#wide-versus-long-data" id="toc-wide-versus-long-data" class="nav-link" data-scroll-target="#wide-versus-long-data"><span class="header-section-number">3.5</span> Wide Versus Long Data</a></li>
   <li><a href="#reshaping-with-pivot_longer" id="toc-reshaping-with-pivot_longer" class="nav-link" data-scroll-target="#reshaping-with-pivot_longer"><span class="header-section-number">3.6</span> Reshaping With <code>pivot_longer()</code></a></li>
@@ -227,11 +228,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">3.10</span> Exercises</a></li>
   <li><a href="#extra-material" id="toc-extra-material" class="nav-link" data-scroll-target="#extra-material"><span class="header-section-number">3.11</span> Extra Material</a>
   <ul class="collapse">
-  <li><a href="#extra-1-more-summaries-in-one-pipeline" id="toc-extra-1-more-summaries-in-one-pipeline" class="nav-link" data-scroll-target="#extra-1-more-summaries-in-one-pipeline"><span class="header-section-number">3.11.1</span> Extra 1: More Summaries In One Pipeline</a></li>
-  <li><a href="#extra-2-sorting-results" id="toc-extra-2-sorting-results" class="nav-link" data-scroll-target="#extra-2-sorting-results"><span class="header-section-number">3.11.2</span> Extra 2: Sorting Results</a></li>
-  <li><a href="#extra-3-finding-unmatched-cases-with-anti_join" id="toc-extra-3-finding-unmatched-cases-with-anti_join" class="nav-link" data-scroll-target="#extra-3-finding-unmatched-cases-with-anti_join"><span class="header-section-number">3.11.3</span> Extra 3: Finding Unmatched Cases With <code>anti_join()</code></a></li>
-  <li><a href="#extra-4-a-full_join-example" id="toc-extra-4-a-full_join-example" class="nav-link" data-scroll-target="#extra-4-a-full_join-example"><span class="header-section-number">3.11.4</span> Extra 4: A <code>full_join()</code> Example</a></li>
-  <li><a href="#extra-5-fast-check-questions" id="toc-extra-5-fast-check-questions" class="nav-link" data-scroll-target="#extra-5-fast-check-questions"><span class="header-section-number">3.11.5</span> Extra 5: Fast Check Questions</a></li>
+  <li><a href="#extra-1-sorting-results" id="toc-extra-1-sorting-results" class="nav-link" data-scroll-target="#extra-1-sorting-results"><span class="header-section-number">3.11.1</span> Extra 1: Sorting Results</a></li>
+  <li><a href="#extra-2-finding-unmatched-cases-with-anti_join" id="toc-extra-2-finding-unmatched-cases-with-anti_join" class="nav-link" data-scroll-target="#extra-2-finding-unmatched-cases-with-anti_join"><span class="header-section-number">3.11.2</span> Extra 2: Finding Unmatched Cases With <code>anti_join()</code></a></li>
+  <li><a href="#extra-3-a-full_join-example" id="toc-extra-3-a-full_join-example" class="nav-link" data-scroll-target="#extra-3-a-full_join-example"><span class="header-section-number">3.11.3</span> Extra 3: A <code>full_join()</code> Example</a></li>
+  <li><a href="#extra-4-fast-check-questions" id="toc-extra-4-fast-check-questions" class="nav-link" data-scroll-target="#extra-4-fast-check-questions"><span class="header-section-number">3.11.4</span> Extra 4: Fast Check Questions</a></li>
   </ul></li>
   <li><a href="#what-comes-next" id="toc-what-comes-next" class="nav-link" data-scroll-target="#what-comes-next"><span class="header-section-number">3.12</span> What Comes Next</a></li>
   </ul>
@@ -280,8 +280,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="import-data" class="level2" data-number="3.3">
 <h2 data-number="3.3" class="anchored" data-anchor-id="import-data"><span class="header-section-number">3.3</span> Import Data</h2>
 <p>For much of this course, we will use a gapminder CSV stored in the repository.</p>
+<p>The Gapminder data are a country-by-year dataset often used for teaching data visualization. They combine national-level indicators such as life expectancy, population, and GDP per capita, which makes them useful for scatterplots, comparisons across continents, and simple time-series summaries.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>gap_raw <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"Data/gapminder/gapminder_unfiltered.csv"</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>gap_raw <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"Data/gapminder/gapminder_unfiltered.csv"</span>) <span class="co"># Base R would be read.csv</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>gap_raw</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3,313 × 6
@@ -302,6 +303,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>Three things are worth noticing immediately:</p>
 <ul>
+<li>We assign the output of a command to an object using the <code>&lt;-</code> operator</li>
 <li><code>read_csv()</code> gives us a tibble, not a base data frame</li>
 <li>R guesses column types on import</li>
 <li>the output is compact enough to read</li>
@@ -532,7 +534,8 @@ $ gdpPercap &lt;dbl&gt; 779.4453, 820.8530, 853.1007, 836.1971, 739.9811, 786.11
 <p>Excel remains one of the most common starting points for data work. <code>read_excel()</code> is the basic entry point when a spreadsheet needs to be pulled into the same workflow as CSV or database data.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl) <span class="co"># Import Excel files</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>my_excel <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"myfile.xlsx"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>path <span class="ot">&lt;-</span> <span class="fu">system.file</span>(<span class="st">"extdata"</span>, <span class="st">"datasets.xlsx"</span>, <span class="at">package =</span> <span class="st">"readxl"</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">read_excel</span>(path)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="stata" class="level3" data-number="3.4.3">
@@ -540,36 +543,30 @@ $ gdpPercap &lt;dbl&gt; 779.4453, 820.8530, 853.1007, 836.1971, 739.9811, 786.11
 <p>Stata files are common in social science workflows, especially when data arrive from collaborators or archives. The <code>haven</code> package reads those files while preserving much of their original structure.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(haven) <span class="co"># Import Stata and SPSS files</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>my_stata <span class="ot">&lt;-</span> <span class="fu">read_dta</span>(<span class="st">"myfile.dta"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>path <span class="ot">&lt;-</span> <span class="fu">system.file</span>(<span class="st">"examples"</span>, <span class="st">"iris.dta"</span>, <span class="at">package =</span> <span class="st">"haven"</span>)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">read_dta</span>(path)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="spss" class="level3" data-number="3.4.4">
 <h3 data-number="3.4.4" class="anchored" data-anchor-id="spss"><span class="header-section-number">3.4.4</span> SPSS</h3>
 <p>SPSS import works through the same <code>haven</code> package. The example below uses a built-in example file so the syntax can run without depending on an external dataset.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(haven) <span class="co"># Import Stata and SPSS files</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(haven) <span class="co"># Import Stata, SAS, and SPSS files</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>path <span class="ot">&lt;-</span> <span class="fu">system.file</span>(<span class="st">"examples"</span>, <span class="st">"iris.sav"</span>, <span class="at">package =</span> <span class="st">"haven"</span>)</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">read_sav</span>(path)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 150 × 5
-   Sepal.Length Sepal.Width Petal.Length Petal.Width Species   
-          &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl+lbl&gt; 
- 1          5.1         3.5          1.4         0.2 1 [setosa]
- 2          4.9         3            1.4         0.2 1 [setosa]
- 3          4.7         3.2          1.3         0.2 1 [setosa]
- 4          4.6         3.1          1.5         0.2 1 [setosa]
- 5          5           3.6          1.4         0.2 1 [setosa]
- 6          5.4         3.9          1.7         0.4 1 [setosa]
- 7          4.6         3.4          1.4         0.3 1 [setosa]
- 8          5           3.4          1.5         0.2 1 [setosa]
- 9          4.4         2.9          1.4         0.2 1 [setosa]
-10          4.9         3.1          1.5         0.1 1 [setosa]
-# ℹ 140 more rows</code></pre>
-</div>
 </div>
 </section>
-<section id="survey-and-course-platforms" class="level3" data-number="3.4.5">
-<h3 data-number="3.4.5" class="anchored" data-anchor-id="survey-and-course-platforms"><span class="header-section-number">3.4.5</span> Survey And Course Platforms</h3>
+<section id="sas" class="level3" data-number="3.4.5">
+<h3 data-number="3.4.5" class="anchored" data-anchor-id="sas"><span class="header-section-number">3.4.5</span> SAS</h3>
+<p>SAS data also show up in archived or administrative workflows. <code>haven</code> can read SAS transport and dataset files, so the import step can still feed into the same tidyverse pipeline.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(haven) <span class="co"># Import Stata, SAS, and SPSS files</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>path <span class="ot">&lt;-</span> <span class="fu">system.file</span>(<span class="st">"examples"</span>, <span class="st">"iris.sas7bdat"</span>, <span class="at">package =</span> <span class="st">"haven"</span>)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="fu">read_sas</span>(path)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="survey-and-course-platforms" class="level3" data-number="3.4.6">
+<h3 data-number="3.4.6" class="anchored" data-anchor-id="survey-and-course-platforms"><span class="header-section-number">3.4.6</span> Survey And Course Platforms</h3>
 <p>Some projects pull data directly from survey or teaching platforms rather than from local files.</p>
 <ul>
 <li><code>qualtRics</code> can download survey data from Qualtrics.</li>
@@ -697,7 +694,7 @@ $ gdpPercap &lt;dbl&gt; 779.4453, 820.8530, 853.1007, 836.1971, 739.9811, 786.11
 2 Brazil       2007     8029.    72.4</code></pre>
 </div>
 </div>
-<p>This reversibility is important.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<p>This reversibility is important as is your flexibility no matter what format the data is in.</p>
 </section>
 <section id="the-core-tidyverse-verbs" class="level2" data-number="3.7">
 <h2 data-number="3.7" class="anchored" data-anchor-id="the-core-tidyverse-verbs"><span class="header-section-number">3.7</span> The Core Tidyverse Verbs</h2>
@@ -789,6 +786,7 @@ $ gdpPercap &lt;dbl&gt; 779.4453, 820.8530, 853.1007, 836.1971, 739.9811, 786.11
 # ℹ 173 more rows</code></pre>
 </div>
 </div>
+<p>Here <code>round()</code> takes a numeric variable and rounds it to a simpler value. With no second argument, it rounds to the nearest whole number.</p>
 </section>
 <section id="group-and-summarize" class="level3" data-number="3.7.4">
 <h3 data-number="3.7.4" class="anchored" data-anchor-id="group-and-summarize"><span class="header-section-number">3.7.4</span> Group And Summarize</h3>
@@ -822,6 +820,7 @@ $ gdpPercap &lt;dbl&gt; 779.4453, 820.8530, 853.1007, 836.1971, 739.9811, 786.11
 11 Oceania    2007           71.5            5144.          11</code></pre>
 </div>
 </div>
+<p>The option <code>na.rm = TRUE</code> means “remove missing values before calculating the summary.” Without it, many summary functions return <code>NA</code> as soon as even one missing value is present in the group.</p>
 <p>Aggregation is one of the biggest payoffs of the tidyverse approach. Going from country-level observations to continent-level summaries is conceptually simple, but many older workflows make that transition unnecessarily awkward. The grouped pipeline keeps the logic visible.</p>
 </section>
 <section id="merge-data" class="level3" data-number="3.7.5">
@@ -857,13 +856,14 @@ $ gdpPercap &lt;dbl&gt; 779.4453, 820.8530, 853.1007, 836.1971, 739.9811, 786.11
 <p>It is useful to see the contrast directly after seeing the core tidyverse verbs. Base R can do the same work, but the tidyverse usually reads more clearly when several steps are chained together.</p>
 <section id="base-r" class="level3" data-number="3.8.1">
 <h3 data-number="3.8.1" class="anchored" data-anchor-id="base-r"><span class="header-section-number">3.8.1</span> Base R</h3>
-<p>The base R version works by indexing rows and columns directly, then creating a new variable with <code>$</code>. It is perfectly valid, but once several steps accumulate the syntax tends to become less readable.</p>
+<p>The base R version works by indexing rows and columns directly within the brackets (eg [row,column]). It also creates a new variable accessed with <code>$</code>. It is perfectly valid, but once several steps accumulate the syntax tends to become less readable.</p>
 <p>Two small pieces of syntax appear immediately here. The assignment arrow <code>&lt;-</code> means “save the result as this object name.” The equality operator <code>==</code> means “is exactly equal to” and is commonly used inside filters or row-selection logic.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>gap_2007_base <span class="ot">&lt;-</span> gap_raw[gap_raw<span class="sc">$</span>year <span class="sc">==</span> <span class="dv">2007</span>, <span class="fu">c</span>(<span class="st">"country"</span>, <span class="st">"continent"</span>, <span class="st">"lifeExp"</span>, <span class="st">"gdpPercap"</span>)]</span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>gap_2007_base<span class="sc">$</span>log_gdp <span class="ot">&lt;-</span> <span class="fu">log10</span>(gap_2007_base<span class="sc">$</span>gdpPercap)</span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(gap_2007_base)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>gap_2007_base <span class="ot">&lt;-</span> gap_raw[gap_raw<span class="sc">$</span>year <span class="sc">==</span> <span class="dv">2007</span>, ]</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>gap_2007_base <span class="ot">&lt;-</span> gap_2007_base[, <span class="fu">c</span>(<span class="st">"country"</span>, <span class="st">"continent"</span>, <span class="st">"lifeExp"</span>, <span class="st">"gdpPercap"</span>)]</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>gap_2007_base<span class="sc">$</span>log_gdp <span class="ot">&lt;-</span> <span class="fu">log10</span>(gap_2007_base<span class="sc">$</span>gdpPercap)</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(gap_2007_base)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 5
   country     continent lifeExp gdpPercap log_gdp
@@ -900,7 +900,7 @@ $ gdpPercap &lt;dbl&gt; 779.4453, 820.8530, 853.1007, 836.1971, 739.9811, 786.11
 </div>
 </div>
 <p>Both approaches work. The main advantage of the tidyverse style is that the sequence of operations is easier to read from top to bottom.</p>
-<p>One piece of syntax powers much of that readability: the base R pipe <code>|&gt;</code>. It takes the result on the left and passes it into the first argument of the function on the right. In other words, <code>x |&gt; f()</code> can usually be read as “take <code>x</code>, then apply <code>f()</code> to it.”<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+<p>One piece of syntax powers much of that readability: the base R pipe <code>|&gt;</code>. It takes the result on the left and passes it into the first argument of the function on the right. In other words, <code>x |&gt; f()</code> can usually be read as “take <code>x</code>, then apply <code>f()</code> to it.”<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
 </section>
 </section>
 <section id="a-practical-pipeline" class="level2" data-number="3.9">
@@ -912,26 +912,31 @@ $ gdpPercap &lt;dbl&gt; 779.4453, 820.8530, 853.1007, 836.1971, 739.9811, 786.11
 <span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">gdp_per_capita_k =</span> gdpPercap <span class="sc">/</span> <span class="dv">1000</span>) <span class="sc">|&gt;</span></span>
 <span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(continent) <span class="sc">|&gt;</span></span>
 <span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
-<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">median_life_exp =</span> <span class="fu">median</span>(lifeExp),</span>
-<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">median_gdp_per_capita_k =</span> <span class="fu">median</span>(gdp_per_capita_k),</span>
-<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">n_countries =</span> <span class="fu">n</span>()</span>
-<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a>gap_2007</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">min_life_exp =</span> <span class="fu">round</span>(<span class="fu">min</span>(lifeExp, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="dv">1</span>),</span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">median_life_exp =</span> <span class="fu">round</span>(<span class="fu">median</span>(lifeExp), <span class="dv">1</span>),</span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">max_life_exp =</span> <span class="fu">round</span>(<span class="fu">max</span>(lifeExp, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="dv">1</span>),</span>
+<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">median_gdp_per_capita_k =</span> <span class="fu">round</span>(<span class="fu">median</span>(gdp_per_capita_k), <span class="dv">1</span>),</span>
+<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_gdp_per_capita_k =</span> <span class="fu">round</span>(<span class="fu">mean</span>(gdp_per_capita_k, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="dv">1</span>),</span>
+<span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">n_countries =</span> <span class="fu">n</span>()</span>
+<span id="cb33-12"><a href="#cb33-12" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb33-13"><a href="#cb33-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-14"><a href="#cb33-14" aria-hidden="true" tabindex="-1"></a>gap_2007</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 6 × 4
-  continent median_life_exp median_gdp_per_capita_k n_countries
-  &lt;chr&gt;               &lt;dbl&gt;                   &lt;dbl&gt;       &lt;int&gt;
-1 Africa               52.9                    1.46          53
-2 Americas             73.5                    9.07          33
-3 Asia                 72.0                    4.89          43
-4 Europe               78.6                   25.9           34
-5 FSU                  69.0                   10.3            9
-6 Oceania              71.5                    5.14          11</code></pre>
+<pre><code># A tibble: 6 × 7
+  continent min_life_exp median_life_exp max_life_exp median_gdp_per_capita_k
+  &lt;chr&gt;            &lt;dbl&gt;           &lt;dbl&gt;        &lt;dbl&gt;                   &lt;dbl&gt;
+1 Africa            39.6            52.9         76.4                     1.5
+2 Americas          60.9            73.5         80.7                     9.1
+3 Asia              43.8            72           82.6                     4.9
+4 Europe            68.9            78.6         81.8                    25.9
+5 FSU               65.5            69           73                      10.3
+6 Oceania           57.2            71.5         81.2                     5.1
+# ℹ 2 more variables: mean_gdp_per_capita_k &lt;dbl&gt;, n_countries &lt;int&gt;</code></pre>
 </div>
 </div>
 <p>One useful way to read a pipeline is as a sentence: start with the raw data, restrict to the year of interest, create a more interpretable GDP variable, define the grouping structure, and summarize. Read that way, the code becomes a compact statement of analytical intent rather than a pile of separate commands.</p>
 <p>Pipelines also reduce the need to create a long chain of intermediate and temporary objects. Instead of saving each partial step as a separate variable, the transformations can stay in one readable sequence. That usually makes both the analysis and the code tidier.</p>
+<p>A common tidyverse convention is to place each major step of a pipeline on its own line and indent the inside of functions such as <code>mutate()</code> or <code>summarize()</code>. That makes the sequence easier to scan. The exact formatting is still flexible, though, and there is no single required style. RStudio can also wrap long lines automatically in the editor, so the main goal is readability rather than rigid formatting rules.</p>
 </section>
 <section id="exercises" class="level2" data-number="3.10">
 <h2 data-number="3.10" class="anchored" data-anchor-id="exercises"><span class="header-section-number">3.10</span> Exercises</h2>
@@ -940,71 +945,41 @@ $ gdpPercap &lt;dbl&gt; 779.4453, 820.8530, 853.1007, 836.1971, 739.9811, 786.11
 <li>Create a filtered dataset with only <code>Asia</code> and <code>Europe</code> for the years <code>1952</code>, <code>1982</code>, and <code>2007</code>.</li>
 <li>Add a new variable that rounds life expectancy to the nearest whole number.</li>
 </ol>
-<p>The exercises are intentionally small. The point is to practice modifying a working pipeline rather than constructing an analysis from scratch. That is also how much real code evolves: through incremental revision of something that already runs.</p>
 </section>
 <section id="extra-material" class="level2" data-number="3.11">
 <h2 data-number="3.11" class="anchored" data-anchor-id="extra-material"><span class="header-section-number">3.11</span> Extra Material</h2>
-<section id="extra-1-more-summaries-in-one-pipeline" class="level3" data-number="3.11.1">
-<h3 data-number="3.11.1" class="anchored" data-anchor-id="extra-1-more-summaries-in-one-pipeline"><span class="header-section-number">3.11.1</span> Extra 1: More Summaries In One Pipeline</h3>
-<p>This example shows how quickly a pipeline can move from row-level data to a compact continent summary.</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>gap_raw <span class="sc">|&gt;</span></span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2007</span>) <span class="sc">|&gt;</span></span>
-<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(continent) <span class="sc">|&gt;</span></span>
-<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
-<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">min_lifeExp =</span> <span class="fu">min</span>(lifeExp, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">median_lifeExp =</span> <span class="fu">median</span>(lifeExp, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">max_lifeExp =</span> <span class="fu">max</span>(lifeExp, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_gdpPercap =</span> <span class="fu">mean</span>(gdpPercap, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 6 × 5
-  continent min_lifeExp median_lifeExp max_lifeExp mean_gdpPercap
-  &lt;chr&gt;           &lt;dbl&gt;          &lt;dbl&gt;       &lt;dbl&gt;          &lt;dbl&gt;
-1 Africa           39.6           52.9        76.4          3091.
-2 Americas         60.9           73.5        80.7         11941.
-3 Asia             43.8           72.0        82.6         15338.
-4 Europe           68.9           78.6        81.8         24174.
-5 FSU              65.5           69.0        73.0          9523.
-6 Oceania          57.2           71.5        81.2         13157.</code></pre>
-</div>
-</div>
-</section>
-<section id="extra-2-sorting-results" class="level3" data-number="3.11.2">
-<h3 data-number="3.11.2" class="anchored" data-anchor-id="extra-2-sorting-results"><span class="header-section-number">3.11.2</span> Extra 2: Sorting Results</h3>
+<section id="extra-1-sorting-results" class="level3" data-number="3.11.1">
+<h3 data-number="3.11.1" class="anchored" data-anchor-id="extra-1-sorting-results"><span class="header-section-number">3.11.1</span> Extra 1: Sorting Results</h3>
 <p>Summaries become much more useful once sorted.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>gap_raw <span class="sc">|&gt;</span></span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2007</span>) <span class="sc">|&gt;</span></span>
-<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(continent) <span class="sc">|&gt;</span></span>
-<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">median_lifeExp =</span> <span class="fu">median</span>(lifeExp, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(median_lifeExp))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 6 × 2
-  continent median_lifeExp
-  &lt;chr&gt;              &lt;dbl&gt;
-1 Europe              78.6
-2 Americas            73.5
-3 Asia                72.0
-4 Oceania             71.5
-5 FSU                 69.0
-6 Africa              52.9</code></pre>
-</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>gap_2007 <span class="ot">&lt;-</span> gap_raw <span class="sc">|&gt;</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2007</span>) <span class="sc">|&gt;</span></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">gdp_per_capita_k =</span> gdpPercap <span class="sc">/</span> <span class="dv">1000</span>) <span class="sc">|&gt;</span></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(continent) <span class="sc">|&gt;</span></span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">min_life_exp =</span> <span class="fu">round</span>(<span class="fu">min</span>(lifeExp, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="dv">1</span>),</span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">median_life_exp =</span> <span class="fu">round</span>(<span class="fu">median</span>(lifeExp), <span class="dv">1</span>),</span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">max_life_exp =</span> <span class="fu">round</span>(<span class="fu">max</span>(lifeExp, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="dv">1</span>),</span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">median_gdp_per_capita_k =</span> <span class="fu">round</span>(<span class="fu">median</span>(gdp_per_capita_k), <span class="dv">1</span>),</span>
+<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_gdp_per_capita_k =</span> <span class="fu">round</span>(<span class="fu">mean</span>(gdp_per_capita_k, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="dv">1</span>),</span>
+<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">n_countries =</span> <span class="fu">n</span>()</span>
+<span id="cb35-12"><a href="#cb35-12" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb35-13"><a href="#cb35-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(median_life_exp)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="extra-3-finding-unmatched-cases-with-anti_join" class="level3" data-number="3.11.3">
-<h3 data-number="3.11.3" class="anchored" data-anchor-id="extra-3-finding-unmatched-cases-with-anti_join"><span class="header-section-number">3.11.3</span> Extra 3: Finding Unmatched Cases With <code>anti_join()</code></h3>
+<section id="extra-2-finding-unmatched-cases-with-anti_join" class="level3" data-number="3.11.2">
+<h3 data-number="3.11.2" class="anchored" data-anchor-id="extra-2-finding-unmatched-cases-with-anti_join"><span class="header-section-number">3.11.2</span> Extra 2: Finding Unmatched Cases With <code>anti_join()</code></h3>
 <p>This is the diagnostic companion to a regular join. Instead of asking which rows matched, it asks which rows failed to match and therefore may need attention.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>density_data <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">country =</span> <span class="fu">c</span>(<span class="st">"Afghanistan"</span>, <span class="st">"Brazil"</span>, <span class="st">"Canada"</span>),</span>
-<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">pop_density =</span> <span class="fu">c</span>(<span class="dv">60</span>, <span class="dv">26</span>, <span class="dv">4</span>)</span>
-<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>gap_raw <span class="sc">|&gt;</span></span>
-<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2007</span>, country <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Afghanistan"</span>, <span class="st">"Brazil"</span>, <span class="st">"Canada"</span>, <span class="st">"Germany"</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(country, continent, lifeExp) <span class="sc">|&gt;</span></span>
-<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">anti_join</span>(density_data, <span class="at">by =</span> <span class="st">"country"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>density_data <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">country =</span> <span class="fu">c</span>(<span class="st">"Afghanistan"</span>, <span class="st">"Brazil"</span>, <span class="st">"Canada"</span>),</span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">pop_density =</span> <span class="fu">c</span>(<span class="dv">60</span>, <span class="dv">26</span>, <span class="dv">4</span>)</span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>gap_raw <span class="sc">|&gt;</span></span>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2007</span>, country <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Afghanistan"</span>, <span class="st">"Brazil"</span>, <span class="st">"Canada"</span>, <span class="st">"Germany"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(country, continent, lifeExp) <span class="sc">|&gt;</span></span>
+<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">anti_join</span>(density_data, <span class="at">by =</span> <span class="st">"country"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 3
   country continent lifeExp
@@ -1014,19 +989,19 @@ $ gdpPercap &lt;dbl&gt; 779.4453, 820.8530, 853.1007, 836.1971, 739.9811, 786.11
 </div>
 <p><code>anti_join()</code> is useful for diagnosis. Instead of returning the matched rows, it returns the rows from the first table that did <strong>not</strong> find a match in the second table. In this example, Germany is the remaining unmatched case.</p>
 </section>
-<section id="extra-4-a-full_join-example" class="level3" data-number="3.11.4">
-<h3 data-number="3.11.4" class="anchored" data-anchor-id="extra-4-a-full_join-example"><span class="header-section-number">3.11.4</span> Extra 4: A <code>full_join()</code> Example</h3>
+<section id="extra-3-a-full_join-example" class="level3" data-number="3.11.3">
+<h3 data-number="3.11.3" class="anchored" data-anchor-id="extra-3-a-full_join-example"><span class="header-section-number">3.11.3</span> Extra 3: A <code>full_join()</code> Example</h3>
 <p><code>full_join()</code> keeps all rows from both tables. When a match exists, the rows are combined. When a match does not exist, the unmatched side is still kept with missing values for the other table’s columns.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>density_data <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">country =</span> <span class="fu">c</span>(<span class="st">"Afghanistan"</span>, <span class="st">"Brazil"</span>, <span class="st">"Canada"</span>, <span class="st">"Chile"</span>),</span>
-<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">pop_density =</span> <span class="fu">c</span>(<span class="dv">60</span>, <span class="dv">26</span>, <span class="dv">4</span>, <span class="dv">26</span>)</span>
-<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>gap_raw <span class="sc">|&gt;</span></span>
-<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2007</span>, country <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Afghanistan"</span>, <span class="st">"Brazil"</span>, <span class="st">"Canada"</span>, <span class="st">"Germany"</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(country, continent, lifeExp) <span class="sc">|&gt;</span></span>
-<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">full_join</span>(density_data, <span class="at">by =</span> <span class="st">"country"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>density_data <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">country =</span> <span class="fu">c</span>(<span class="st">"Afghanistan"</span>, <span class="st">"Brazil"</span>, <span class="st">"Canada"</span>, <span class="st">"Chile"</span>),</span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">pop_density =</span> <span class="fu">c</span>(<span class="dv">60</span>, <span class="dv">26</span>, <span class="dv">4</span>, <span class="dv">26</span>)</span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a>gap_raw <span class="sc">|&gt;</span></span>
+<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2007</span>, country <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Afghanistan"</span>, <span class="st">"Brazil"</span>, <span class="st">"Canada"</span>, <span class="st">"Germany"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(country, continent, lifeExp) <span class="sc">|&gt;</span></span>
+<span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">full_join</span>(density_data, <span class="at">by =</span> <span class="st">"country"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5 × 4
   country     continent lifeExp pop_density
@@ -1040,8 +1015,8 @@ $ gdpPercap &lt;dbl&gt; 779.4453, 820.8530, 853.1007, 836.1971, 739.9811, 786.11
 </div>
 <p>This differs from <code>left_join()</code> because the unmatched row from the second table, <code>Chile</code>, is retained as well.</p>
 </section>
-<section id="extra-5-fast-check-questions" class="level3" data-number="3.11.5">
-<h3 data-number="3.11.5" class="anchored" data-anchor-id="extra-5-fast-check-questions"><span class="header-section-number">3.11.5</span> Extra 5: Fast Check Questions</h3>
+<section id="extra-4-fast-check-questions" class="level3" data-number="3.11.4">
+<h3 data-number="3.11.4" class="anchored" data-anchor-id="extra-4-fast-check-questions"><span class="header-section-number">3.11.4</span> Extra 4: Fast Check Questions</h3>
 <p>For a brief discussion block without adding new commands:</p>
 <ul>
 <li>When is <code>filter()</code> more appropriate than <code>select()</code>?</li>
@@ -1061,8 +1036,7 @@ $ gdpPercap &lt;dbl&gt; 779.4453, 820.8530, 853.1007, 836.1971, 739.9811, 786.11
 <hr>
 <ol>
 <li id="fn1"><p>That is often acceptable for collaborative work, but it also means that local snapshots are sometimes worth saving for stability.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>Data often arrive in a form optimized for entry or display rather than for analysis. Reshaping is therefore a routine part of analytical work, not a sign that the data were badly designed.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>Earlier tidyverse code often used <code>%&gt;%</code> from <code>magrittr</code>. In current R, <code>|&gt;</code> is the built-in pipe and is the one used throughout this course.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Earlier tidyverse code often used <code>%&gt;%</code> from <code>magrittr</code>. In current R, <code>|&gt;</code> is the built-in pipe and is the one used throughout this course.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
@@ -1491,8 +1465,8 @@ document.addEventListener("DOMContentLoaded", function () {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./01-workflow-and-data.html" class="pagination-link" aria-label="Workflow and Quarto">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Workflow and Quarto</span></span>
+      <a href="./01-workflow-and-data.html" class="pagination-link" aria-label="A Unified Visualization Workflow">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">A Unified Visualization Workflow</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

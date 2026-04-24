@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>7&nbsp; Extra: Dashboards and Agentic AI – Odum 2026: Data Visualization in R</title>
+<title>7&nbsp; Dashboards, Slides, and Agentic AI – Odum 2026: Data Visualization in R</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -106,6 +106,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<link href="site_libs/htmltools-fill-0.5.9/fill.css" rel="stylesheet">
+<script src="site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<script src="site_libs/plotly-binding-4.12.0/plotly.js"></script>
+<script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+<script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
+<link href="site_libs/crosstalk-1.2.2/css/crosstalk.min.css" rel="stylesheet">
+<script src="site_libs/crosstalk-1.2.2/js/crosstalk.min.js"></script>
+<link href="site_libs/plotly-htmlwidgets-css-2.25.2/plotly-htmlwidgets.css" rel="stylesheet">
+<script src="site_libs/plotly-main-2.25.2/plotly-latest.min.js"></script>
 
 
 </head>
@@ -119,7 +128,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./06-storytelling-dashboards-and-ai.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Extra: Dashboards and Agentic AI</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./06-storytelling-dashboards-and-ai.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Dashboards, Slides, and Agentic AI</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -153,7 +162,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./01-workflow-and-data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Workflow and Quarto</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">A Unified Visualization Workflow</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -183,7 +192,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./06-storytelling-dashboards-and-ai.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Extra: Dashboards and Agentic AI</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Dashboards, Slides, and Agentic AI</span></span></a>
   </div>
 </li>
     </ul>
@@ -200,25 +209,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#where-this-fits" id="toc-where-this-fits" class="nav-link" data-scroll-target="#where-this-fits"><span class="header-section-number">7.2</span> Where This Fits</a></li>
   <li><a href="#dashboards-as-output" id="toc-dashboards-as-output" class="nav-link" data-scroll-target="#dashboards-as-output"><span class="header-section-number">7.3</span> Dashboards As Output</a></li>
   <li><a href="#native-quarto-dashboard-demo" id="toc-native-quarto-dashboard-demo" class="nav-link" data-scroll-target="#native-quarto-dashboard-demo"><span class="header-section-number">7.4</span> Native Quarto Dashboard Demo</a></li>
-  <li><a href="#dashboard-design-choices" id="toc-dashboard-design-choices" class="nav-link" data-scroll-target="#dashboard-design-choices"><span class="header-section-number">7.5</span> Dashboard Design Choices</a></li>
-  <li><a href="#agentic-ai-in-the-visualization-workflow" id="toc-agentic-ai-in-the-visualization-workflow" class="nav-link" data-scroll-target="#agentic-ai-in-the-visualization-workflow"><span class="header-section-number">7.6</span> Agentic AI In The Visualization Workflow</a></li>
-  <li><a href="#useful-ai-tasks" id="toc-useful-ai-tasks" class="nav-link" data-scroll-target="#useful-ai-tasks"><span class="header-section-number">7.7</span> Useful AI Tasks</a></li>
-  <li><a href="#weak-ai-tasks" id="toc-weak-ai-tasks" class="nav-link" data-scroll-target="#weak-ai-tasks"><span class="header-section-number">7.8</span> Weak AI Tasks</a></li>
-  <li><a href="#prompt-patterns" id="toc-prompt-patterns" class="nav-link" data-scroll-target="#prompt-patterns"><span class="header-section-number">7.9</span> Prompt Patterns</a>
+  <li><a href="#a-light-ggplotly-example" id="toc-a-light-ggplotly-example" class="nav-link" data-scroll-target="#a-light-ggplotly-example"><span class="header-section-number">7.5</span> A Light <code>ggplotly()</code> Example</a></li>
+  <li><a href="#dashboard-design-choices" id="toc-dashboard-design-choices" class="nav-link" data-scroll-target="#dashboard-design-choices"><span class="header-section-number">7.6</span> Dashboard Design Choices</a></li>
+  <li><a href="#quarto-can-also-produce-slides" id="toc-quarto-can-also-produce-slides" class="nav-link" data-scroll-target="#quarto-can-also-produce-slides"><span class="header-section-number">7.7</span> Quarto Can Also Produce Slides</a></li>
+  <li><a href="#agentic-ai-in-the-visualization-workflow" id="toc-agentic-ai-in-the-visualization-workflow" class="nav-link" data-scroll-target="#agentic-ai-in-the-visualization-workflow"><span class="header-section-number">7.8</span> Agentic AI In The Visualization Workflow</a></li>
+  <li><a href="#useful-ai-tasks" id="toc-useful-ai-tasks" class="nav-link" data-scroll-target="#useful-ai-tasks"><span class="header-section-number">7.9</span> Useful AI Tasks</a></li>
+  <li><a href="#weak-ai-tasks" id="toc-weak-ai-tasks" class="nav-link" data-scroll-target="#weak-ai-tasks"><span class="header-section-number">7.10</span> Weak AI Tasks</a></li>
+  <li><a href="#prompt-patterns" id="toc-prompt-patterns" class="nav-link" data-scroll-target="#prompt-patterns"><span class="header-section-number">7.11</span> Prompt Patterns</a>
   <ul class="collapse">
-  <li><a href="#debugging" id="toc-debugging" class="nav-link" data-scroll-target="#debugging"><span class="header-section-number">7.9.1</span> Debugging</a></li>
-  <li><a href="#first-draft-plot" id="toc-first-draft-plot" class="nav-link" data-scroll-target="#first-draft-plot"><span class="header-section-number">7.9.2</span> First Draft Plot</a></li>
-  <li><a href="#improving-labels" id="toc-improving-labels" class="nav-link" data-scroll-target="#improving-labels"><span class="header-section-number">7.9.3</span> Improving Labels</a></li>
-  <li><a href="#critique" id="toc-critique" class="nav-link" data-scroll-target="#critique"><span class="header-section-number">7.9.4</span> Critique</a></li>
+  <li><a href="#debugging" id="toc-debugging" class="nav-link" data-scroll-target="#debugging"><span class="header-section-number">7.11.1</span> Debugging</a></li>
+  <li><a href="#first-draft-plot" id="toc-first-draft-plot" class="nav-link" data-scroll-target="#first-draft-plot"><span class="header-section-number">7.11.2</span> First Draft Plot</a></li>
+  <li><a href="#improving-labels" id="toc-improving-labels" class="nav-link" data-scroll-target="#improving-labels"><span class="header-section-number">7.11.3</span> Improving Labels</a></li>
+  <li><a href="#critique" id="toc-critique" class="nav-link" data-scroll-target="#critique"><span class="header-section-number">7.11.4</span> Critique</a></li>
   </ul></li>
-  <li><a href="#a-practical-ai-workflow" id="toc-a-practical-ai-workflow" class="nav-link" data-scroll-target="#a-practical-ai-workflow"><span class="header-section-number">7.10</span> A Practical AI Workflow</a></li>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">7.11</span> Exercises</a></li>
-  <li><a href="#extra-material" id="toc-extra-material" class="nav-link" data-scroll-target="#extra-material"><span class="header-section-number">7.12</span> Extra Material</a>
-  <ul class="collapse">
-  <li><a href="#extra-1-quarto-can-also-produce-slides" id="toc-extra-1-quarto-can-also-produce-slides" class="nav-link" data-scroll-target="#extra-1-quarto-can-also-produce-slides"><span class="header-section-number">7.12.1</span> Extra 1: Quarto Can Also Produce Slides</a></li>
-  <li><a href="#extra-2-closing-discussion" id="toc-extra-2-closing-discussion" class="nav-link" data-scroll-target="#extra-2-closing-discussion"><span class="header-section-number">7.12.2</span> Extra 2: Closing Discussion</a></li>
-  </ul></li>
-  <li><a href="#closing" id="toc-closing" class="nav-link" data-scroll-target="#closing"><span class="header-section-number">7.13</span> Closing</a></li>
+  <li><a href="#a-practical-ai-workflow" id="toc-a-practical-ai-workflow" class="nav-link" data-scroll-target="#a-practical-ai-workflow"><span class="header-section-number">7.12</span> A Practical AI Workflow</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">7.13</span> Exercises</a></li>
+  <li><a href="#closing-discussion" id="toc-closing-discussion" class="nav-link" data-scroll-target="#closing-discussion"><span class="header-section-number">7.14</span> Closing Discussion</a></li>
+  <li><a href="#closing" id="toc-closing" class="nav-link" data-scroll-target="#closing"><span class="header-section-number">7.15</span> Closing</a></li>
   </ul>
 </nav>
     </div>
@@ -227,7 +234,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Extra: Dashboards and Agentic AI</span></h1>
+<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Dashboards, Slides, and Agentic AI</span></h1>
 </div>
 
 
@@ -276,6 +283,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 data-number="7.4" class="anchored" data-anchor-id="native-quarto-dashboard-demo"><span class="header-section-number">7.4</span> Native Quarto Dashboard Demo</h2>
 <p>This project includes a small native Quarto dashboard:</p>
 <pre class="text"><code>Demos/dashboard-demo-quarto.qmd</code></pre>
+<p>Published version: <a href="https://bshor.github.io/odum-2026/demos/dashboard-demo-quarto.html" class="uri">https://bshor.github.io/odum-2026/demos/dashboard-demo-quarto.html</a></p>
 <p>Opening that file shows a different YAML header from the textbook chapters. The format is a dashboard rather than a book chapter, so Quarto arranges the rendered output into cards, rows, and columns.</p>
 <p>The demo uses the same general ingredients as the rest of the course:</p>
 <ul>
@@ -286,15 +294,54 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>short source-code comments explain the purpose of each section</li>
 </ul>
 <p>That continuity is the main lesson. A dashboard does not require a completely different analysis workflow. It mostly changes the final arrangement of material.</p>
+</section>
+<section id="a-light-ggplotly-example" class="level2" data-number="7.5">
+<h2 data-number="7.5" class="anchored" data-anchor-id="a-light-ggplotly-example"><span class="header-section-number">7.5</span> A Light <code>ggplotly()</code> Example</h2>
+<p>One simple route into interactivity is to start with an ordinary <code>ggplot2</code> figure and convert it with <code>ggplotly()</code> from the <code>plotly</code> package. That preserves much of the original plotting workflow while adding hover, zoom, and pan behavior in HTML output.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>interactive_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  gap_2007_interactive,</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">aes</span>(</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> gdpPercap,</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> lifeExp,</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> continent,</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">text =</span> <span class="fu">paste</span>(</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Country:"</span>, country,</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>      <span class="st">"&lt;br&gt;GDP per capita:"</span>, scales<span class="sc">::</span><span class="fu">dollar</span>(<span class="fu">round</span>(gdpPercap)),</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>      <span class="st">"&lt;br&gt;Life expectancy:"</span>, <span class="fu">round</span>(lifeExp, <span class="dv">1</span>)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>) <span class="sc">+</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>(<span class="at">labels =</span> scales<span class="sc">::</span>dollar) <span class="sc">+</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Life Expectancy And GDP Per Capita In 2007"</span>,</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"GDP per capita"</span>,</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Life expectancy"</span>,</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"Continent"</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (knitr<span class="sc">::</span><span class="fu">is_html_output</span>()) {</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplotly</span>(interactive_plot, <span class="at">tooltip =</span> <span class="st">"text"</span>)</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>  interactive_plot</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div class="plotly html-widget html-fill-item" id="htmlwidget-4dca164ad6109264136e" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-4dca164ad6109264136e">{"x":{"data":[{"x":[3.7940254450966644,3.6809906556268164,3.1587498285200959,4.0993301562976825,3.0853023521971163,2.6335398473202094,3.3100759930113757,3.5058929899660716,2.8488148736349985,3.2314858313133699,2.9939420450679588,2.443344140046372,3.5602125331291146,3.1888582353745463,3.3185811659560813,3.7467261069384517,4.0847224390037145,2.8071083194109296,2.8393558343569563,4.120787226641542,2.8766506063906259,3.1230701584328973,2.9743524119826992,2.7628523540039867,3.1653183196828425,3.195714676047237,2.6175322269121151,4.0812572446605149,3.0190207459573766,2.8804419458658828,3.0181100381010961,3.2560322165243099,4.0396913096789095,3.5820832842930348,2.9157614843495785,3.6822408118633683,2.7921653017164396,3.3040545722906871,3.884802303432406,2.9360553118387509,3.2036950046605677,3.2336235137236495,2.9357796251727324,2.9666771427490164,3.9670637023386344,3.4153732150271123,3.6545115842375888,3.0443367476975203,2.9459459204926648,3.8508252467512323,3.0238202200422353,3.1042178448294138,2.6718291573166399],"y":[72.301000000000002,42.731000000000002,56.728000000000002,50.728000000000002,52.295000000000002,49.579999999999998,50.43,71.677000000000007,44.741,50.651000000000003,65.152000000000001,46.462000000000003,55.322000000000003,48.328000000000003,54.790999999999997,71.337999999999994,51.579000000000001,58.039999999999999,52.947000000000003,56.734999999999999,59.448,60.021999999999998,56.006999999999998,46.387999999999998,54.109999999999999,42.591999999999999,45.677999999999997,73.951999999999998,59.442999999999998,48.302999999999997,54.466999999999999,64.164000000000001,72.801000000000002,71.164000000000001,42.082000000000001,52.905999999999999,56.866999999999997,46.859000000000002,76.441999999999993,46.241999999999997,65.528000000000006,63.061999999999998,42.567999999999998,48.158999999999999,49.338999999999999,58.555999999999997,39.613,52.517000000000003,58.420000000000002,73.923000000000002,51.542000000000002,42.384,43.487000000000002],"text":["Country: Algeria <br>GDP per capita: $6,223 <br>Life expectancy: 72.3","Country: Angola <br>GDP per capita: $4,797 <br>Life expectancy: 42.7","Country: Benin <br>GDP per capita: $1,441 <br>Life expectancy: 56.7","Country: Botswana <br>GDP per capita: $12,570 <br>Life expectancy: 50.7","Country: Burkina Faso <br>GDP per capita: $1,217 <br>Life expectancy: 52.3","Country: Burundi <br>GDP per capita: $430 <br>Life expectancy: 49.6","Country: Cameroon <br>GDP per capita: $2,042 <br>Life expectancy: 50.4","Country: Cape Verde <br>GDP per capita: $3,205 <br>Life expectancy: 71.7","Country: Central African Republic <br>GDP per capita: $706 <br>Life expectancy: 44.7","Country: Chad <br>GDP per capita: $1,704 <br>Life expectancy: 50.7","Country: Comoros <br>GDP per capita: $986 <br>Life expectancy: 65.2","Country: Congo, Dem. Rep. <br>GDP per capita: $278 <br>Life expectancy: 46.5","Country: Congo, Rep. <br>GDP per capita: $3,633 <br>Life expectancy: 55.3","Country: Cote d'Ivoire <br>GDP per capita: $1,545 <br>Life expectancy: 48.3","Country: Djibouti <br>GDP per capita: $2,082 <br>Life expectancy: 54.8","Country: Egypt <br>GDP per capita: $5,581 <br>Life expectancy: 71.3","Country: Equatorial Guinea <br>GDP per capita: $12,154 <br>Life expectancy: 51.6","Country: Eritrea <br>GDP per capita: $641 <br>Life expectancy: 58","Country: Ethiopia <br>GDP per capita: $691 <br>Life expectancy: 52.9","Country: Gabon <br>GDP per capita: $13,206 <br>Life expectancy: 56.7","Country: Gambia <br>GDP per capita: $753 <br>Life expectancy: 59.4","Country: Ghana <br>GDP per capita: $1,328 <br>Life expectancy: 60","Country: Guinea <br>GDP per capita: $943 <br>Life expectancy: 56","Country: Guinea-Bissau <br>GDP per capita: $579 <br>Life expectancy: 46.4","Country: Kenya <br>GDP per capita: $1,463 <br>Life expectancy: 54.1","Country: Lesotho <br>GDP per capita: $1,569 <br>Life expectancy: 42.6","Country: Liberia <br>GDP per capita: $415 <br>Life expectancy: 45.7","Country: Libya <br>GDP per capita: $12,057 <br>Life expectancy: 74","Country: Madagascar <br>GDP per capita: $1,045 <br>Life expectancy: 59.4","Country: Malawi <br>GDP per capita: $759 <br>Life expectancy: 48.3","Country: Mali <br>GDP per capita: $1,043 <br>Life expectancy: 54.5","Country: Mauritania <br>GDP per capita: $1,803 <br>Life expectancy: 64.2","Country: Mauritius <br>GDP per capita: $10,957 <br>Life expectancy: 72.8","Country: Morocco <br>GDP per capita: $3,820 <br>Life expectancy: 71.2","Country: Mozambique <br>GDP per capita: $824 <br>Life expectancy: 42.1","Country: Namibia <br>GDP per capita: $4,811 <br>Life expectancy: 52.9","Country: Niger <br>GDP per capita: $620 <br>Life expectancy: 56.9","Country: Nigeria <br>GDP per capita: $2,014 <br>Life expectancy: 46.9","Country: Reunion <br>GDP per capita: $7,670 <br>Life expectancy: 76.4","Country: Rwanda <br>GDP per capita: $863 <br>Life expectancy: 46.2","Country: Sao Tome and Principe <br>GDP per capita: $1,598 <br>Life expectancy: 65.5","Country: Senegal <br>GDP per capita: $1,712 <br>Life expectancy: 63.1","Country: Sierra Leone <br>GDP per capita: $863 <br>Life expectancy: 42.6","Country: Somalia <br>GDP per capita: $926 <br>Life expectancy: 48.2","Country: South Africa <br>GDP per capita: $9,270 <br>Life expectancy: 49.3","Country: Sudan <br>GDP per capita: $2,602 <br>Life expectancy: 58.6","Country: Swaziland <br>GDP per capita: $4,513 <br>Life expectancy: 39.6","Country: Tanzania <br>GDP per capita: $1,107 <br>Life expectancy: 52.5","Country: Togo <br>GDP per capita: $883 <br>Life expectancy: 58.4","Country: Tunisia <br>GDP per capita: $7,093 <br>Life expectancy: 73.9","Country: Uganda <br>GDP per capita: $1,056 <br>Life expectancy: 51.5","Country: Zambia <br>GDP per capita: $1,271 <br>Life expectancy: 42.4","Country: Zimbabwe <br>GDP per capita: $470 <br>Life expectancy: 43.5"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(248,118,109,1)","opacity":0.69999999999999996,"size":5.6692913385826778,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(248,118,109,1)"}},"hoveron":"points","name":"Africa","legendgroup":"Africa","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[4.1065097720176862,4.4350584102103836,4.3792808104971161,4.2310387113346852,3.8779599252208818,3.5823062593168782,3.957406173408569,4.5601366924251883,4.1196398143870931,3.8455061110473117,3.9843049975871763,3.9517309708016475,3.7799840633073747,3.837162919576186,3.7580298117512663,3.9613265335447685,3.7148366998460376,3.5546154496180993,3.0797733480287044,3.550024106620056,3.8645633037284566,4.0783688975107708,4.3521825368342801,3.4392254438054342,3.991632953509189,3.6204315729333021,3.8697540590018766,4.2862028478952521,3.9023984419290949,4.2554777630339444,4.6329798832790043,4.0257752637018411,4.0575065679833457],"y":[75.319999999999993,74.239000000000004,73.495000000000005,77.296000000000006,76.120999999999995,65.554000000000002,72.390000000000001,80.653000000000006,78.552999999999997,72.888999999999996,78.781999999999996,78.272999999999996,72.234999999999999,74.994,71.878,68.724000000000004,70.259,66.826999999999998,60.915999999999997,70.197999999999993,72.566999999999993,76.194999999999993,75.111999999999995,72.899000000000001,75.537000000000006,71.751999999999995,71.421000000000006,78.745999999999995,70.198999999999998,69.819000000000003,78.242000000000004,76.384,73.747],"text":["Country: Argentina <br>GDP per capita: $12,779 <br>Life expectancy: 75.3","Country: Aruba <br>GDP per capita: $27,231 <br>Life expectancy: 74.2","Country: Bahamas <br>GDP per capita: $23,949 <br>Life expectancy: 73.5","Country: Barbados <br>GDP per capita: $17,023 <br>Life expectancy: 77.3","Country: Belize <br>GDP per capita: $7,550 <br>Life expectancy: 76.1","Country: Bolivia <br>GDP per capita: $3,822 <br>Life expectancy: 65.6","Country: Brazil <br>GDP per capita: $9,066 <br>Life expectancy: 72.4","Country: Canada <br>GDP per capita: $36,319 <br>Life expectancy: 80.7","Country: Chile <br>GDP per capita: $13,172 <br>Life expectancy: 78.6","Country: Colombia <br>GDP per capita: $7,007 <br>Life expectancy: 72.9","Country: Costa Rica <br>GDP per capita: $9,645 <br>Life expectancy: 78.8","Country: Cuba <br>GDP per capita: $8,948 <br>Life expectancy: 78.3","Country: Dominican Republic <br>GDP per capita: $6,025 <br>Life expectancy: 72.2","Country: Ecuador <br>GDP per capita: $6,873 <br>Life expectancy: 75","Country: El Salvador <br>GDP per capita: $5,728 <br>Life expectancy: 71.9","Country: Grenada <br>GDP per capita: $9,148 <br>Life expectancy: 68.7","Country: Guatemala <br>GDP per capita: $5,186 <br>Life expectancy: 70.3","Country: Guyana <br>GDP per capita: $3,586 <br>Life expectancy: 66.8","Country: Haiti <br>GDP per capita: $1,202 <br>Life expectancy: 60.9","Country: Honduras <br>GDP per capita: $3,548 <br>Life expectancy: 70.2","Country: Jamaica <br>GDP per capita: $7,321 <br>Life expectancy: 72.6","Country: Mexico <br>GDP per capita: $11,978 <br>Life expectancy: 76.2","Country: Netherlands Antilles <br>GDP per capita: $22,500 <br>Life expectancy: 75.1","Country: Nicaragua <br>GDP per capita: $2,749 <br>Life expectancy: 72.9","Country: Panama <br>GDP per capita: $9,809 <br>Life expectancy: 75.5","Country: Paraguay <br>GDP per capita: $4,173 <br>Life expectancy: 71.8","Country: Peru <br>GDP per capita: $7,409 <br>Life expectancy: 71.4","Country: Puerto Rico <br>GDP per capita: $19,329 <br>Life expectancy: 78.7","Country: Suriname <br>GDP per capita: $7,987 <br>Life expectancy: 70.2","Country: Trinidad and Tobago <br>GDP per capita: $18,009 <br>Life expectancy: 69.8","Country: United States <br>GDP per capita: $42,952 <br>Life expectancy: 78.2","Country: Uruguay <br>GDP per capita: $10,611 <br>Life expectancy: 76.4","Country: Venezuela <br>GDP per capita: $11,416 <br>Life expectancy: 73.7"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(183,159,0,1)","opacity":0.69999999999999996,"size":5.6692913385826778,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(183,159,0,1)"}},"hoveron":"points","name":"Americas","legendgroup":"Americas","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2.9888176454912858,3.8869761411055395,4.4741586701859664,3.1434063610570009,3.6762032676184226,4.681373203669196,3.2339547372751722,3.6954041667466049,4.5990636726886356,3.3895577312128795,3.5490831898821575,4.0646718823630357,3.6504106831196688,4.406936435530084,4.5004569709846161,3.6550866594992835,3.2022336270366805,4.3682522837381041,4.6749253140699576,4.0195756382230385,4.7371116642106212,4.095227107013149,3.7132234715292944,3.4907690059237622,2.9749719942980688,3.0379679438446519,4.3486201061894318,3.4159656754035375,3.5038561648270914,4.9138719912017175,4.3355548175826542,4.6734188707962172,3.5988009435983197,3.6216485631534296,4.4581583777244909,3.1938055582794025,3.8726454573379581,3.3590264505135643,3.6892422299531833,4.5676577370880809,3.3876703191654678,3.4807755960325997,3.3580814739680283],"y":[43.828000000000003,67.486999999999995,75.635000000000005,64.061999999999998,65.625,77.117999999999995,59.722999999999999,72.960999999999999,82.207999999999998,64.697999999999993,70.650000000000006,70.963999999999999,59.545000000000002,80.745000000000005,82.602999999999994,72.534999999999997,67.296999999999997,78.623000000000005,77.587999999999994,71.992999999999995,80.718000000000004,74.241,68.463999999999999,66.802999999999997,62.069000000000003,63.784999999999997,75.640000000000001,65.483000000000004,71.688000000000002,75.587999999999994,72.777000000000001,79.971999999999994,72.396000000000001,74.143000000000001,78.400000000000006,66.670000000000002,70.616,60.838999999999999,63.168999999999997,78.671999999999997,74.248999999999995,73.421999999999997,62.698],"text":["Country: Afghanistan <br>GDP per capita: $975 <br>Life expectancy: 43.8","Country: Azerbaijan <br>GDP per capita: $7,709 <br>Life expectancy: 67.5","Country: Bahrain <br>GDP per capita: $29,796 <br>Life expectancy: 75.6","Country: Bangladesh <br>GDP per capita: $1,391 <br>Life expectancy: 64.1","Country: Bhutan <br>GDP per capita: $4,745 <br>Life expectancy: 65.6","Country: Brunei <br>GDP per capita: $48,015 <br>Life expectancy: 77.1","Country: Cambodia <br>GDP per capita: $1,714 <br>Life expectancy: 59.7","Country: China <br>GDP per capita: $4,959 <br>Life expectancy: 73","Country: Hong Kong, China <br>GDP per capita: $39,725 <br>Life expectancy: 82.2","Country: India <br>GDP per capita: $2,452 <br>Life expectancy: 64.7","Country: Indonesia <br>GDP per capita: $3,541 <br>Life expectancy: 70.7","Country: Iran <br>GDP per capita: $11,606 <br>Life expectancy: 71","Country: Iraq <br>GDP per capita: $4,471 <br>Life expectancy: 59.5","Country: Israel <br>GDP per capita: $25,523 <br>Life expectancy: 80.7","Country: Japan <br>GDP per capita: $31,656 <br>Life expectancy: 82.6","Country: Jordan <br>GDP per capita: $4,519 <br>Life expectancy: 72.5","Country: Korea, Dem. Rep. <br>GDP per capita: $1,593 <br>Life expectancy: 67.3","Country: Korea, Rep. <br>GDP per capita: $23,348 <br>Life expectancy: 78.6","Country: Kuwait <br>GDP per capita: $47,307 <br>Life expectancy: 77.6","Country: Lebanon <br>GDP per capita: $10,461 <br>Life expectancy: 72","Country: Macao, China <br>GDP per capita: $54,590 <br>Life expectancy: 80.7","Country: Malaysia <br>GDP per capita: $12,452 <br>Life expectancy: 74.2","Country: Maldives <br>GDP per capita: $5,167 <br>Life expectancy: 68.5","Country: Mongolia <br>GDP per capita: $3,096 <br>Life expectancy: 66.8","Country: Myanmar <br>GDP per capita: $944 <br>Life expectancy: 62.1","Country: Nepal <br>GDP per capita: $1,091 <br>Life expectancy: 63.8","Country: Oman <br>GDP per capita: $22,316 <br>Life expectancy: 75.6","Country: Pakistan <br>GDP per capita: $2,606 <br>Life expectancy: 65.5","Country: Philippines <br>GDP per capita: $3,190 <br>Life expectancy: 71.7","Country: Qatar <br>GDP per capita: $82,011 <br>Life expectancy: 75.6","Country: Saudi Arabia <br>GDP per capita: $21,655 <br>Life expectancy: 72.8","Country: Singapore <br>GDP per capita: $47,143 <br>Life expectancy: 80","Country: Sri Lanka <br>GDP per capita: $3,970 <br>Life expectancy: 72.4","Country: Syria <br>GDP per capita: $4,185 <br>Life expectancy: 74.1","Country: Taiwan <br>GDP per capita: $28,718 <br>Life expectancy: 78.4","Country: Tajikistan <br>GDP per capita: $1,562 <br>Life expectancy: 66.7","Country: Thailand <br>GDP per capita: $7,458 <br>Life expectancy: 70.6","Country: Timor-Leste <br>GDP per capita: $2,286 <br>Life expectancy: 60.8","Country: Turkmenistan <br>GDP per capita: $4,889 <br>Life expectancy: 63.2","Country: United Arab Emirates <br>GDP per capita: $36,954 <br>Life expectancy: 78.7","Country: Vietnam <br>GDP per capita: $2,442 <br>Life expectancy: 74.2","Country: West Bank and Gaza <br>GDP per capita: $3,025 <br>Life expectancy: 73.4","Country: Yemen, Rep. <br>GDP per capita: $2,281 <br>Life expectancy: 62.7"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(0,186,56,1)","opacity":0.69999999999999996,"size":5.6692913385826778,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(0,186,56,1)"}},"hoveron":"points","name":"Asia","legendgroup":"Asia","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[3.7735692087621691,4.5578258006221848,4.5275345915133105,3.8719404594797928,4.0286034909483179,4.1649242825131747,4.4150213176569988,4.3585688446278343,4.5475091108168488,4.3003215757302318,4.5212307459814749,4.4838726922507623,4.5074561155365247,4.4399388911990529,4.2554882582210949,4.5584780356339154,4.6093381996914395,4.4559059795027833,4.3366943667959061,3.415766134403345,3.9663246195778949,4.5658234281049346,4.6933504280025318,4.1872364943512697,4.3119582019159575,4.0337644468812863,3.9906289409349966,4.271337680163577,4.4110850532178922,4.4597100052953031,4.5296837260525233,4.574105601810623,3.927281872119107,4.5211807429313629],"y":[76.423000000000002,79.828999999999994,79.441000000000003,74.852000000000004,73.004999999999995,75.748000000000005,79.034999999999997,76.486000000000004,78.331999999999994,71.370000000000005,79.313000000000002,80.656999999999996,79.406000000000006,79.483000000000004,73.337999999999994,81.757000000000005,78.885000000000005,80.546000000000006,79.439999999999998,68.864999999999995,74.543000000000006,79.762,80.195999999999998,75.563000000000002,78.097999999999999,72.475999999999999,74.001999999999995,74.662999999999997,77.926000000000002,80.941000000000003,80.884,81.700999999999993,71.777000000000001,79.424999999999997],"text":["Country: Albania <br>GDP per capita: $5,937 <br>Life expectancy: 76.4","Country: Austria <br>GDP per capita: $36,126 <br>Life expectancy: 79.8","Country: Belgium <br>GDP per capita: $33,693 <br>Life expectancy: 79.4","Country: Bosnia and Herzegovina <br>GDP per capita: $7,446 <br>Life expectancy: 74.9","Country: Bulgaria <br>GDP per capita: $10,681 <br>Life expectancy: 73","Country: Croatia <br>GDP per capita: $14,619 <br>Life expectancy: 75.7","Country: Cyprus <br>GDP per capita: $26,003 <br>Life expectancy: 79","Country: Czech Republic <br>GDP per capita: $22,833 <br>Life expectancy: 76.5","Country: Denmark <br>GDP per capita: $35,278 <br>Life expectancy: 78.3","Country: Estonia <br>GDP per capita: $19,967 <br>Life expectancy: 71.4","Country: Finland <br>GDP per capita: $33,207 <br>Life expectancy: 79.3","Country: France <br>GDP per capita: $30,470 <br>Life expectancy: 80.7","Country: Germany <br>GDP per capita: $32,170 <br>Life expectancy: 79.4","Country: Greece <br>GDP per capita: $27,538 <br>Life expectancy: 79.5","Country: Hungary <br>GDP per capita: $18,009 <br>Life expectancy: 73.3","Country: Iceland <br>GDP per capita: $36,181 <br>Life expectancy: 81.8","Country: Ireland <br>GDP per capita: $40,676 <br>Life expectancy: 78.9","Country: Italy <br>GDP per capita: $28,570 <br>Life expectancy: 80.5","Country: Malta <br>GDP per capita: $21,712 <br>Life expectancy: 79.4","Country: Moldova <br>GDP per capita: $2,605 <br>Life expectancy: 68.9","Country: Montenegro <br>GDP per capita: $9,254 <br>Life expectancy: 74.5","Country: Netherlands <br>GDP per capita: $36,798 <br>Life expectancy: 79.8","Country: Norway <br>GDP per capita: $49,357 <br>Life expectancy: 80.2","Country: Poland <br>GDP per capita: $15,390 <br>Life expectancy: 75.6","Country: Portugal <br>GDP per capita: $20,510 <br>Life expectancy: 78.1","Country: Romania <br>GDP per capita: $10,808 <br>Life expectancy: 72.5","Country: Serbia <br>GDP per capita: $9,787 <br>Life expectancy: 74","Country: Slovak Republic <br>GDP per capita: $18,678 <br>Life expectancy: 74.7","Country: Slovenia <br>GDP per capita: $25,768 <br>Life expectancy: 77.9","Country: Spain <br>GDP per capita: $28,821 <br>Life expectancy: 80.9","Country: Sweden <br>GDP per capita: $33,860 <br>Life expectancy: 80.9","Country: Switzerland <br>GDP per capita: $37,506 <br>Life expectancy: 81.7","Country: Turkey <br>GDP per capita: $8,458 <br>Life expectancy: 71.8","Country: United Kingdom <br>GDP per capita: $33,203 <br>Life expectancy: 79.4"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(0,191,196,1)","opacity":0.69999999999999996,"size":5.6692913385826778,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(0,191,196,1)"}},"hoveron":"points","name":"Europe","legendgroup":"Europe","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[3.6939505364015481,4.0117300155972222,3.6421241125909543,4.0133753905643905,4.2185211554066449,4.2218446343960663,4.1405303973156453,3.8161996441804646,3.3446199436798496],"y":[71.965000000000003,69.027000000000001,70.986999999999995,66.995999999999995,72.674000000000007,72.962000000000003,65.474999999999994,67.864000000000004,67.165999999999997],"text":["Country: Armenia <br>GDP per capita: $4,943 <br>Life expectancy: 72","Country: Belarus <br>GDP per capita: $10,274 <br>Life expectancy: 69","Country: Georgia <br>GDP per capita: $4,387 <br>Life expectancy: 71","Country: Kazakhstan <br>GDP per capita: $10,313 <br>Life expectancy: 67","Country: Latvia <br>GDP per capita: $16,539 <br>Life expectancy: 72.7","Country: Lithuania <br>GDP per capita: $16,667 <br>Life expectancy: 73","Country: Russia <br>GDP per capita: $13,821 <br>Life expectancy: 65.5","Country: Ukraine <br>GDP per capita: $6,549 <br>Life expectancy: 67.9","Country: Uzbekistan <br>GDP per capita: $2,211 <br>Life expectancy: 67.2"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(97,156,255,1)","opacity":0.69999999999999996,"size":5.6692913385826778,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(97,156,255,1)"}},"hoveron":"points","name":"FSU","legendgroup":"FSU","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[4.5370047214526892,3.614703036038561,4.4275971816093618,3.7341698431947319,4.495243765880895,4.4011421122881123,3.2617615108684226,3.7112684939237535,3.2622890657704229,3.7044916248433615,3.5631139349135976],"y":[81.234999999999999,68.774000000000001,74.057000000000002,68.534000000000006,76.058000000000007,80.203999999999994,57.228999999999999,71.453999999999994,63.57,73.311999999999998,70.037999999999997],"text":["Country: Australia <br>GDP per capita: $34,435 <br>Life expectancy: 81.2","Country: Fiji <br>GDP per capita: $4,118 <br>Life expectancy: 68.8","Country: French Polynesia <br>GDP per capita: $26,767 <br>Life expectancy: 74.1","Country: Micronesia, Fed. Sts. <br>GDP per capita: $5,422 <br>Life expectancy: 68.5","Country: New Caledonia <br>GDP per capita: $31,278 <br>Life expectancy: 76.1","Country: New Zealand <br>GDP per capita: $25,185 <br>Life expectancy: 80.2","Country: Papua New Guinea <br>GDP per capita: $1,827 <br>Life expectancy: 57.2","Country: Samoa <br>GDP per capita: $5,144 <br>Life expectancy: 71.5","Country: Solomon Islands <br>GDP per capita: $1,829 <br>Life expectancy: 63.6","Country: Tonga <br>GDP per capita: $5,064 <br>Life expectancy: 73.3","Country: Vanuatu <br>GDP per capita: $3,657 <br>Life expectancy: 70"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(245,100,227,1)","opacity":0.69999999999999996,"size":5.6692913385826778,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(245,100,227,1)"}},"hoveron":"points","name":"Oceania","legendgroup":"Oceania","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":40.840182648401829,"r":7.3059360730593621,"b":37.260273972602747,"l":37.260273972602747},"paper_bgcolor":"rgba(255,255,255,1)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724},"title":{"text":"Life Expectancy And GDP Per Capita In 2007","font":{"color":"rgba(0,0,0,1)","family":"","size":17.534246575342465},"x":0,"xref":"paper"},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[2.3198177474886048,5.0373983837594851],"tickmode":"array","ticktext":["$1,000","$10,000","$100,000"],"tickvals":[3,4,5],"categoryorder":"array","categoryarray":["$1,000","$10,000","$100,000"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"y","title":{"text":"GDP per capita","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[37.463499999999996,84.752499999999998],"tickmode":"array","ticktext":["40","50","60","70","80"],"tickvals":[40,50,60,70,80],"categoryorder":"array","categoryarray":["40","50","60","70","80"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"x","title":{"text":"Life expectancy","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"shapes":[],"showlegend":true,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.68949771689498},"title":{"text":"Continent","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"67063cece510":{"x":{},"y":{},"colour":{},"text":{},"type":"scatter"}},"cur_data":"67063cece510","visdat":{"67063cece510":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<p>The important pattern is that the static plot comes first. <code>ggplotly()</code> does not replace <code>ggplot2</code>; it wraps a plot that already exists. That makes it a useful first step when a figure should become interactive without being rewritten from scratch.</p>
 <p>When the desired output is just one polished figure, a dashboard is unnecessary. A named plot object can be saved directly:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">"figure-name.png"</span>, <span class="at">plot =</span> final_plot, <span class="at">width =</span> <span class="dv">8</span>, <span class="at">height =</span> <span class="dv">5</span>, <span class="at">dpi =</span> <span class="dv">300</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">"figure-name.pdf"</span>, <span class="at">plot =</span> final_plot, <span class="at">width =</span> <span class="dv">8</span>, <span class="at">height =</span> <span class="dv">5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">"figure-name.png"</span>, <span class="at">plot =</span> final_plot, <span class="at">width =</span> <span class="dv">8</span>, <span class="at">height =</span> <span class="dv">5</span>, <span class="at">dpi =</span> <span class="dv">300</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">"figure-name.pdf"</span>, <span class="at">plot =</span> final_plot, <span class="at">width =</span> <span class="dv">8</span>, <span class="at">height =</span> <span class="dv">5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>PNG is convenient for slides and documents. PDF preserves vector information and is often better for print or later editing. The important habit is to save intentional output rather than relying on screenshots.</p>
 </section>
-<section id="dashboard-design-choices" class="level2" data-number="7.5">
-<h2 data-number="7.5" class="anchored" data-anchor-id="dashboard-design-choices"><span class="header-section-number">7.5</span> Dashboard Design Choices</h2>
+<section id="dashboard-design-choices" class="level2" data-number="7.6">
+<h2 data-number="7.6" class="anchored" data-anchor-id="dashboard-design-choices"><span class="header-section-number">7.6</span> Dashboard Design Choices</h2>
 <p>Dashboards are easy to overload. The most useful dashboards usually have a small number of well-chosen components rather than every possible plot.</p>
 <p>A compact dashboard should answer three questions:</p>
 <ol type="1">
@@ -304,20 +351,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ol>
 <p>The demo dashboard follows that pattern. It uses headline cards for compact summaries, a gauge for one benchmark-style quantity, plots for patterns, and a table for lookup. The layout is deliberately modest because the point is to show how dashboard packaging works, not to turn the course into a dashboard-building course.</p>
 </section>
-<section id="agentic-ai-in-the-visualization-workflow" class="level2" data-number="7.6">
-<h2 data-number="7.6" class="anchored" data-anchor-id="agentic-ai-in-the-visualization-workflow"><span class="header-section-number">7.6</span> Agentic AI In The Visualization Workflow</h2>
+<section id="quarto-can-also-produce-slides" class="level2" data-number="7.7">
+<h2 data-number="7.7" class="anchored" data-anchor-id="quarto-can-also-produce-slides"><span class="header-section-number">7.7</span> Quarto Can Also Produce Slides</h2>
+<p>The same general workflow can also be used for presentations. A small example lives in:</p>
+<pre class="text"><code>Demos/presentation-demo.qmd</code></pre>
+<p>Published version: <a href="https://bshor.github.io/odum-2026/demos/presentation-demo.html#/title-slide" class="uri">https://bshor.github.io/odum-2026/demos/presentation-demo.html#/title-slide</a></p>
+<p>That file shows how Markdown, code chunks, and rendered output can be adapted into slide form.</p>
+<p>The <code>Demos</code> folder also includes <code>paper-example.qmd</code>, a short paper-style document with an abstract, citations, footnotes, a bibliography file, and PDF output.</p>
+</section>
+<section id="agentic-ai-in-the-visualization-workflow" class="level2" data-number="7.8">
+<h2 data-number="7.8" class="anchored" data-anchor-id="agentic-ai-in-the-visualization-workflow"><span class="header-section-number">7.8</span> Agentic AI In The Visualization Workflow</h2>
 <p>Agentic AI tools are useful when treated as supervised assistants.</p>
 <p>For coding and visualization, that means they can help move work forward, but their output still needs to be read, tested, and judged. The tool can produce code quickly. It cannot be trusted to know whether the result is substantively appropriate unless the analyst supplies context and checks the output.</p>
 <p>Useful examples include:</p>
 <ul>
 <li><code>Claude Code</code></li>
-<li><code>Codex</code></li>
-<li><code>Gemini</code></li>
+<li><code>OpenAI Codex</code></li>
+<li><code>Gemini CLI</code></li>
 </ul>
 <p>The specific tool matters less than the workflow discipline around it.</p>
+<p>One practical distinction is that agentic AI is often used from a terminal or terminal-like coding environment rather than from a web chat window. A web chatbot usually works by waiting for pasted snippets, screenshots, or questions. An agentic tool can often inspect files directly, move across several related files, run commands, and help carry a task through multiple steps. That makes it more useful for coding workflows, but it also raises the stakes: if the tool can touch more of the project, it also needs closer supervision.</p>
+<p>The difference is therefore not just where the interface appears. It is also about scope. A chatbot on the web is often best for explanation, brainstorming, and short code suggestions. An agentic tool is more like a supervised junior assistant working inside the project itself, which is why careful review matters even more.</p>
 </section>
-<section id="useful-ai-tasks" class="level2" data-number="7.7">
-<h2 data-number="7.7" class="anchored" data-anchor-id="useful-ai-tasks"><span class="header-section-number">7.7</span> Useful AI Tasks</h2>
+<section id="useful-ai-tasks" class="level2" data-number="7.9">
+<h2 data-number="7.9" class="anchored" data-anchor-id="useful-ai-tasks"><span class="header-section-number">7.9</span> Useful AI Tasks</h2>
 <p>AI assistance is strongest when the task is concrete and checkable.</p>
 <p>Good uses include:</p>
 <ul>
@@ -330,8 +387,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <p>These tasks are useful because the output can be inspected. If the model suggests code, the code can be read and run. If it suggests labels, the labels can be compared. If it critiques a plot, the critique can be accepted, rejected, or revised.</p>
 </section>
-<section id="weak-ai-tasks" class="level2" data-number="7.8">
-<h2 data-number="7.8" class="anchored" data-anchor-id="weak-ai-tasks"><span class="header-section-number">7.8</span> Weak AI Tasks</h2>
+<section id="weak-ai-tasks" class="level2" data-number="7.10">
+<h2 data-number="7.10" class="anchored" data-anchor-id="weak-ai-tasks"><span class="header-section-number">7.10</span> Weak AI Tasks</h2>
 <p>AI assistance is weakest when the task depends on context, judgment, or domain knowledge that has not been provided.</p>
 <p>Riskier uses include:</p>
 <ul>
@@ -343,28 +400,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <p>The practical rule is simple: if the result cannot be explained, it should not be treated as finished.</p>
 </section>
-<section id="prompt-patterns" class="level2" data-number="7.9">
-<h2 data-number="7.9" class="anchored" data-anchor-id="prompt-patterns"><span class="header-section-number">7.9</span> Prompt Patterns</h2>
+<section id="prompt-patterns" class="level2" data-number="7.11">
+<h2 data-number="7.11" class="anchored" data-anchor-id="prompt-patterns"><span class="header-section-number">7.11</span> Prompt Patterns</h2>
 <p>Good prompts are narrow, concrete, and evaluable. They name the object being revised, the desired task, and any constraints.</p>
-<section id="debugging" class="level3" data-number="7.9.1">
-<h3 data-number="7.9.1" class="anchored" data-anchor-id="debugging"><span class="header-section-number">7.9.1</span> Debugging</h3>
+<section id="debugging" class="level3" data-number="7.11.1">
+<h3 data-number="7.11.1" class="anchored" data-anchor-id="debugging"><span class="header-section-number">7.11.1</span> Debugging</h3>
 <pre class="text"><code>Explain this ggplot2 error message and suggest the smallest possible fix.</code></pre>
 </section>
-<section id="first-draft-plot" class="level3" data-number="7.9.2">
-<h3 data-number="7.9.2" class="anchored" data-anchor-id="first-draft-plot"><span class="header-section-number">7.9.2</span> First Draft Plot</h3>
+<section id="first-draft-plot" class="level3" data-number="7.11.2">
+<h3 data-number="7.11.2" class="anchored" data-anchor-id="first-draft-plot"><span class="header-section-number">7.11.2</span> First Draft Plot</h3>
 <pre class="text"><code>Write a ggplot2 scatterplot using GDP per capita on the x-axis and life expectancy on the y-axis, colored by continent, with a log-scaled x-axis.</code></pre>
 </section>
-<section id="improving-labels" class="level3" data-number="7.9.3">
-<h3 data-number="7.9.3" class="anchored" data-anchor-id="improving-labels"><span class="header-section-number">7.9.3</span> Improving Labels</h3>
+<section id="improving-labels" class="level3" data-number="7.11.3">
+<h3 data-number="7.11.3" class="anchored" data-anchor-id="improving-labels"><span class="header-section-number">7.11.3</span> Improving Labels</h3>
 <pre class="text"><code>Rewrite this title, subtitle, and caption for a social science audience without making them longer.</code></pre>
 </section>
-<section id="critique" class="level3" data-number="7.9.4">
-<h3 data-number="7.9.4" class="anchored" data-anchor-id="critique"><span class="header-section-number">7.9.4</span> Critique</h3>
+<section id="critique" class="level3" data-number="7.11.4">
+<h3 data-number="7.11.4" class="anchored" data-anchor-id="critique"><span class="header-section-number">7.11.4</span> Critique</h3>
 <pre class="text"><code>Critique this plot as a methods instructor. What is misleading, cluttered, or unclear?</code></pre>
 </section>
 </section>
-<section id="a-practical-ai-workflow" class="level2" data-number="7.10">
-<h2 data-number="7.10" class="anchored" data-anchor-id="a-practical-ai-workflow"><span class="header-section-number">7.10</span> A Practical AI Workflow</h2>
+<section id="a-practical-ai-workflow" class="level2" data-number="7.12">
+<h2 data-number="7.12" class="anchored" data-anchor-id="a-practical-ai-workflow"><span class="header-section-number">7.12</span> A Practical AI Workflow</h2>
 <p>A cautious workflow keeps the human role explicit:</p>
 <ol type="1">
 <li>Start with a working plot or a clear sketch of the plot.</li>
@@ -375,35 +432,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ol>
 <p>This sequence avoids the main failure mode: letting the tool replace the analytical decision rather than support it.</p>
 </section>
-<section id="exercises" class="level2" data-number="7.11">
-<h2 data-number="7.11" class="anchored" data-anchor-id="exercises"><span class="header-section-number">7.11</span> Exercises</h2>
+<section id="exercises" class="level2" data-number="7.13">
+<h2 data-number="7.13" class="anchored" data-anchor-id="exercises"><span class="header-section-number">7.13</span> Exercises</h2>
 <ol type="1">
 <li>Open <code>Demos/dashboard-demo-quarto.qmd</code> and identify which panels are summaries, which are plots, and which are detail views.</li>
+<li>Open <code>Demos/presentation-demo.qmd</code> and identify one slide that shows static output and one that shows interactive output.</li>
 <li>Take one plot from Chapter 05 and write a prompt asking for three shorter subtitles.</li>
 <li>Ask an AI tool to critique one plot, then list one suggestion worth accepting and one suggestion worth rejecting.</li>
 <li>Save one named plot object as a PNG or PDF using <code>ggsave()</code>.</li>
 </ol>
 </section>
-<section id="extra-material" class="level2" data-number="7.12">
-<h2 data-number="7.12" class="anchored" data-anchor-id="extra-material"><span class="header-section-number">7.12</span> Extra Material</h2>
-<section id="extra-1-quarto-can-also-produce-slides" class="level3" data-number="7.12.1">
-<h3 data-number="7.12.1" class="anchored" data-anchor-id="extra-1-quarto-can-also-produce-slides"><span class="header-section-number">7.12.1</span> Extra 1: Quarto Can Also Produce Slides</h3>
-<p>The same general workflow can also be used for presentations. A small example lives in:</p>
-<pre class="text"><code>Demos/presentation-demo.qmd</code></pre>
-<p>That file shows how Markdown, code chunks, and rendered output can be adapted into slide form.</p>
-<p>The <code>Demos</code> folder also includes <code>paper-example.qmd</code>, a short paper-style document with an abstract, citations, footnotes, a bibliography file, and PDF output.</p>
-</section>
-<section id="extra-2-closing-discussion" class="level3" data-number="7.12.2">
-<h3 data-number="7.12.2" class="anchored" data-anchor-id="extra-2-closing-discussion"><span class="header-section-number">7.12.2</span> Extra 2: Closing Discussion</h3>
+<section id="closing-discussion" class="level2" data-number="7.14">
+<h2 data-number="7.14" class="anchored" data-anchor-id="closing-discussion"><span class="header-section-number">7.14</span> Closing Discussion</h2>
 <ul>
 <li>What is the difference between code that runs and code that earns trust?</li>
 <li>When should plot polishing stop?</li>
 <li>What should AI help with, and what should it not decide?</li>
 </ul>
 </section>
-</section>
-<section id="closing" class="level2" data-number="7.13">
-<h2 data-number="7.13" class="anchored" data-anchor-id="closing"><span class="header-section-number">7.13</span> Closing</h2>
+<section id="closing" class="level2" data-number="7.15">
+<h2 data-number="7.15" class="anchored" data-anchor-id="closing"><span class="header-section-number">7.15</span> Closing</h2>
 <p>The durable skills remain the same: understand the data, choose the comparison, make the figure readable, and keep the workflow reproducible.</p>
 <p>Dashboards can package results. Agentic AI can accelerate parts of the work. Neither replaces the underlying judgment required to make a visualization useful.</p>
 

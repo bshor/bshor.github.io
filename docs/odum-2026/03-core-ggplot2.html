@@ -154,7 +154,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./01-workflow-and-data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Workflow and Quarto</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">A Unified Visualization Workflow</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -184,7 +184,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./06-storytelling-dashboards-and-ai.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Extra: Dashboards and Agentic AI</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Dashboards, Slides, and Agentic AI</span></span></a>
   </div>
 </li>
     </ul>
@@ -208,7 +208,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#defaults" id="toc-defaults" class="nav-link" data-scroll-target="#defaults"><span class="header-section-number">4.5</span> Defaults</a></li>
   <li><a href="#the-grammar-of-graphics" id="toc-the-grammar-of-graphics" class="nav-link" data-scroll-target="#the-grammar-of-graphics"><span class="header-section-number">4.6</span> The Grammar of Graphics</a></li>
   <li><a href="#ggplot-and-aes" id="toc-ggplot-and-aes" class="nav-link" data-scroll-target="#ggplot-and-aes"><span class="header-section-number">4.7</span> <code>ggplot()</code> And <code>aes()</code></a></li>
-  <li><a href="#first-scatterplot" id="toc-first-scatterplot" class="nav-link" data-scroll-target="#first-scatterplot"><span class="header-section-number">4.8</span> First Scatterplot</a></li>
+  <li><a href="#building-a-visualization-pipeline" id="toc-building-a-visualization-pipeline" class="nav-link" data-scroll-target="#building-a-visualization-pipeline"><span class="header-section-number">4.8</span> Building A Visualization Pipeline</a>
+  <ul class="collapse">
+  <li><a href="#our-first-geom-a-scatterplot" id="toc-our-first-geom-a-scatterplot" class="nav-link" data-scroll-target="#our-first-geom-a-scatterplot"><span class="header-section-number">4.8.1</span> Our First Geom: A Scatterplot</a></li>
+  </ul></li>
   <li><a href="#mapping-versus-setting" id="toc-mapping-versus-setting" class="nav-link" data-scroll-target="#mapping-versus-setting"><span class="header-section-number">4.9</span> Mapping Versus Setting</a></li>
   <li><a href="#choosing-a-geom" id="toc-choosing-a-geom" class="nav-link" data-scroll-target="#choosing-a-geom"><span class="header-section-number">4.10</span> Choosing A Geom</a></li>
   <li><a href="#smoothers" id="toc-smoothers" class="nav-link" data-scroll-target="#smoothers"><span class="header-section-number">4.11</span> Smoothers</a>
@@ -219,21 +222,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#log-scales" id="toc-log-scales" class="nav-link" data-scroll-target="#log-scales"><span class="header-section-number">4.12</span> Log Scales</a></li>
   <li><a href="#labels-with-labs" id="toc-labels-with-labs" class="nav-link" data-scroll-target="#labels-with-labs"><span class="header-section-number">4.13</span> Labels With <code>labs()</code></a></li>
   <li><a href="#a-first-theme" id="toc-a-first-theme" class="nav-link" data-scroll-target="#a-first-theme"><span class="header-section-number">4.14</span> A First Theme</a></li>
-  <li><a href="#the-improved-scatterplot" id="toc-the-improved-scatterplot" class="nav-link" data-scroll-target="#the-improved-scatterplot"><span class="header-section-number">4.15</span> The Improved Scatterplot</a></li>
-  <li><a href="#continuous-aesthetics" id="toc-continuous-aesthetics" class="nav-link" data-scroll-target="#continuous-aesthetics"><span class="header-section-number">4.16</span> Continuous Aesthetics</a>
+  <li><a href="#a-short-note-on-color-schemes" id="toc-a-short-note-on-color-schemes" class="nav-link" data-scroll-target="#a-short-note-on-color-schemes"><span class="header-section-number">4.15</span> A Short Note On Color Schemes</a></li>
+  <li><a href="#the-improved-scatterplot" id="toc-the-improved-scatterplot" class="nav-link" data-scroll-target="#the-improved-scatterplot"><span class="header-section-number">4.16</span> The Improved Scatterplot</a></li>
+  <li><a href="#continuous-aesthetics" id="toc-continuous-aesthetics" class="nav-link" data-scroll-target="#continuous-aesthetics"><span class="header-section-number">4.17</span> Continuous Aesthetics</a>
   <ul class="collapse">
-  <li><a href="#aes-inside-a-geom" id="toc-aes-inside-a-geom" class="nav-link" data-scroll-target="#aes-inside-a-geom"><span class="header-section-number">4.16.1</span> <code>aes()</code> Inside A Geom</a></li>
+  <li><a href="#aes-inside-a-geom" id="toc-aes-inside-a-geom" class="nav-link" data-scroll-target="#aes-inside-a-geom"><span class="header-section-number">4.17.1</span> <code>aes()</code> Inside A Geom</a></li>
   </ul></li>
-  <li><a href="#low-hanging-fruit" id="toc-low-hanging-fruit" class="nav-link" data-scroll-target="#low-hanging-fruit"><span class="header-section-number">4.17</span> Low-hanging fruit</a></li>
-  <li><a href="#class-exercise-polish-a-scatterplot" id="toc-class-exercise-polish-a-scatterplot" class="nav-link" data-scroll-target="#class-exercise-polish-a-scatterplot"><span class="header-section-number">4.18</span> Class Exercise: Polish A Scatterplot</a></li>
-  <li><a href="#direct-labels" id="toc-direct-labels" class="nav-link" data-scroll-target="#direct-labels"><span class="header-section-number">4.19</span> Direct Labels</a></li>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">4.20</span> Exercises</a></li>
-  <li><a href="#extra-material" id="toc-extra-material" class="nav-link" data-scroll-target="#extra-material"><span class="header-section-number">4.21</span> Extra Material</a>
+  <li><a href="#low-hanging-fruit" id="toc-low-hanging-fruit" class="nav-link" data-scroll-target="#low-hanging-fruit"><span class="header-section-number">4.18</span> Low-hanging fruit</a></li>
+  <li><a href="#class-exercise-a-simple-scatterplot" id="toc-class-exercise-a-simple-scatterplot" class="nav-link" data-scroll-target="#class-exercise-a-simple-scatterplot"><span class="header-section-number">4.19</span> Class Exercise: A Simple Scatterplot</a></li>
+  <li><a href="#direct-labels" id="toc-direct-labels" class="nav-link" data-scroll-target="#direct-labels"><span class="header-section-number">4.20</span> Direct Labels</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">4.21</span> Exercises</a></li>
+  <li><a href="#extra-material" id="toc-extra-material" class="nav-link" data-scroll-target="#extra-material"><span class="header-section-number">4.22</span> Extra Material</a>
   <ul class="collapse">
-  <li><a href="#extra-1-built-in-themes" id="toc-extra-1-built-in-themes" class="nav-link" data-scroll-target="#extra-1-built-in-themes"><span class="header-section-number">4.21.1</span> Extra 1: Built-In Themes</a></li>
-  <li><a href="#extra-2-discussion-prompt" id="toc-extra-2-discussion-prompt" class="nav-link" data-scroll-target="#extra-2-discussion-prompt"><span class="header-section-number">4.21.2</span> Extra 2: Discussion Prompt</a></li>
+  <li><a href="#extra-1-built-in-themes" id="toc-extra-1-built-in-themes" class="nav-link" data-scroll-target="#extra-1-built-in-themes"><span class="header-section-number">4.22.1</span> Extra 1: Built-In Themes</a></li>
+  <li><a href="#extra-2-discussion-prompt" id="toc-extra-2-discussion-prompt" class="nav-link" data-scroll-target="#extra-2-discussion-prompt"><span class="header-section-number">4.22.2</span> Extra 2: Discussion Prompt</a></li>
   </ul></li>
-  <li><a href="#what-comes-next" id="toc-what-comes-next" class="nav-link" data-scroll-target="#what-comes-next"><span class="header-section-number">4.22</span> What Comes Next</a></li>
+  <li><a href="#what-comes-next" id="toc-what-comes-next" class="nav-link" data-scroll-target="#what-comes-next"><span class="header-section-number">4.23</span> What Comes Next</a></li>
   </ul>
 </nav>
     </div>
@@ -294,7 +298,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="03-core-ggplot2_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="03-core-ggplot2_files/figure-html/ch03-chunk-03-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -306,7 +310,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="03-core-ggplot2_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="03-core-ggplot2_files/figure-html/ch03-chunk-04-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -322,7 +326,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="03-core-ggplot2_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="03-core-ggplot2_files/figure-html/ch03-plot-05-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -331,7 +335,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="03-core-ggplot2_files/figure-html/unnamed-chunk-5-2.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="03-core-ggplot2_files/figure-html/ch03-plot-05-2.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -345,7 +349,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="defaults" class="level2" data-number="4.5">
 <h2 data-number="4.5" class="anchored" data-anchor-id="defaults"><span class="header-section-number">4.5</span> Defaults</h2>
-<p><code>ggplot2</code> starts with defaults that are usually sensible. They are not always the final answer, but they provide a much better starting point than many default graphics. The usual workflow is therefore to begin with a simple plot and improve it incrementally.</p>
+<p><code>ggplot2</code> starts with defaults that are usually sensible and have good aesthetic “taste.” They are not always the final answer, but they provide a much better starting point than the default graphics. The usual workflow is therefore to begin with a simple plot and improve it incrementally.</p>
 </section>
 <section id="the-grammar-of-graphics" class="level2" data-number="4.6">
 <h2 data-number="4.6" class="anchored" data-anchor-id="the-grammar-of-graphics"><span class="header-section-number">4.6</span> The Grammar of Graphics</h2>
@@ -354,7 +358,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>a dataset</li>
 <li>a mapping from variables to visual features</li>
-<li>one or more geoms</li>
+<li>one or more geoms that are the plotted geometric forms</li>
 </ul>
 <p>This separation matters because it keeps different design decisions from collapsing into one another. First decide what data belong in the figure. Then decide how variables should be encoded visually. Then decide which geometric form best supports the comparison of interest. That sequence makes plots easier both to build and to diagnose.</p>
 </section>
@@ -367,35 +371,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap, <span class="at">y =</span> lifeExp)</span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>Here <code>gdpPercap</code> is mapped to the x-axis and <code>lifeExp</code> is mapped to the y-axis. Inside <code>aes()</code>, write variable names from the dataset. Outside <code>aes()</code>, write fixed styling choices such as <code>"steelblue"</code> or <code>0.3</code>.</p>
+<p>Inside <code>aes()</code>, <code>gdpPercap</code> is mapped to the x-axis and <code>lifeExp</code> is mapped to the y-axis. They are variable names from the dataset.</p>
 <p>That distinction matters because <code>aes()</code> is about data, not decoration. If color appears inside <code>aes()</code>, it carries information. If color appears outside <code>aes()</code>, it is simply a design choice.</p>
-<p>Saving the plot object as <code>p_gap</code> is also a useful habit to notice. A <code>ggplot</code> object can be stored, then extended later with additional layers. That is what makes patterns such as <code>p_gap + geom_point()</code> possible.</p>
-<p>Saved plot objects can also be exported later. The pattern is to build the plot, give it a name, inspect it, and then save it:</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>my_plot <span class="ot">&lt;-</span> p_gap <span class="sc">+</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.25</span>) <span class="sc">+</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>(<span class="at">labels =</span> scales<span class="sc">::</span>dollar) <span class="sc">+</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Economic Growth and Life Expectancy"</span>,</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"GDP per capita"</span>,</span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Life expectancy"</span></span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>my_plot</span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">"my-plot.png"</span>, <span class="at">plot =</span> my_plot, <span class="at">width =</span> <span class="dv">8</span>, <span class="at">height =</span> <span class="dv">5</span>, <span class="at">dpi =</span> <span class="dv">300</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>This is better than exporting by screenshot because the file is reproducible. If the plot changes, rerunning the same code updates the saved output.</p>
+<p>Saving the plot object temporarily as <code>p_gap</code> is also a useful habit to notice. A <code>ggplot</code> object can be stored, then extended later with additional layers. That is what makes patterns such as <code>p_gap + geom_point()</code> possible.</p>
 </section>
-<section id="first-scatterplot" class="level2" data-number="4.8">
-<h2 data-number="4.8" class="anchored" data-anchor-id="first-scatterplot"><span class="header-section-number">4.8</span> First Scatterplot</h2>
+<section id="building-a-visualization-pipeline" class="level2" data-number="4.8">
+<h2 data-number="4.8" class="anchored" data-anchor-id="building-a-visualization-pipeline"><span class="header-section-number">4.8</span> Building A Visualization Pipeline</h2>
+<p>In <code>ggplot2</code>, a plot is built in pieces. A base plot object holds the data and the default mappings, and then the <code>+</code> operator keeps adding geoms, labels, scales, and themes.</p>
+<p>The <code>+</code> operator can be read as “take this plot, then add this next component.” That is why <code>ggplot2</code> code often reads like a visual pipeline: start with the data and mappings, then layer on the parts that make the figure complete.</p>
+<section id="our-first-geom-a-scatterplot" class="level3" data-number="4.8.1">
+<h3 data-number="4.8.1" class="anchored" data-anchor-id="our-first-geom-a-scatterplot"><span class="header-section-number">4.8.1</span> Our First Geom: A Scatterplot</h3>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>p_gap <span class="sc">+</span> <span class="fu">geom_point</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>p_gap <span class="sc">+</span> </span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="03-core-ggplot2_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="03-core-ggplot2_files/figure-html/ch03-chunk-08-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -403,34 +395,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>The <code>geom_point()</code> layer is what actually draws the marks. The plot object <code>p_gap</code> supplies the data and the default mappings; the geom decides how those mapped values appear on the page.</p>
 <p>That already improves on many default base R graphics, but the x-axis is hard to read because GDP per capita is strongly skewed.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
 </section>
+</section>
 <section id="mapping-versus-setting" class="level2" data-number="4.9">
 <h2 data-number="4.9" class="anchored" data-anchor-id="mapping-versus-setting"><span class="header-section-number">4.9</span> Mapping Versus Setting</h2>
 <p>One of the most important <code>ggplot2</code> distinctions is mapping an aesthetic versus setting it.</p>
 <p>The <code>alpha</code> argument appears in the next few plots. <code>alpha</code> controls transparency: lower values make points lighter and more see-through, which is often useful when many points overlap.</p>
 <p>When a variable is <strong>mapped</strong>, the visual feature changes with the data.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>p_gap <span class="sc">+</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> continent), <span class="at">alpha =</span> <span class="fl">0.35</span>) <span class="sc">+</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>(<span class="at">labels =</span> scales<span class="sc">::</span>dollar) <span class="sc">+</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>p_gap <span class="sc">+</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> continent), <span class="at">alpha =</span> <span class="fl">0.4</span>) <span class="sc">+</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>(<span class="at">labels =</span> scales<span class="sc">::</span>dollar) <span class="sc">+</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="03-core-ggplot2_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="03-core-ggplot2_files/figure-html/ch03-chunk-09-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>When a visual property is <strong>set</strong>, it stays fixed.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>p_gap <span class="sc">+</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"steelblue"</span>, <span class="at">alpha =</span> <span class="fl">0.35</span>) <span class="sc">+</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>(<span class="at">labels =</span> scales<span class="sc">::</span>dollar) <span class="sc">+</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>p_gap <span class="sc">+</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"steelblue"</span>, <span class="at">alpha =</span> <span class="fl">0.4</span>) <span class="sc">+</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>(<span class="at">labels =</span> scales<span class="sc">::</span>dollar) <span class="sc">+</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="03-core-ggplot2_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="03-core-ggplot2_files/figure-html/ch03-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -446,15 +439,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><code>geom_line()</code> usually works when the x variable is ordered, especially time.</li>
 <li><code>geom_col()</code> works when the bar heights have already been summarized in the data.</li>
 </ul>
-<p>Those choices are substantive, not cosmetic. Changing the geom changes the question the plot answers.</p>
 <p>For a fuller catalog of available geoms, scales, coordinate systems, and themes, the main <code>ggplot2</code> reference index is useful: <a href="https://ggplot2.tidyverse.org/reference/index.html">ggplot2 reference index</a>.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(midwest_data, <span class="fu">aes</span>(<span class="at">x =</span> percollege)) <span class="sc">+</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(midwest_data, <span class="fu">aes</span>(<span class="at">x =</span> percollege)) <span class="sc">+</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="03-core-ggplot2_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="03-core-ggplot2_files/figure-html/ch03-plot-11-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -467,13 +459,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="linear-smoother" class="level3" data-number="4.11.1">
 <h3 data-number="4.11.1" class="anchored" data-anchor-id="linear-smoother"><span class="header-section-number">4.11.1</span> Linear Smoother</h3>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>p_gap <span class="sc">+</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.25</span>) <span class="sc">+</span></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">formula =</span> y <span class="sc">~</span> x, <span class="at">linewidth =</span> <span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>p_gap <span class="sc">+</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.25</span>) <span class="sc">+</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">formula =</span> y <span class="sc">~</span> x, <span class="at">linewidth =</span> <span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="03-core-ggplot2_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="03-core-ggplot2_files/figure-html/ch03-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -483,13 +475,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="loess-smoother" class="level3" data-number="4.11.2">
 <h3 data-number="4.11.2" class="anchored" data-anchor-id="loess-smoother"><span class="header-section-number">4.11.2</span> Loess Smoother</h3>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>p_gap <span class="sc">+</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.25</span>) <span class="sc">+</span></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"loess"</span>, <span class="at">formula =</span> y <span class="sc">~</span> x, <span class="at">linewidth =</span> <span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>p_gap <span class="sc">+</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.25</span>) <span class="sc">+</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"loess"</span>, <span class="at">formula =</span> y <span class="sc">~</span> x, <span class="at">linewidth =</span> <span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="03-core-ggplot2_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="03-core-ggplot2_files/figure-html/ch03-chunk-13-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -502,14 +494,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 data-number="4.12" class="anchored" data-anchor-id="log-scales"><span class="header-section-number">4.12</span> Log Scales</h2>
 <p>Some variables are distributed so unevenly that a standard linear axis hides most of the interesting variation. GDP per capita is a good example: a few very high-income countries can stretch the axis so much that lower- and middle-income countries are compressed into one corner.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>p_gap <span class="sc">+</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.25</span>) <span class="sc">+</span></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">formula =</span> y <span class="sc">~</span> x, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>(<span class="at">labels =</span> scales<span class="sc">::</span>dollar)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>p_gap <span class="sc">+</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.25</span>) <span class="sc">+</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">formula =</span> y <span class="sc">~</span> x, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>(<span class="at">labels =</span> scales<span class="sc">::</span>dollar)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="03-core-ggplot2_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="03-core-ggplot2_files/figure-html/ch03-chunk-14-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -521,19 +513,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 data-number="4.13" class="anchored" data-anchor-id="labels-with-labs"><span class="header-section-number">4.13</span> Labels With <code>labs()</code></h2>
 <p><code>labs()</code> is the main way to add descriptive text to a plot. It can supply a title, subtitle, axis labels, captions, and legend titles.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>p_gap <span class="sc">+</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.25</span>) <span class="sc">+</span></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Economic Growth and Life Expectancy"</span>,</span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Countries in 2007"</span>,</span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"GDP per capita"</span>,</span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Life expectancy"</span>,</span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"Source: Gapminder"</span></span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>p_gap <span class="sc">+</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.25</span>) <span class="sc">+</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">formula =</span> y <span class="sc">~</span> x, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>(<span class="at">labels =</span> scales<span class="sc">::</span>dollar) <span class="sc">+</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Economic Growth and Life Expectancy"</span>,</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Countries in 2007"</span>,</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"GDP per capita"</span>,</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Life expectancy"</span>,</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"Source: Gapminder"</span></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="03-core-ggplot2_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="03-core-ggplot2_files/figure-html/ch03-chunk-15-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -546,21 +540,36 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Themes control the non-data parts of a plot: the background, grid lines, fonts, spacing, legend placement, and other visual defaults around the marks themselves. They do not change the underlying data or the geom. They change how the plot is presented.</p>
 <p><code>theme_minimal()</code> is a common first choice because it removes some of the heavier default background elements without changing the underlying data display.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>p_gap <span class="sc">+</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.25</span>) <span class="sc">+</span></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>p_gap <span class="sc">+</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.25</span>) <span class="sc">+</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="03-core-ggplot2_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="03-core-ggplot2_files/figure-html/ch03-chunk-16-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>This is not the only useful theme, but it is a simple one to introduce early. A fuller comparison of built-in themes appears later in the chapter.</p>
 </section>
-<section id="the-improved-scatterplot" class="level2" data-number="4.15">
-<h2 data-number="4.15" class="anchored" data-anchor-id="the-improved-scatterplot"><span class="header-section-number">4.15</span> The Improved Scatterplot</h2>
+<section id="a-short-note-on-color-schemes" class="level2" data-number="4.15">
+<h2 data-number="4.15" class="anchored" data-anchor-id="a-short-note-on-color-schemes"><span class="header-section-number">4.15</span> A Short Note On Color Schemes</h2>
+<p>Themes control the overall framing of the plot, but color scales control how mapped colors are chosen. Two especially common families are <code>RColorBrewer</code> palettes and <code>viridis</code> palettes.</p>
+<p><code>RColorBrewer</code> palettes offer many named qualitative, sequential, and diverging schemes. <code>viridis</code> palettes are popular because they stay readable across a wide range of values and usually remain more accessible for viewers with color-vision differences.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>p_gap <span class="sc">+</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> continent), <span class="at">alpha =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_brewer</span>(<span class="at">palette =</span> <span class="st">"Dark2"</span>)</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>p_gap <span class="sc">+</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> continent), <span class="at">alpha =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_viridis_d</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>For categorical variables, functions ending in <code>_d()</code> are common. For continuous variables, the matching pattern is often <code>_c()</code>, as in <code>scale_color_viridis_c()</code>.</p>
+</section>
+<section id="the-improved-scatterplot" class="level2" data-number="4.16">
+<h2 data-number="4.16" class="anchored" data-anchor-id="the-improved-scatterplot"><span class="header-section-number">4.16</span> The Improved Scatterplot</h2>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>p_gap <span class="sc">+</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.25</span>) <span class="sc">+</span></span>
@@ -577,15 +586,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="03-core-ggplot2_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="03-core-ggplot2_files/figure-html/ch03-chunk-17-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>This version now combines the main pieces introduced so far. Transparency reduces overplotting. The smoother summarizes the broad relationship. The log-scaled x-axis makes the economic variation easier to inspect. <code>labs()</code> supplies the descriptive text. <code>theme_minimal()</code> removes some of the default visual clutter.</p>
 </section>
-<section id="continuous-aesthetics" class="level2" data-number="4.16">
-<h2 data-number="4.16" class="anchored" data-anchor-id="continuous-aesthetics"><span class="header-section-number">4.16</span> Continuous Aesthetics</h2>
+<section id="continuous-aesthetics" class="level2" data-number="4.17">
+<h2 data-number="4.17" class="anchored" data-anchor-id="continuous-aesthetics"><span class="header-section-number">4.17</span> Continuous Aesthetics</h2>
 <p>Not every mapped aesthetic has to be categorical. Continuous variables can also be mapped to visual features like size or color.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(gap_2007, <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap, <span class="at">y =</span> lifeExp)) <span class="sc">+</span></span>
@@ -605,14 +614,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="03-core-ggplot2_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="03-core-ggplot2_files/figure-html/ch03-plot-18-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>Mapping <code>pop</code> to <code>size</code> makes each point’s area scale with the country’s population, so the largest countries stand out without being assigned to a discrete group. <code>scale_size_area()</code> is used here rather than the default <code>scale_size()</code> because it keeps point area proportional to the value. This pattern is useful when the goal is to preserve a third numeric variable rather than split the data into discrete groups.</p>
-<section id="aes-inside-a-geom" class="level3" data-number="4.16.1">
-<h3 data-number="4.16.1" class="anchored" data-anchor-id="aes-inside-a-geom"><span class="header-section-number">4.16.1</span> <code>aes()</code> Inside A Geom</h3>
+<section id="aes-inside-a-geom" class="level3" data-number="4.17.1">
+<h3 data-number="4.17.1" class="anchored" data-anchor-id="aes-inside-a-geom"><span class="header-section-number">4.17.1</span> <code>aes()</code> Inside A Geom</h3>
 <p>The code above also introduces something new. Up to this point, every <code>aes()</code> call has been inside <code>ggplot()</code>:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> gap_2007, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap, <span class="at">y =</span> lifeExp)) <span class="sc">+</span></span>
@@ -620,7 +629,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="03-core-ggplot2_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="03-core-ggplot2_files/figure-html/ch03-plot-19-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -635,7 +644,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="03-core-ggplot2_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="03-core-ggplot2_files/figure-html/ch03-plot-20-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -644,8 +653,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>The rule is simple: put a mapping in <code>ggplot()</code> when every layer should share it, and put it inside a specific geom when only that layer should use it.</p>
 </section>
 </section>
-<section id="low-hanging-fruit" class="level2" data-number="4.17">
-<h2 data-number="4.17" class="anchored" data-anchor-id="low-hanging-fruit"><span class="header-section-number">4.17</span> Low-hanging fruit</h2>
+<section id="low-hanging-fruit" class="level2" data-number="4.18">
+<h2 data-number="4.18" class="anchored" data-anchor-id="low-hanging-fruit"><span class="header-section-number">4.18</span> Low-hanging fruit</h2>
 <p>In a short course, these are the highest-value improvements:</p>
 <ul>
 <li>better titles and subtitles</li>
@@ -655,26 +664,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <p>You do not need a long catalog of tricks to make a plot better. In practice, clarity usually improves more from better labels, ordering, and scale choices than from elaborate visual decoration. Themes do a lot of the work to make things more aesthetically appealing, but should be done after the basics.</p>
 </section>
-<section id="class-exercise-polish-a-scatterplot" class="level2" data-number="4.18">
-<h2 data-number="4.18" class="anchored" data-anchor-id="class-exercise-polish-a-scatterplot"><span class="header-section-number">4.18</span> Class Exercise: Polish A Scatterplot</h2>
+<section id="class-exercise-a-simple-scatterplot" class="level2" data-number="4.19">
+<h2 data-number="4.19" class="anchored" data-anchor-id="class-exercise-a-simple-scatterplot"><span class="header-section-number">4.19</span> Class Exercise: A Simple Scatterplot</h2>
 <p>Time: about five minutes.</p>
-<p>Starting from <code>p_gap</code>, make a cleaner scatterplot by adding four things:</p>
+<p>Use the built-in <code>mtcars</code> dataset to make a quick scatterplot of car weight and miles per gallon.</p>
+<p>Add:</p>
 <ol type="1">
-<li><code>geom_point()</code> with some transparency</li>
-<li>a log-scaled x-axis</li>
-<li>a title plus clearer axis labels</li>
+<li><code>geom_point()</code></li>
+<li>a linear smoother with <code>geom_smooth(method = "lm", ...)</code></li>
+<li>a title plus clearer axis labels with <code>labs()</code></li>
 <li><code>theme_minimal()</code></li>
 </ol>
+<p>If time remains, replace the linear smoother with a loess smoother and compare the result.</p>
 <p>Starter code:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>p_gap <span class="sc">+</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(<span class="at">x =</span> wt, <span class="at">y =</span> mpg)) <span class="sc">+</span></span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(...) <span class="sc">+</span></span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>(...) <span class="sc">+</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(...) <span class="sc">+</span></span>
 <span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(...) <span class="sc">+</span></span>
 <span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>One solution is in <code>Exercises/03-class-exercise-solution.R</code>.</p>
 </section>
-<section id="direct-labels" class="level2" data-number="4.19">
-<h2 data-number="4.19" class="anchored" data-anchor-id="direct-labels"><span class="header-section-number">4.19</span> Direct Labels</h2>
+<section id="direct-labels" class="level2" data-number="4.20">
+<h2 data-number="4.20" class="anchored" data-anchor-id="direct-labels"><span class="header-section-number">4.20</span> Direct Labels</h2>
 <p>Direct labels can sometimes replace a legend altogether.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>label_data <span class="ot">&lt;-</span> gap_2007 <span class="sc">|&gt;</span></span>
@@ -703,14 +714,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="03-core-ggplot2_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="03-core-ggplot2_files/figure-html/ch03-label-data-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
 </section>
-<section id="exercises" class="level2" data-number="4.20">
-<h2 data-number="4.20" class="anchored" data-anchor-id="exercises"><span class="header-section-number">4.20</span> Exercises</h2>
+<section id="exercises" class="level2" data-number="4.21">
+<h2 data-number="4.21" class="anchored" data-anchor-id="exercises"><span class="header-section-number">4.21</span> Exercises</h2>
 <ol type="1">
 <li>Recreate the life expectancy versus GDP plot with <code>continent</code> mapped to color.</li>
 <li>Make the same plot with a fixed point color instead.</li>
@@ -718,10 +729,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ol>
 <p>These exercises reinforce the main logic of the chapter: build a simple plot, understand what each layer is doing, and improve clarity with the smallest useful changes.</p>
 </section>
-<section id="extra-material" class="level2" data-number="4.21">
-<h2 data-number="4.21" class="anchored" data-anchor-id="extra-material"><span class="header-section-number">4.21</span> Extra Material</h2>
-<section id="extra-1-built-in-themes" class="level3" data-number="4.21.1">
-<h3 data-number="4.21.1" class="anchored" data-anchor-id="extra-1-built-in-themes"><span class="header-section-number">4.21.1</span> Extra 1: Built-In Themes</h3>
+<section id="extra-material" class="level2" data-number="4.22">
+<h2 data-number="4.22" class="anchored" data-anchor-id="extra-material"><span class="header-section-number">4.22</span> Extra Material</h2>
+<section id="extra-1-built-in-themes" class="level3" data-number="4.22.1">
+<h3 data-number="4.22.1" class="anchored" data-anchor-id="extra-1-built-in-themes"><span class="header-section-number">4.22.1</span> Extra 1: Built-In Themes</h3>
 <p>Built-in themes are one of the quickest ways to change the overall look of a plot. <code>theme_minimal()</code> has already appeared once; this extra compares it with two other common built-in options.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>theme_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(gap_2007, <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap, <span class="at">y =</span> lifeExp)) <span class="sc">+</span></span>
@@ -737,7 +748,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="03-core-ggplot2_files/figure-html/unnamed-chunk-22-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="03-core-ggplot2_files/figure-html/ch03-theme-plot-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -745,7 +756,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="03-core-ggplot2_files/figure-html/unnamed-chunk-22-2.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="03-core-ggplot2_files/figure-html/ch03-theme-plot-2.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -753,15 +764,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="03-core-ggplot2_files/figure-html/unnamed-chunk-22-3.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="03-core-ggplot2_files/figure-html/ch03-theme-plot-3.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
 <p><code>theme_grey()</code> is the default, <code>theme_bw()</code> often works well for print, and <code>theme_minimal()</code> removes more background structure.</p>
 </section>
-<section id="extra-2-discussion-prompt" class="level3" data-number="4.21.2">
-<h3 data-number="4.21.2" class="anchored" data-anchor-id="extra-2-discussion-prompt"><span class="header-section-number">4.21.2</span> Extra 2: Discussion Prompt</h3>
+<section id="extra-2-discussion-prompt" class="level3" data-number="4.22.2">
+<h3 data-number="4.22.2" class="anchored" data-anchor-id="extra-2-discussion-prompt"><span class="header-section-number">4.22.2</span> Extra 2: Discussion Prompt</h3>
 <ul>
 <li>When is a direct label better than a legend?</li>
 <li>What does a log-scaled x-axis solve here?</li>
@@ -769,8 +780,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 </section>
 </section>
-<section id="what-comes-next" class="level2" data-number="4.22">
-<h2 data-number="4.22" class="anchored" data-anchor-id="what-comes-next"><span class="header-section-number">4.22</span> What Comes Next</h2>
+<section id="what-comes-next" class="level2" data-number="4.23">
+<h2 data-number="4.23" class="anchored" data-anchor-id="what-comes-next"><span class="header-section-number">4.23</span> What Comes Next</h2>
 <p>The next chapter moves from one-panel plots to the broader problem of comparison.</p>
 <p>That includes color, faceting, line charts, bar charts, distributions, and the question of how to separate data clearly without adding clutter.</p>
 

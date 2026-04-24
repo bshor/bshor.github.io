@@ -154,7 +154,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./01-workflow-and-data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Workflow and Quarto</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">A Unified Visualization Workflow</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -184,7 +184,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./06-storytelling-dashboards-and-ai.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Extra: Dashboards and Agentic AI</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Dashboards, Slides, and Agentic AI</span></span></a>
   </div>
 </li>
     </ul>
@@ -198,29 +198,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#learning-goals" id="toc-learning-goals" class="nav-link active" data-scroll-target="#learning-goals"><span class="header-section-number">6.1</span> Learning Goals</a></li>
-  <li><a href="#the-question" id="toc-the-question" class="nav-link" data-scroll-target="#the-question"><span class="header-section-number">6.2</span> The Question</a></li>
+  <li><a href="#why-this-case-study" id="toc-why-this-case-study" class="nav-link" data-scroll-target="#why-this-case-study"><span class="header-section-number">6.2</span> Why This Case Study</a></li>
   <li><a href="#load-data" id="toc-load-data" class="nav-link" data-scroll-target="#load-data"><span class="header-section-number">6.3</span> Load Data</a></li>
   <li><a href="#step-1-inspect-the-data" id="toc-step-1-inspect-the-data" class="nav-link" data-scroll-target="#step-1-inspect-the-data"><span class="header-section-number">6.4</span> Step 1: Inspect The Data</a></li>
   <li><a href="#step-2-narrow-to-one-year" id="toc-step-2-narrow-to-one-year" class="nav-link" data-scroll-target="#step-2-narrow-to-one-year"><span class="header-section-number">6.5</span> Step 2: Narrow To One Year</a></li>
   <li><a href="#step-3-try-a-first-scatterplot" id="toc-step-3-try-a-first-scatterplot" class="nav-link" data-scroll-target="#step-3-try-a-first-scatterplot"><span class="header-section-number">6.6</span> Step 3: Try A First Scatterplot</a></li>
-  <li><a href="#class-exercise-repeat-the-first-plot-for-1985" id="toc-class-exercise-repeat-the-first-plot-for-1985" class="nav-link" data-scroll-target="#class-exercise-repeat-the-first-plot-for-1985"><span class="header-section-number">6.7</span> Class Exercise: Repeat The First Plot For 1985</a></li>
+  <li><a href="#class-exercise-try-a-different-predictor" id="toc-class-exercise-try-a-different-predictor" class="nav-link" data-scroll-target="#class-exercise-try-a-different-predictor"><span class="header-section-number">6.7</span> Class Exercise: Try A Different Predictor</a></li>
   <li><a href="#step-4-add-a-smoother" id="toc-step-4-add-a-smoother" class="nav-link" data-scroll-target="#step-4-add-a-smoother"><span class="header-section-number">6.8</span> Step 4: Add A Smoother</a></li>
-  <li><a href="#step-5-label-the-states-directly" id="toc-step-5-label-the-states-directly" class="nav-link" data-scroll-target="#step-5-label-the-states-directly"><span class="header-section-number">6.9</span> Step 5: Label The States Directly</a></li>
-  <li><a href="#step-6-build-a-more-compressed-summary" id="toc-step-6-build-a-more-compressed-summary" class="nav-link" data-scroll-target="#step-6-build-a-more-compressed-summary"><span class="header-section-number">6.10</span> Step 6: Build A More Compressed Summary</a></li>
-  <li><a href="#step-7-plot-the-summary-chart" id="toc-step-7-plot-the-summary-chart" class="nav-link" data-scroll-target="#step-7-plot-the-summary-chart"><span class="header-section-number">6.11</span> Step 7: Plot The Summary Chart</a></li>
-  <li><a href="#step-8-choose-the-final-figure" id="toc-step-8-choose-the-final-figure" class="nav-link" data-scroll-target="#step-8-choose-the-final-figure"><span class="header-section-number">6.12</span> Step 8: Choose The Final Figure</a></li>
-  <li><a href="#step-9-finalize-and-export" id="toc-step-9-finalize-and-export" class="nav-link" data-scroll-target="#step-9-finalize-and-export"><span class="header-section-number">6.13</span> Step 9: Finalize And Export</a></li>
-  <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection"><span class="header-section-number">6.14</span> Reflection</a></li>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">6.15</span> Exercises</a></li>
-  <li><a href="#extra-material" id="toc-extra-material" class="nav-link" data-scroll-target="#extra-material"><span class="header-section-number">6.16</span> Extra Material</a>
+  <li><a href="#step-5-add-a-title-axis-labels-and-a-theme" id="toc-step-5-add-a-title-axis-labels-and-a-theme" class="nav-link" data-scroll-target="#step-5-add-a-title-axis-labels-and-a-theme"><span class="header-section-number">6.9</span> Step 5: Add A Title, Axis Labels, And A Theme</a></li>
+  <li><a href="#step-6-label-the-states-directly" id="toc-step-6-label-the-states-directly" class="nav-link" data-scroll-target="#step-6-label-the-states-directly"><span class="header-section-number">6.10</span> Step 6: Label The States Directly</a></li>
+  <li><a href="#step-7-does-the-same-pattern-hold-in-1985" id="toc-step-7-does-the-same-pattern-hold-in-1985" class="nav-link" data-scroll-target="#step-7-does-the-same-pattern-hold-in-1985"><span class="header-section-number">6.11</span> Step 7: Does The Same Pattern Hold In 1985?</a></li>
+  <li><a href="#step-8-a-longer-time-series-view" id="toc-step-8-a-longer-time-series-view" class="nav-link" data-scroll-target="#step-8-a-longer-time-series-view"><span class="header-section-number">6.12</span> Step 8: A Longer Time-Series View</a></li>
+  <li><a href="#step-9-build-a-more-compressed-summary" id="toc-step-9-build-a-more-compressed-summary" class="nav-link" data-scroll-target="#step-9-build-a-more-compressed-summary"><span class="header-section-number">6.13</span> Step 9: Build A More Compressed Summary</a></li>
+  <li><a href="#step-10-plot-the-summary-chart" id="toc-step-10-plot-the-summary-chart" class="nav-link" data-scroll-target="#step-10-plot-the-summary-chart"><span class="header-section-number">6.14</span> Step 10: Plot The Summary Chart</a></li>
+  <li><a href="#step-11-choose-the-final-figure" id="toc-step-11-choose-the-final-figure" class="nav-link" data-scroll-target="#step-11-choose-the-final-figure"><span class="header-section-number">6.15</span> Step 11: Choose The Final Figure</a></li>
+  <li><a href="#step-12-finalize-and-export" id="toc-step-12-finalize-and-export" class="nav-link" data-scroll-target="#step-12-finalize-and-export"><span class="header-section-number">6.16</span> Step 12: Finalize And Export</a></li>
+  <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection"><span class="header-section-number">6.17</span> Reflection</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">6.18</span> Exercises</a></li>
+  <li><a href="#extra-material" id="toc-extra-material" class="nav-link" data-scroll-target="#extra-material"><span class="header-section-number">6.19</span> Extra Material</a>
   <ul class="collapse">
-  <li><a href="#extra-1-compare-1985-and-1995-with-facets" id="toc-extra-1-compare-1985-and-1995-with-facets" class="nav-link" data-scroll-target="#extra-1-compare-1985-and-1995-with-facets"><span class="header-section-number">6.16.1</span> Extra 1: Compare 1985 And 1995 With Facets</a></li>
-  <li><a href="#extra-2-highlight-one-state-against-all-others" id="toc-extra-2-highlight-one-state-against-all-others" class="nav-link" data-scroll-target="#extra-2-highlight-one-state-against-all-others"><span class="header-section-number">6.16.2</span> Extra 2: Highlight One State Against All Others</a></li>
-  <li><a href="#extra-3-facet-a-small-set-of-states" id="toc-extra-3-facet-a-small-set-of-states" class="nav-link" data-scroll-target="#extra-3-facet-a-small-set-of-states"><span class="header-section-number">6.16.3</span> Extra 3: Facet A Small Set Of States</a></li>
-  <li><a href="#extra-4-a-very-simple-us-state-map" id="toc-extra-4-a-very-simple-us-state-map" class="nav-link" data-scroll-target="#extra-4-a-very-simple-us-state-map"><span class="header-section-number">6.16.4</span> Extra 4: A Very Simple US State Map</a></li>
-  <li><a href="#extra-5-discussion-prompt" id="toc-extra-5-discussion-prompt" class="nav-link" data-scroll-target="#extra-5-discussion-prompt"><span class="header-section-number">6.16.5</span> Extra 5: Discussion Prompt</a></li>
+  <li><a href="#extra-1-highlight-one-state-against-all-others" id="toc-extra-1-highlight-one-state-against-all-others" class="nav-link" data-scroll-target="#extra-1-highlight-one-state-against-all-others"><span class="header-section-number">6.19.1</span> Extra 1: Highlight One State Against All Others</a></li>
+  <li><a href="#extra-2-a-very-simple-us-state-map" id="toc-extra-2-a-very-simple-us-state-map" class="nav-link" data-scroll-target="#extra-2-a-very-simple-us-state-map"><span class="header-section-number">6.19.2</span> Extra 2: A Very Simple US State Map</a></li>
+  <li><a href="#extra-3-a-hex-tile-version-of-the-same-map" id="toc-extra-3-a-hex-tile-version-of-the-same-map" class="nav-link" data-scroll-target="#extra-3-a-hex-tile-version-of-the-same-map"><span class="header-section-number">6.19.3</span> Extra 3: A Hex-Tile Version Of The Same Map</a></li>
+  <li><a href="#extra-4-discussion-prompt" id="toc-extra-4-discussion-prompt" class="nav-link" data-scroll-target="#extra-4-discussion-prompt"><span class="header-section-number">6.19.4</span> Extra 4: Discussion Prompt</a></li>
   </ul></li>
-  <li><a href="#what-comes-next" id="toc-what-comes-next" class="nav-link" data-scroll-target="#what-comes-next"><span class="header-section-number">6.17</span> What Comes Next</a></li>
+  <li><a href="#what-comes-next" id="toc-what-comes-next" class="nav-link" data-scroll-target="#what-comes-next"><span class="header-section-number">6.20</span> What Comes Next</a></li>
   </ul>
 </nav>
     </div>
@@ -255,13 +257,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>keep labels and axis units aligned with the substantive variables</li>
 </ul>
 </section>
-<section id="the-question" class="level2" data-number="6.2">
-<h2 data-number="6.2" class="anchored" data-anchor-id="the-question"><span class="header-section-number">6.2</span> The Question</h2>
-<p>For this case study, the working question is:</p>
+<section id="why-this-case-study" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="why-this-case-study"><span class="header-section-number">6.2</span> Why This Case Study</h2>
+<p>Cigarette taxes are the single most widely used policy tool for reducing smoking, and they vary enormously across U.S. states — from a few cents per pack in tobacco-producing states to well over a dollar elsewhere. That variation is the kind of policy laboratory social scientists work with all the time: a large, continuous predictor that states set themselves, a clearly measurable outcome (packs per capita), and a real substantive question behind it.</p>
+<p>The working question for the rest of the chapter is:</p>
 <blockquote class="blockquote">
 <p>How do state cigarette taxes relate to cigarette consumption, and what is the clearest way to show that relationship?</p>
 </blockquote>
-<p>The focus here is narrower than in the earlier draft of this chapter. Rather than comparing several possible predictors, this version stays with one substantively important pair of variables: cigarette taxes and cigarette consumption.</p>
+<p>The tradeoffs that come up answering it — detailed scatterplot versus compressed summary, one year versus two, one state highlighted versus all, a table of numbers versus a figure — recur in almost every piece of descriptive state-level analysis. The case study is small, but the moves it teaches generalize well beyond tobacco policy.</p>
 </section>
 <section id="load-data" class="level2" data-number="6.3">
 <h2 data-number="6.3" class="anchored" data-anchor-id="load-data"><span class="header-section-number">6.3</span> Load Data</h2>
@@ -269,279 +272,68 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)  <span class="co"># Core data import, transformation, and plotting tools</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggrepel)    <span class="co"># Separate overlapping text labels on plots</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>cigarettes_raw <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"Data/cigarettes/cigarettesSW.csv"</span>, <span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">scipen =</span> <span class="dv">999</span>)  <span class="co"># Print numbers in full, not scientific notation</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>cigarettes_raw <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"Data/cigarettes/cigarettesSW.csv"</span>, <span class="at">show_col_types =</span> <span class="cn">FALSE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">where</span>(is.numeric), round))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>This dataset records cigarette consumption and related state-level variables in <code>1985</code> and <code>1995</code>. <code>packs</code> is annual cigarette packs per capita, and <code>tax</code> is cigarette tax in cents per pack.</p>
+<p>This dataset records cigarette consumption and related state-level variables in <code>1985</code> and <code>1995</code>. <code>packs</code> is annual cigarette packs per capita. For taxes and prices, there are two versions of each column: <code>tax</code> and <code>price</code> are nominal cents per pack (the amount printed on the receipt at the time), while <code>real_tax</code> and <code>real_price</code> are the same amounts adjusted for inflation to constant dollars. For any comparison across years — 1985 vs 1995 — the real versions are what matter, because 20 cents in 1985 was worth substantively more than 20 cents in 1995. The rest of the chapter uses <code>real_tax</code> for that reason.</p>
 </section>
 <section id="step-1-inspect-the-data" class="level2" data-number="6.4">
 <h2 data-number="6.4" class="anchored" data-anchor-id="step-1-inspect-the-data"><span class="header-section-number">6.4</span> Step 1: Inspect The Data</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>skimr<span class="sc">::</span><span class="fu">skim</span>(cigarettes_raw)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<caption>Data summary</caption>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Name</td>
-<td style="text-align: left;">cigarettes_raw</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Number of rows</td>
-<td style="text-align: left;">96</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Number of columns</td>
-<td style="text-align: left;">12</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">_______________________</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Column type frequency:</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">character</td>
-<td style="text-align: left;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">numeric</td>
-<td style="text-align: left;">11</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">________________________</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Group variables</td>
-<td style="text-align: left;">None</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Variable type: character</strong></p>
-<table class="caption-top table table-sm table-striped small">
-<colgroup>
-<col style="width: 19%">
-<col style="width: 13%">
-<col style="width: 19%">
-<col style="width: 5%">
-<col style="width: 5%">
-<col style="width: 8%">
-<col style="width: 12%">
-<col style="width: 15%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">skim_variable</th>
-<th style="text-align: right;">n_missing</th>
-<th style="text-align: right;">complete_rate</th>
-<th style="text-align: right;">min</th>
-<th style="text-align: right;">max</th>
-<th style="text-align: right;">empty</th>
-<th style="text-align: right;">n_unique</th>
-<th style="text-align: right;">whitespace</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">state</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">48</td>
-<td style="text-align: right;">0</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Variable type: numeric</strong></p>
-<table class="caption-top table table-sm table-striped small">
-<colgroup>
-<col style="width: 10%">
-<col style="width: 7%">
-<col style="width: 10%">
-<col style="width: 9%">
-<col style="width: 10%">
-<col style="width: 8%">
-<col style="width: 9%">
-<col style="width: 9%">
-<col style="width: 9%">
-<col style="width: 10%">
-<col style="width: 4%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">skim_variable</th>
-<th style="text-align: right;">n_missing</th>
-<th style="text-align: right;">complete_rate</th>
-<th style="text-align: right;">mean</th>
-<th style="text-align: right;">sd</th>
-<th style="text-align: right;">p0</th>
-<th style="text-align: right;">p25</th>
-<th style="text-align: right;">p50</th>
-<th style="text-align: right;">p75</th>
-<th style="text-align: right;">p100</th>
-<th style="text-align: left;">hist</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">year</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">1990.00</td>
-<td style="text-align: right;">5.03</td>
-<td style="text-align: right;">1985.00</td>
-<td style="text-align: right;">1985.00</td>
-<td style="text-align: right;">1990.00</td>
-<td style="text-align: right;">1.99500e+03</td>
-<td style="text-align: right;">1995.00</td>
-<td style="text-align: left;">▇▁▁▁▇</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">cpi</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">1.30</td>
-<td style="text-align: right;">0.23</td>
-<td style="text-align: right;">1.08</td>
-<td style="text-align: right;">1.08</td>
-<td style="text-align: right;">1.30</td>
-<td style="text-align: right;">1.52000e+00</td>
-<td style="text-align: right;">1.52</td>
-<td style="text-align: left;">▇▁▁▁▇</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">population</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">5168866.32</td>
-<td style="text-align: right;">5442344.66</td>
-<td style="text-align: right;">478447.00</td>
-<td style="text-align: right;">1622606.50</td>
-<td style="text-align: right;">3697471.50</td>
-<td style="text-align: right;">5.90150e+06</td>
-<td style="text-align: right;">31493524.00</td>
-<td style="text-align: left;">▇▂▁▁▁</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">packs</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">109.18</td>
-<td style="text-align: right;">25.87</td>
-<td style="text-align: right;">49.27</td>
-<td style="text-align: right;">92.45</td>
-<td style="text-align: right;">110.16</td>
-<td style="text-align: right;">1.23520e+02</td>
-<td style="text-align: right;">197.99</td>
-<td style="text-align: left;">▂▇▇▁▁</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">income</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">99878735.74</td>
-<td style="text-align: right;">120541138.18</td>
-<td style="text-align: right;">6887097.00</td>
-<td style="text-align: right;">25520384.00</td>
-<td style="text-align: right;">61661644.00</td>
-<td style="text-align: right;">1.27314e+08</td>
-<td style="text-align: right;">771470144.00</td>
-<td style="text-align: left;">▇▁▁▁▁</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">tax</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">42.68</td>
-<td style="text-align: right;">16.14</td>
-<td style="text-align: right;">18.00</td>
-<td style="text-align: right;">31.00</td>
-<td style="text-align: right;">37.00</td>
-<td style="text-align: right;">5.08800e+01</td>
-<td style="text-align: right;">99.00</td>
-<td style="text-align: left;">▇▆▃▂▁</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">price</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">143.45</td>
-<td style="text-align: right;">43.89</td>
-<td style="text-align: right;">84.97</td>
-<td style="text-align: right;">102.71</td>
-<td style="text-align: right;">137.72</td>
-<td style="text-align: right;">1.76150e+02</td>
-<td style="text-align: right;">240.85</td>
-<td style="text-align: left;">▇▁▅▂▂</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">taxs</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">48.33</td>
-<td style="text-align: right;">19.33</td>
-<td style="text-align: right;">21.27</td>
-<td style="text-align: right;">34.77</td>
-<td style="text-align: right;">41.05</td>
-<td style="text-align: right;">5.94800e+01</td>
-<td style="text-align: right;">112.63</td>
-<td style="text-align: left;">▇▅▂▁▁</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">real_price</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">108.28</td>
-<td style="text-align: right;">17.36</td>
-<td style="text-align: right;">78.97</td>
-<td style="text-align: right;">95.45</td>
-<td style="text-align: right;">103.54</td>
-<td style="text-align: right;">1.18090e+02</td>
-<td style="text-align: right;">158.04</td>
-<td style="text-align: left;">▅▇▃▂▁</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">real_tax</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">32.33</td>
-<td style="text-align: right;">8.66</td>
-<td style="text-align: right;">16.73</td>
-<td style="text-align: right;">26.94</td>
-<td style="text-align: right;">31.17</td>
-<td style="text-align: right;">3.80100e+01</td>
-<td style="text-align: right;">64.96</td>
-<td style="text-align: left;">▃▇▃▁▁</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">real_taxs</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">36.46</td>
-<td style="text-align: right;">10.34</td>
-<td style="text-align: right;">19.77</td>
-<td style="text-align: right;">29.49</td>
-<td style="text-align: right;">34.82</td>
-<td style="text-align: right;">4.20800e+01</td>
-<td style="text-align: right;">73.91</td>
-<td style="text-align: left;">▅▇▃▁▁</td>
-</tr>
-</tbody>
-</table>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">requireNamespace</span>(<span class="st">"skimr"</span>, <span class="at">quietly =</span> <span class="cn">TRUE</span>)) {</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  skimr<span class="sc">::</span><span class="fu">skim</span>(cigarettes_raw)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">glimpse</span>(cigarettes_raw)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summary</span>(cigarettes_raw)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 96
+Columns: 12
+$ state      &lt;chr&gt; "AL", "AR", "AZ", "CA", "CO", "CT", "DE", "FL", "GA", "IA",…
+$ year       &lt;dbl&gt; 1985, 1985, 1985, 1985, 1985, 1985, 1985, 1985, 1985, 1985,…
+$ cpi        &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,…
+$ population &lt;dbl&gt; 3973000, 2327000, 3184000, 26444000, 3209000, 3201000, 6180…
+$ packs      &lt;dbl&gt; 116, 129, 105, 100, 113, 109, 144, 122, 127, 114, 103, 123,…
+$ income     &lt;dbl&gt; 46014968, 26210736, 43956936, 447102816, 49466672, 60063368…
+$ tax        &lt;dbl&gt; 33, 37, 31, 26, 31, 42, 30, 37, 28, 34, 25, 28, 26, 32, 19,…
+$ price      &lt;dbl&gt; 102, 101, 109, 108, 94, 128, 102, 115, 97, 102, 103, 104, 9…
+$ taxs       &lt;dbl&gt; 33, 37, 36, 32, 31, 51, 30, 42, 29, 38, 29, 29, 31, 35, 23,…
+$ real_price &lt;dbl&gt; 95, 94, 101, 100, 88, 119, 95, 107, 90, 95, 96, 97, 89, 92,…
+$ real_tax   &lt;dbl&gt; 30, 34, 29, 24, 29, 39, 28, 34, 26, 32, 23, 26, 25, 30, 18,…
+$ real_taxs  &lt;dbl&gt; 31, 34, 34, 30, 29, 48, 28, 39, 27, 35, 27, 27, 29, 32, 22,…</code></pre>
 </div>
+<div class="cell-output cell-output-stdout">
+<pre><code>    state                year           cpi        population      
+ Length:96          Min.   :1985   Min.   :1.0   Min.   :  478447  
+ Class :character   1st Qu.:1985   1st Qu.:1.0   1st Qu.: 1622606  
+ Mode  :character   Median :1990   Median :1.5   Median : 3697472  
+                    Mean   :1990   Mean   :1.5   Mean   : 5168866  
+                    3rd Qu.:1995   3rd Qu.:2.0   3rd Qu.: 5901500  
+                    Max.   :1995   Max.   :2.0   Max.   :31493524  
+     packs           income               tax           price      
+ Min.   : 49.0   Min.   :  6887097   Min.   :18.0   Min.   : 85.0  
+ 1st Qu.: 92.0   1st Qu.: 25520384   1st Qu.:31.0   1st Qu.:102.8  
+ Median :110.0   Median : 61661644   Median :37.0   Median :137.5  
+ Mean   :109.2   Mean   : 99878736   Mean   :42.7   Mean   :143.4  
+ 3rd Qu.:123.2   3rd Qu.:127313964   3rd Qu.:50.5   3rd Qu.:176.0  
+ Max.   :198.0   Max.   :771470144   Max.   :99.0   Max.   :241.0  
+      taxs          real_price        real_tax       real_taxs    
+ Min.   : 21.00   Min.   : 79.00   Min.   :17.00   Min.   :20.00  
+ 1st Qu.: 35.00   1st Qu.: 95.75   1st Qu.:27.00   1st Qu.:29.75  
+ Median : 41.00   Median :103.50   Median :31.00   Median :35.00  
+ Mean   : 48.26   Mean   :108.25   Mean   :32.38   Mean   :36.48  
+ 3rd Qu.: 59.50   3rd Qu.:118.25   3rd Qu.:38.00   3rd Qu.:42.25  
+ Max.   :113.00   Max.   :158.00   Max.   :65.00   Max.   :74.00  </code></pre>
 </div>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>cigarettes_raw <span class="sc">|&gt;</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">states =</span> <span class="fu">n_distinct</span>(state),</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">years =</span> <span class="fu">n_distinct</span>(year),</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">first_year =</span> <span class="fu">min</span>(year),</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">last_year =</span> <span class="fu">max</span>(year)</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>cigarettes_raw <span class="sc">|&gt;</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">states =</span> <span class="fu">n_distinct</span>(state),</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">years =</span> <span class="fu">n_distinct</span>(year),</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">first_year =</span> <span class="fu">min</span>(year),</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">last_year =</span> <span class="fu">max</span>(year)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 4
   states years first_year last_year
@@ -552,21 +344,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>The data form a small panel, with each state observed in two years.</p>
 <p>Before narrowing to a single year, it is worth looking at how the tax variable is distributed across states in each year. A density plot is well suited to this: it shows the shape of the distribution without reducing it to a single number, and overlaying both years in one panel makes the shift between them easy to see.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(cigarettes_raw, <span class="fu">aes</span>(<span class="at">x =</span> tax, <span class="at">fill =</span> <span class="fu">factor</span>(year), <span class="at">color =</span> <span class="fu">factor</span>(year))) <span class="sc">+</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.35</span>, <span class="at">linewidth =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"State Cigarette Tax Distributions In 1985 And 1995"</span>,</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Densities are overlaid in one panel for direct comparison"</span>,</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Cigarette tax (cents per pack)"</span>,</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Density"</span>,</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">"Year"</span>,</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"Year"</span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(cigarettes_raw, <span class="fu">aes</span>(<span class="at">x =</span> real_tax, <span class="at">fill =</span> <span class="fu">factor</span>(year), <span class="at">color =</span> <span class="fu">factor</span>(year))) <span class="sc">+</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.35</span>, <span class="at">linewidth =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"State Cigarette Tax Distributions In 1985 And 1995"</span>,</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Densities are overlaid in one panel for direct comparison"</span>,</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Cigarette tax (real cents per pack)"</span>,</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Density"</span>,</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">"Year"</span>,</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"Year"</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="05-from-question-to-final-figure_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="05-from-question-to-final-figure_files/figure-html/ch05-plot-03-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -575,21 +367,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>The density plot is not the only way to compare these distributions. Two other common choices show the same information with different tradeoffs.</p>
 <p>A <strong>boxplot</strong> compresses each year’s distribution into a small five-number summary: median, quartiles, and whiskers. The result is compact and easy to read when several groups need to be compared side by side.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(cigarettes_raw, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">factor</span>(year), <span class="at">y =</span> tax, <span class="at">fill =</span> <span class="fu">factor</span>(year))) <span class="sc">+</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">width =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"State Cigarette Taxes By Year"</span>,</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Boxplots compress each distribution into a five-number summary"</span>,</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Year"</span>,</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Cigarette tax (cents per pack)"</span>,</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">"Year"</span></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(cigarettes_raw, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">factor</span>(year), <span class="at">y =</span> real_tax, <span class="at">fill =</span> <span class="fu">factor</span>(year))) <span class="sc">+</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">width =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"State Cigarette Taxes By Year"</span>,</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Boxplots compress each distribution into a five-number summary"</span>,</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Year"</span>,</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Cigarette tax (real cents per pack)"</span>,</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">"Year"</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="05-from-question-to-final-figure_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="05-from-question-to-final-figure_files/figure-html/ch05-plot-04-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -597,21 +389,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>The legend is suppressed because the x-axis already labels the two groups. Boxplots are good at center-and-spread comparisons but hide the actual shape of the distribution — for example, bimodality or skew would not show up at all.</p>
 <p>A <strong>violin plot</strong> keeps the side-by-side compactness of a boxplot while restoring the shape information from the density plot. Each “violin” is a symmetric density curve, so wider regions indicate more states concentrated at that tax level.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(cigarettes_raw, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">factor</span>(year), <span class="at">y =</span> tax, <span class="at">fill =</span> <span class="fu">factor</span>(year))) <span class="sc">+</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_violin</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"State Cigarette Taxes By Year"</span>,</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Violin plots combine the compactness of boxplots with the shape of densities"</span>,</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Year"</span>,</span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Cigarette tax (cents per pack)"</span>,</span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">"Year"</span></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(cigarettes_raw, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">factor</span>(year), <span class="at">y =</span> real_tax, <span class="at">fill =</span> <span class="fu">factor</span>(year))) <span class="sc">+</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_violin</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"State Cigarette Taxes By Year"</span>,</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Violin plots combine the compactness of boxplots with the shape of densities"</span>,</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Year"</span>,</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Cigarette tax (real cents per pack)"</span>,</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">"Year"</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="05-from-question-to-final-figure_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="05-from-question-to-final-figure_files/figure-html/ch05-plot-05-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -622,211 +414,310 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 data-number="6.5" class="anchored" data-anchor-id="step-2-narrow-to-one-year"><span class="header-section-number">6.5</span> Step 2: Narrow To One Year</h2>
 <p>Here the focus shifts to <code>1995</code>.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>cig_1995 <span class="ot">&lt;-</span> cigarettes_raw <span class="sc">|&gt;</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">1995</span>) <span class="sc">|&gt;</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(state, year, packs, tax, income, price, taxs)</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>cig_1995</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>cig_1995 <span class="ot">&lt;-</span> cigarettes_raw <span class="sc">|&gt;</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">1995</span>) <span class="sc">|&gt;</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(state, year, packs, real_tax, income, real_price, taxs)</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>cig_1995</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 48 × 7
-   state  year packs   tax    income price  taxs
-   &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
- 1 AL     1995 101.   40.5  83903280  158.  41.9
- 2 AR     1995 111.   55.5  45995496  176.  63.9
- 3 AZ     1995  72.0  65.3  88870496  199.  74.8
- 4 CA     1995  56.9  61   771470144  211.  74.8
- 5 CO     1995  82.6  44    92946544  167.  44  
- 6 CT     1995  79.5  74   104315120  218.  86.4
- 7 DE     1995 124.   48    18237436  166.  48  
- 8 FL     1995  93.1  57.9 333525344  188.  68.5
- 9 GA     1995  97.5  36   159800448  157.  37.4
-10 IA     1995  92.4  60    60170928  191.  69.1
+   state  year packs real_tax    income real_price  taxs
+   &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;      &lt;dbl&gt; &lt;dbl&gt;
+ 1 AL     1995   101       27  83903280        104    42
+ 2 AR     1995   111       36  45995496        115    64
+ 3 AZ     1995    72       43  88870496        130    75
+ 4 CA     1995    57       40 771470144        138    75
+ 5 CO     1995    83       29  92946544        110    44
+ 6 CT     1995    79       49 104315120        143    86
+ 7 DE     1995   124       31  18237436        109    48
+ 8 FL     1995    93       38 333525344        123    69
+ 9 GA     1995    97       24 159800448        103    37
+10 IA     1995    92       39  60170928        125    69
 # ℹ 38 more rows</code></pre>
 </div>
 </div>
 <p>Restricting to one year keeps the state comparison clear and avoids mixing change over time with cross-sectional variation.</p>
-<p>The units matter here. <code>tax</code> is measured in cents per pack, so the x-axis should stay in cents rather than being reformatted as dollars. <code>packs</code> is annual cigarette packs per capita.</p>
+<p>The units matter here. <code>real_tax</code> is measured in real cents per pack, so the x-axis should stay in cents rather than being reformatted as dollars. <code>packs</code> is annual cigarette packs per capita.</p>
 </section>
 <section id="step-3-try-a-first-scatterplot" class="level2" data-number="6.6">
 <h2 data-number="6.6" class="anchored" data-anchor-id="step-3-try-a-first-scatterplot"><span class="header-section-number">6.6</span> Step 3: Try A First Scatterplot</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(cig_1995, <span class="fu">aes</span>(<span class="at">x =</span> tax, <span class="at">y =</span> packs)) <span class="sc">+</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(cig_1995, <span class="fu">aes</span>(<span class="at">x =</span> real_tax, <span class="at">y =</span> packs)) <span class="sc">+</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="05-from-question-to-final-figure_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="05-from-question-to-final-figure_files/figure-html/ch05-plot-07-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>This is a workable first draft, but it still needs structure and labels.</p>
 </section>
-<section id="class-exercise-repeat-the-first-plot-for-1985" class="level2" data-number="6.7">
-<h2 data-number="6.7" class="anchored" data-anchor-id="class-exercise-repeat-the-first-plot-for-1985"><span class="header-section-number">6.7</span> Class Exercise: Repeat The First Plot For 1985</h2>
-<p>Time: about five minutes.</p>
-<p>Create a 1985 version of the first scatterplot:</p>
+<section id="class-exercise-try-a-different-predictor" class="level2" data-number="6.7">
+<h2 data-number="6.7" class="anchored" data-anchor-id="class-exercise-try-a-different-predictor"><span class="header-section-number">6.7</span> Class Exercise: Try A Different Predictor</h2>
+<p>Time: about ten minutes.</p>
+<p>The scatterplot above uses <code>real_tax</code> as the predictor. But the tax is only one part of what smokers actually pay — <code>real_price</code> is the full retail price per pack (inflation-adjusted), and <code>income</code> is average state per-capita income. Either one is a plausible predictor of cigarette consumption, and each tells a different substantive story.</p>
+<p>For the <code>1995</code> cross-section:</p>
 <ol type="1">
-<li>filter <code>cigarettes_raw</code> to <code>year == 1985</code></li>
-<li>put <code>tax</code> on the x-axis</li>
-<li>put <code>packs</code> on the y-axis</li>
-<li>add a title and axis labels</li>
-<li>use <code>theme_minimal()</code></li>
+<li>pick either <code>real_price</code> or <code>income</code> as the x-axis variable</li>
+<li>keep <code>packs</code> on the y-axis</li>
+<li>add a smoother with <code>geom_smooth(method = "lm", formula = y ~ x, se = FALSE)</code></li>
+<li>label the axes in the correct units (real price is in cents per pack, income is per-capita dollars)</li>
+<li>add a title that names the predictor, and use <code>theme_minimal()</code></li>
 </ol>
+<p>Then answer briefly:</p>
+<ul>
+<li>Is the association stronger, weaker, or in a different direction than the tax-vs-packs plot?</li>
+<li>Which of the three predictors (<code>real_tax</code>, <code>real_price</code>, <code>income</code>) do you think is the most informative, and why?</li>
+</ul>
 <p>Starter code:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>cig_1985 <span class="ot">&lt;-</span> cigarettes_raw <span class="sc">|&gt;</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(...)</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(cig_1985, <span class="fu">aes</span>(<span class="at">x =</span> ..., <span class="at">y =</span> ...)) <span class="sc">+</span></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(...) <span class="sc">+</span></span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(cig_1995, <span class="fu">aes</span>(<span class="at">x =</span> ..., <span class="at">y =</span> ...)) <span class="sc">+</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(...) <span class="sc">+</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(...) <span class="sc">+</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>One solution is in <code>Exercises/05-class-exercise-solution.R</code>.</p>
 </section>
 <section id="step-4-add-a-smoother" class="level2" data-number="6.8">
 <h2 data-number="6.8" class="anchored" data-anchor-id="step-4-add-a-smoother"><span class="header-section-number">6.8</span> Step 4: Add A Smoother</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(cig_1995, <span class="fu">aes</span>(<span class="at">x =</span> tax, <span class="at">y =</span> packs)) <span class="sc">+</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">formula =</span> y <span class="sc">~</span> x, <span class="at">se =</span> <span class="cn">FALSE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(cig_1995, <span class="fu">aes</span>(<span class="at">x =</span> real_tax, <span class="at">y =</span> packs)) <span class="sc">+</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">formula =</span> y <span class="sc">~</span> x, <span class="at">se =</span> <span class="cn">FALSE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="05-from-question-to-final-figure_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="05-from-question-to-final-figure_files/figure-html/ch05-plot-08-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>The smoother makes the negative association easier to see. It summarizes the pattern in the cross-section, but it does not by itself establish a causal effect. Higher taxes may reduce smoking, but taxes may also reflect political or cultural differences across states that are related to smoking in other ways.</p>
 </section>
-<section id="step-5-label-the-states-directly" class="level2" data-number="6.9">
-<h2 data-number="6.9" class="anchored" data-anchor-id="step-5-label-the-states-directly"><span class="header-section-number">6.9</span> Step 5: Label The States Directly</h2>
+<section id="step-5-add-a-title-axis-labels-and-a-theme" class="level2" data-number="6.9">
+<h2 data-number="6.9" class="anchored" data-anchor-id="step-5-add-a-title-axis-labels-and-a-theme"><span class="header-section-number">6.9</span> Step 5: Add A Title, Axis Labels, And A Theme</h2>
+<p>The plot from Step 4 shows the pattern but is unlabeled. <code>labs()</code> adds a title, an optional subtitle, and axis labels. <code>theme_minimal()</code> replaces the default gray panel with a lighter look that puts the focus on the data.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>final_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(cig_1995, <span class="fu">aes</span>(<span class="at">x =</span> tax, <span class="at">y =</span> packs)) <span class="sc">+</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"gray75"</span>, <span class="at">size =</span> <span class="fl">1.4</span>) <span class="sc">+</span></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">formula =</span> y <span class="sc">~</span> x, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">color =</span> <span class="st">"gray35"</span>, <span class="at">linewidth =</span> <span class="fl">0.9</span>) <span class="sc">+</span></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text_repel</span>(</span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">label =</span> state),</span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"steelblue4"</span>,</span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">size =</span> <span class="dv">3</span>,</span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">box.padding =</span> <span class="fl">0.2</span>,</span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">point.padding =</span> <span class="fl">0.15</span>,</span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">segment.color =</span> <span class="st">"gray80"</span>,</span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">min.segment.length =</span> <span class="dv">0</span>,</span>
-<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">seed =</span> <span class="dv">123</span></span>
-<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">100</span>, <span class="at">by =</span> <span class="dv">10</span>)) <span class="sc">+</span></span>
-<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_number</span>(<span class="at">accuracy =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
-<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Cigarette Taxes And Consumption In 1995"</span>,</span>
-<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Each label is a state; the smoother summarizes the overall association"</span>,</span>
-<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Cigarette tax (cents per pack)"</span>,</span>
-<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Annual cigarette packs per capita"</span></span>
-<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
-<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a>final_plot</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(cig_1995, <span class="fu">aes</span>(<span class="at">x =</span> real_tax, <span class="at">y =</span> packs)) <span class="sc">+</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">formula =</span> y <span class="sc">~</span> x, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Cigarette Taxes And Consumption In 1995"</span>,</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"The smoother summarizes the overall association"</span>,</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Cigarette tax (real cents per pack)"</span>,</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Annual cigarette packs per capita"</span></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="05-from-question-to-final-figure_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="05-from-question-to-final-figure_files/figure-html/ch05-plot-09-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
-<p>This version keeps the state identities visible while still showing the overall pattern clearly.</p>
+<p>This version is publication-adjacent: the pattern is clear, the axes are legible, and a reader who only sees the figure can still tell what it is about. The default axis ticks are perfectly readable, so there is no need to override them here.</p>
+</section>
+<section id="step-6-label-the-states-directly" class="level2" data-number="6.10">
+<h2 data-number="6.10" class="anchored" data-anchor-id="step-6-label-the-states-directly"><span class="header-section-number">6.10</span> Step 6: Label The States Directly</h2>
+<p>The scatterplot shows the overall relationship well, but each point is still anonymous. <code>geom_text_repel()</code> from the <code>ggrepel</code> package adds text labels that are automatically nudged apart so they do not overlap each other or the points.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>final_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(cig_1995, <span class="fu">aes</span>(<span class="at">x =</span> real_tax, <span class="at">y =</span> packs)) <span class="sc">+</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">formula =</span> y <span class="sc">~</span> x, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text_repel</span>(<span class="fu">aes</span>(<span class="at">label =</span> state), <span class="at">seed =</span> <span class="dv">42</span>) <span class="sc">+</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">100</span>, <span class="at">by =</span> <span class="dv">10</span>)) <span class="sc">+</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Cigarette Taxes And Consumption In 1995"</span>,</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Each label is a state; the smoother summarizes the overall association"</span>,</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Cigarette tax (real cents per pack)"</span>,</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Annual cigarette packs per capita"</span></span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>final_plot</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="05-from-question-to-final-figure_files/figure-html/ch05-final-plot-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><code>geom_text_repel()</code> only needs one mapping — <code>aes(label = state)</code> — to do its job. Everything else has a sensible default: it picks label sizes, nudges overlapping labels apart, and draws short line segments to the points they label. The only other argument here is <code>seed = 42</code>, which makes label placement reproducible — without it, <code>ggrepel</code> would pick slightly different positions on each render.</p>
+<p>This is also the first place a custom axis scale earns its keep. With state names crowding the plot area, denser x-axis tick marks help a reader look up a specific state’s tax value: <code>scale_x_continuous(breaks = seq(0, 100, by = 10))</code> replaces the defaults with a tick every 10 cents. <code>scale_x_continuous()</code> and its partner <code>scale_y_continuous()</code> control tick positions (<code>breaks</code>), axis range (<code>limits</code>), and label formatting (<code>labels</code>) on any continuous axis.</p>
+<p>The whole plot is also saved to an R object named <code>final_plot</code>, which will be useful in the export step later.</p>
 <p>The main pattern is negative, but not mechanical. Higher-tax states generally cluster at lower levels of cigarette consumption, yet there is still meaningful variation among states with similar tax levels. That is another reason the full scatterplot is more informative than a simple grouped summary.</p>
 </section>
-<section id="step-6-build-a-more-compressed-summary" class="level2" data-number="6.10">
-<h2 data-number="6.10" class="anchored" data-anchor-id="step-6-build-a-more-compressed-summary"><span class="header-section-number">6.10</span> Step 6: Build A More Compressed Summary</h2>
+<section id="step-7-does-the-same-pattern-hold-in-1985" class="level2" data-number="6.11">
+<h2 data-number="6.11" class="anchored" data-anchor-id="step-7-does-the-same-pattern-hold-in-1985"><span class="header-section-number">6.11</span> Step 7: Does The Same Pattern Hold In 1985?</h2>
+<p>One natural check is whether the tax-consumption association looks similar a decade earlier. Faceting by year puts the two cross-sections side by side on the same axes, so the overall slope is easy to compare.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>cig_tax_groups <span class="ot">&lt;-</span> cig_1995 <span class="sc">|&gt;</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">tax_group =</span> <span class="fu">factor</span>(</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>      <span class="fu">ntile</span>(tax, <span class="dv">3</span>),</span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>      <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>),</span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Lower tax"</span>, <span class="st">"Middle tax"</span>, <span class="st">"Higher tax"</span>)</span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(tax_group) <span class="sc">|&gt;</span></span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
-<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_packs =</span> <span class="fu">signif</span>(<span class="fu">mean</span>(packs, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="dv">2</span>),</span>
-<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_tax =</span> <span class="fu">signif</span>(<span class="fu">mean</span>(tax, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="dv">2</span>),</span>
-<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">"drop"</span></span>
-<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>cig_tax_groups</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>comparison_data <span class="ot">&lt;-</span> cigarettes_raw <span class="sc">|&gt;</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1985</span>, <span class="dv">1995</span>))</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(comparison_data, <span class="fu">aes</span>(<span class="at">x =</span> real_tax, <span class="at">y =</span> packs)) <span class="sc">+</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"gray60"</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">formula =</span> y <span class="sc">~</span> x, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">color =</span> <span class="st">"gray35"</span>) <span class="sc">+</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> year) <span class="sc">+</span></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Cigarette Taxes And Consumption In 1985 And 1995"</span>,</span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Cigarette tax (real cents per pack)"</span>,</span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Annual packs per capita"</span></span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="05-from-question-to-final-figure_files/figure-html/ch05-comparison-data-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The negative slope is visible in both years. Because the x-axis is in real (inflation-adjusted) cents, the change between panels reflects actual policy shifts rather than general price-level drift — taxes rose substantively in real terms, and consumption dropped. The two-year <code>cigarettesSW</code> file is enough for a simple cross-section and a two-panel comparison, but it is not ideal for a fuller time-series exercise. For that, the longer cigarette panel included with the course materials is more useful.</p>
+</section>
+<section id="step-8-a-longer-time-series-view" class="level2" data-number="6.12">
+<h2 data-number="6.12" class="anchored" data-anchor-id="step-8-a-longer-time-series-view"><span class="header-section-number">6.12</span> Step 8: A Longer Time-Series View</h2>
+<p>The <code>cigarette.csv</code> file in the course materials is the same kind of data but covers many more years. With it the question can shift from “what is the cross-section in 1995?” to “how did consumption in specific states change over time?”</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>long_cigarettes <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"Data/cigarettes/cigarette.csv"</span>, <span class="at">show_col_types =</span> <span class="cn">FALSE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">where</span>(is.numeric), round)) <span class="sc">|&gt;</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">year_date =</span> <span class="fu">as.Date</span>(<span class="fu">paste0</span>(year, <span class="st">"-01-01"</span>)))</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>  long_cigarettes <span class="sc">|&gt;</span> <span class="fu">filter</span>(state <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"NC"</span>, <span class="st">"CA"</span>, <span class="st">"TX"</span>, <span class="st">"NY"</span>)),</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">aes</span>(<span class="at">x =</span> year_date, <span class="at">y =</span> packpc, <span class="at">color =</span> state)</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>) <span class="sc">+</span></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> forcats<span class="sc">::</span><span class="fu">fct_reorder</span>(state, packpc, <span class="at">.fun =</span> mean)) <span class="sc">+</span></span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_date</span>(<span class="at">date_breaks =</span> <span class="st">"2 years"</span>, <span class="at">date_labels =</span> <span class="st">"%Y"</span>) <span class="sc">+</span></span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Cigarette Consumption In Four States"</span>,</span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="cn">NULL</span>,</span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Annual packs per capita"</span></span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="05-from-question-to-final-figure_files/figure-html/ch05-long-cigarettes-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The legend is suppressed because each facet header already names the state. Faceting works well when a handful of specific states deserve direct comparison and one shared panel would be too crowded. The panels are ordered by average consumption, which makes the ranking immediately visible — North Carolina at the top, California at the bottom. All four states trend downward, but the levels differ by a factor of roughly two.</p>
+<p><code>scale_x_date(date_breaks = "2 years", date_labels = "%Y")</code> is the first date scale in this chapter. It tells <code>ggplot2</code> to treat the x-axis as dates, place tick marks every two years, and print the labels as four-digit years.</p>
+</section>
+<section id="step-9-build-a-more-compressed-summary" class="level2" data-number="6.13">
+<h2 data-number="6.13" class="anchored" data-anchor-id="step-9-build-a-more-compressed-summary"><span class="header-section-number">6.13</span> Step 9: Build A More Compressed Summary</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>cig_tax_groups <span class="ot">&lt;-</span> cig_1995 <span class="sc">|&gt;</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">tax_group =</span> <span class="fu">factor</span>(</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>      <span class="fu">ntile</span>(real_tax, <span class="dv">3</span>),</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>      <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>),</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Lower tax"</span>, <span class="st">"Middle tax"</span>, <span class="st">"Higher tax"</span>)</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(tax_group) <span class="sc">|&gt;</span></span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_packs =</span> <span class="fu">round</span>(<span class="fu">mean</span>(packs, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)),</span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_real_tax =</span> <span class="fu">round</span>(<span class="fu">mean</span>(real_tax, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)),</span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">"drop"</span></span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a>cig_tax_groups</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 3
-  tax_group  mean_packs mean_tax
-  &lt;fct&gt;           &lt;dbl&gt;    &lt;dbl&gt;
-1 Lower tax         110       38
-2 Middle tax         95       52
-3 Higher tax         80       71</code></pre>
+  tax_group  mean_packs mean_real_tax
+  &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;
+1 Lower tax         113            25
+2 Middle tax         95            34
+3 Higher tax         80            47</code></pre>
 </div>
 </div>
 <p>This summary is easier to read but less detailed. A continuous tax measure has been collapsed into only three groups.</p>
-<p>The grouping step uses <code>ntile(tax, 3)</code> to divide the observed tax values into three roughly equal-sized groups. The <code>factor()</code> wrapper then gives those groups readable labels in a fixed low-to-high order.</p>
+<p>The grouping step uses <code>ntile(real_tax, 3)</code> to divide the observed tax values into three roughly equal-sized groups. The <code>factor()</code> wrapper then gives those groups readable labels in a fixed low-to-high order.</p>
 <p>It is also useful to see which states sit at the high-tax end of the distribution:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>cig_1995 <span class="sc">|&gt;</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(tax)) <span class="sc">|&gt;</span></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(state, tax, packs) <span class="sc">|&gt;</span></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_head</span>(<span class="at">n =</span> <span class="dv">8</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>cig_1995 <span class="sc">|&gt;</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(real_tax)) <span class="sc">|&gt;</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(state, real_tax, packs) <span class="sc">|&gt;</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_head</span>(<span class="at">n =</span> <span class="dv">8</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 8 × 3
-  state   tax packs
-  &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt;
-1 MI     99    81.4
-2 WA     80.5  65.5
-3 NY     80    70.8
-4 RI     80    92.6
-5 MA     75    76.6
-6 CT     74    79.5
-7 MN     72    82.9
-8 IL     68.0  83.3</code></pre>
+  state real_tax packs
+  &lt;chr&gt;    &lt;dbl&gt; &lt;dbl&gt;
+1 MI          65    81
+2 WA          53    66
+3 NY          52    71
+4 RI          52    93
+5 CT          49    79
+6 MA          49    77
+7 MN          47    83
+8 IL          45    83</code></pre>
 </div>
 </div>
 <p>That small table complements the labeled plot. It makes the highest-tax cases easy to identify numerically, while the plot still shows how those states fit into the broader relationship.</p>
 </section>
-<section id="step-7-plot-the-summary-chart" class="level2" data-number="6.11">
-<h2 data-number="6.11" class="anchored" data-anchor-id="step-7-plot-the-summary-chart"><span class="header-section-number">6.11</span> Step 7: Plot The Summary Chart</h2>
+<section id="step-10-plot-the-summary-chart" class="level2" data-number="6.14">
+<h2 data-number="6.14" class="anchored" data-anchor-id="step-10-plot-the-summary-chart"><span class="header-section-number">6.14</span> Step 10: Plot The Summary Chart</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>summary_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(cig_tax_groups, <span class="fu">aes</span>(<span class="at">x =</span> tax_group, <span class="at">y =</span> mean_packs)) <span class="sc">+</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">"steelblue"</span>, <span class="at">width =</span> <span class="fl">0.65</span>) <span class="sc">+</span></span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_number</span>(<span class="at">accuracy =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Average Cigarette Consumption By Tax Group"</span>,</span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="cn">NULL</span>,</span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Average annual packs per capita"</span></span>
-<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
-<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>summary_plot</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>summary_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(cig_tax_groups, <span class="fu">aes</span>(<span class="at">x =</span> tax_group, <span class="at">y =</span> mean_packs)) <span class="sc">+</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">"steelblue"</span>, <span class="at">width =</span> <span class="fl">0.65</span>) <span class="sc">+</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_number</span>(<span class="at">accuracy =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Average Cigarette Consumption By Tax Group"</span>,</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="cn">NULL</span>,</span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Average annual packs per capita"</span></span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>summary_plot</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="05-from-question-to-final-figure_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="05-from-question-to-final-figure_files/figure-html/ch05-summary-plot-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>The bar chart is useful as a compressed summary, but it loses the state-level spread and the continuous tax gradient.</p>
 </section>
-<section id="step-8-choose-the-final-figure" class="level2" data-number="6.12">
-<h2 data-number="6.12" class="anchored" data-anchor-id="step-8-choose-the-final-figure"><span class="header-section-number">6.12</span> Step 8: Choose The Final Figure</h2>
-<p>For the original question, the labeled scatterplot is the better final figure. It preserves the continuous relationship between tax and consumption and keeps the states identifiable.</p>
-</section>
-<section id="step-9-finalize-and-export" class="level2" data-number="6.13">
-<h2 data-number="6.13" class="anchored" data-anchor-id="step-9-finalize-and-export"><span class="header-section-number">6.13</span> Step 9: Finalize And Export</h2>
+<section id="step-11-choose-the-final-figure" class="level2" data-number="6.15">
+<h2 data-number="6.15" class="anchored" data-anchor-id="step-11-choose-the-final-figure"><span class="header-section-number">6.15</span> Step 11: Choose The Final Figure</h2>
+<p>Sometimes the cleanest way to argue for one view over another is to show them together. The <code>patchwork</code> package makes this simple: load it, and then use the <code>+</code> operator to glue two <code>ggplot</code> objects into a single figure.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">"final_cigarettes_plot.png"</span>, <span class="at">plot =</span> final_plot, <span class="at">width =</span> <span class="dv">8</span>, <span class="at">height =</span> <span class="dv">5</span>, <span class="at">dpi =</span> <span class="dv">300</span>)</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">"final_cigarettes_plot.pdf"</span>, <span class="at">plot =</span> final_plot, <span class="at">width =</span> <span class="dv">8</span>, <span class="at">height =</span> <span class="dv">5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>combined_plot <span class="ot">&lt;-</span> (final_plot <span class="sc">+</span> summary_plot) <span class="sc">+</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_annotation</span>(</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Two Views Of The Same 1995 Cigarette-Tax Data"</span>,</span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"The labeled scatterplot preserves state-level detail; the bar chart compresses it into three groups"</span></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>combined_plot</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="05-from-question-to-final-figure_files/figure-html/ch05-load-patchwork-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Because both plots were saved as R objects in earlier steps (<code>final_plot</code> in Step 6, <code>summary_plot</code> in Step 10), combining them is a one-liner. <code>plot_annotation()</code> adds a title and subtitle that sit above the whole figure rather than either panel. <code>patchwork</code> supports richer layouts too — <code>/</code> stacks plots vertically, <code>|</code> puts them side by side, and parentheses group them — but for two plots the plain <code>+</code> is enough. Seeing the detailed scatterplot next to the compressed bar chart makes the tradeoff concrete: the bar chart is easier to summarize verbally, but it throws away almost everything the scatterplot shows. For the original question, the labeled scatterplot is the better final figure — it preserves the continuous relationship between tax and consumption and keeps the states identifiable.</p>
+</section>
+<section id="step-12-finalize-and-export" class="level2" data-number="6.16">
+<h2 data-number="6.16" class="anchored" data-anchor-id="step-12-finalize-and-export"><span class="header-section-number">6.16</span> Step 12: Finalize And Export</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">"final_cigarettes_plot.png"</span>, <span class="at">plot =</span> final_plot, <span class="at">width =</span> <span class="dv">8</span>, <span class="at">height =</span> <span class="dv">5</span>, <span class="at">dpi =</span> <span class="dv">300</span>)</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">"final_cigarettes_plot.pdf"</span>, <span class="at">plot =</span> final_plot, <span class="at">width =</span> <span class="dv">8</span>, <span class="at">height =</span> <span class="dv">5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Saving the figure as an object before export is a small but durable habit. It keeps the workflow readable and makes it easy to reuse the same figure for multiple output formats or sizes.</p>
 </section>
-<section id="reflection" class="level2" data-number="6.14">
-<h2 data-number="6.14" class="anchored" data-anchor-id="reflection"><span class="header-section-number">6.14</span> Reflection</h2>
+<section id="reflection" class="level2" data-number="6.17">
+<h2 data-number="6.17" class="anchored" data-anchor-id="reflection"><span class="header-section-number">6.17</span> Reflection</h2>
 <p>The core workflow was:</p>
 <ol type="1">
 <li>inspect the panel structure</li>
@@ -838,124 +729,92 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ol>
 <p>That sequence is common in real work. A useful figure rarely appears fully formed on the first try. It is usually the result of several narrowing and revision decisions.</p>
 </section>
-<section id="exercises" class="level2" data-number="6.15">
-<h2 data-number="6.15" class="anchored" data-anchor-id="exercises"><span class="header-section-number">6.15</span> Exercises</h2>
+<section id="exercises" class="level2" data-number="6.18">
+<h2 data-number="6.18" class="anchored" data-anchor-id="exercises"><span class="header-section-number">6.18</span> Exercises</h2>
 <ol type="1">
 <li>Rebuild the final plot for <code>1985</code> instead of <code>1995</code>.</li>
-<li>Replace <code>tax</code> with <code>price</code> and compare the result.</li>
+<li>Replace <code>real_tax</code> with <code>real_price</code> and compare the result.</li>
 <li>Recreate the summary chart with four tax groups instead of three and explain what is gained or lost.</li>
 </ol>
 <p>These exercises keep the same workflow while shifting the analytical emphasis.</p>
 </section>
-<section id="extra-material" class="level2" data-number="6.16">
-<h2 data-number="6.16" class="anchored" data-anchor-id="extra-material"><span class="header-section-number">6.16</span> Extra Material</h2>
-<section id="extra-1-compare-1985-and-1995-with-facets" class="level3" data-number="6.16.1">
-<h3 data-number="6.16.1" class="anchored" data-anchor-id="extra-1-compare-1985-and-1995-with-facets"><span class="header-section-number">6.16.1</span> Extra 1: Compare 1985 And 1995 With Facets</h3>
+<section id="extra-material" class="level2" data-number="6.19">
+<h2 data-number="6.19" class="anchored" data-anchor-id="extra-material"><span class="header-section-number">6.19</span> Extra Material</h2>
+<section id="extra-1-highlight-one-state-against-all-others" class="level3" data-number="6.19.1">
+<h3 data-number="6.19.1" class="anchored" data-anchor-id="extra-1-highlight-one-state-against-all-others"><span class="header-section-number">6.19.1</span> Extra 1: Highlight One State Against All Others</h3>
+<p>The <code>long_cigarettes</code> object built in Step 7 is reused here. The key move is to draw every state in light gray, then draw one state a second time in black on top of the gray lines.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>comparison_data <span class="ot">&lt;-</span> cigarettes_raw <span class="sc">|&gt;</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1985</span>, <span class="dv">1995</span>))</span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(comparison_data, <span class="fu">aes</span>(<span class="at">x =</span> tax, <span class="at">y =</span> packs)) <span class="sc">+</span></span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"gray60"</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
-<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">formula =</span> y <span class="sc">~</span> x, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">color =</span> <span class="st">"gray35"</span>) <span class="sc">+</span></span>
-<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> year) <span class="sc">+</span></span>
-<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Cigarette Taxes And Consumption In 1985 And 1995"</span>,</span>
-<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Cigarette tax (cents per pack)"</span>,</span>
-<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Annual packs per capita"</span></span>
-<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(long_cigarettes, <span class="fu">aes</span>(<span class="at">x =</span> year_date, <span class="at">y =</span> packpc, <span class="at">group =</span> state)) <span class="sc">+</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">"gray80"</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> long_cigarettes <span class="sc">|&gt;</span> <span class="fu">filter</span>(state <span class="sc">==</span> <span class="st">"NC"</span>),</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"black"</span>,</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">linewidth =</span> <span class="dv">1</span></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_date</span>(<span class="at">date_breaks =</span> <span class="st">"2 years"</span>, <span class="at">date_labels =</span> <span class="st">"%Y"</span>) <span class="sc">+</span></span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Cigarette Consumption In North Carolina Highlighted"</span>,</span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="cn">NULL</span>,</span>
+<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Annual packs per capita"</span></span>
+<span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="05-from-question-to-final-figure_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>The two-year <code>cigarettesSW</code> file is enough for a simple cross-section and a two-panel comparison, but it is not ideal for a fuller time-series exercise. For that, the longer cigarette panel included with the course materials is more useful.</p>
-</section>
-<section id="extra-2-highlight-one-state-against-all-others" class="level3" data-number="6.16.2">
-<h3 data-number="6.16.2" class="anchored" data-anchor-id="extra-2-highlight-one-state-against-all-others"><span class="header-section-number">6.16.2</span> Extra 2: Highlight One State Against All Others</h3>
-<p>This is the first time a date scale appears in this chapter. <code>scale_x_date(date_breaks = "2 years", date_labels = "%Y")</code> tells <code>ggplot2</code> to treat the x-axis as dates, place tick marks every two years, and print the labels as four-digit years. The <code>"2 years"</code> setting is a human-readable interval, not a subtraction formula.</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>long_cigarettes <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"Data/cigarettes/cigarette.csv"</span>, <span class="at">show_col_types =</span> <span class="cn">FALSE</span>) <span class="sc">|&gt;</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">year_date =</span> <span class="fu">as.Date</span>(<span class="fu">paste0</span>(year, <span class="st">"-01-01"</span>)))</span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(long_cigarettes, <span class="fu">aes</span>(<span class="at">x =</span> year_date, <span class="at">y =</span> packpc, <span class="at">group =</span> state)) <span class="sc">+</span></span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">"gray80"</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(</span>
-<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> long_cigarettes <span class="sc">|&gt;</span> <span class="fu">filter</span>(state <span class="sc">==</span> <span class="st">"NC"</span>),</span>
-<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"black"</span>,</span>
-<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">linewidth =</span> <span class="dv">1</span></span>
-<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_date</span>(<span class="at">date_breaks =</span> <span class="st">"2 years"</span>, <span class="at">date_labels =</span> <span class="st">"%Y"</span>) <span class="sc">+</span></span>
-<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Cigarette Consumption In North Carolina Highlighted"</span>,</span>
-<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="cn">NULL</span>,</span>
-<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Annual packs per capita"</span></span>
-<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="05-from-question-to-final-figure_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="05-from-question-to-final-figure_files/figure-html/ch05-plot-18-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>This is one of the cleanest highlighting patterns for time series: keep all states for context, but push them into the background so one state becomes easy to follow.</p>
 </section>
-<section id="extra-3-facet-a-small-set-of-states" class="level3" data-number="6.16.3">
-<h3 data-number="6.16.3" class="anchored" data-anchor-id="extra-3-facet-a-small-set-of-states"><span class="header-section-number">6.16.3</span> Extra 3: Facet A Small Set Of States</h3>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  long_cigarettes <span class="sc">|&gt;</span> <span class="fu">filter</span>(state <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"NC"</span>, <span class="st">"CA"</span>, <span class="st">"TX"</span>, <span class="st">"NY"</span>)),</span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">aes</span>(<span class="at">x =</span> year_date, <span class="at">y =</span> packpc, <span class="at">color =</span> state)</span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>) <span class="sc">+</span></span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> forcats<span class="sc">::</span><span class="fu">fct_reorder</span>(state, packpc, <span class="at">.fun =</span> mean)) <span class="sc">+</span></span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_date</span>(<span class="at">date_breaks =</span> <span class="st">"2 years"</span>, <span class="at">date_labels =</span> <span class="st">"%Y"</span>) <span class="sc">+</span></span>
-<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Cigarette Consumption In Four States"</span>,</span>
-<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="cn">NULL</span>,</span>
-<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Annual packs per capita"</span></span>
-<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="05-from-question-to-final-figure_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Faceting works well when a handful of specific states deserve direct comparison and one shared panel would be too crowded.</p>
-</section>
-<section id="extra-4-a-very-simple-us-state-map" class="level3" data-number="6.16.4">
-<h3 data-number="6.16.4" class="anchored" data-anchor-id="extra-4-a-very-simple-us-state-map"><span class="header-section-number">6.16.4</span> Extra 4: A Very Simple US State Map</h3>
+<section id="extra-2-a-very-simple-us-state-map" class="level3" data-number="6.19.2">
+<h3 data-number="6.19.2" class="anchored" data-anchor-id="extra-2-a-very-simple-us-state-map"><span class="header-section-number">6.19.2</span> Extra 2: A Very Simple US State Map</h3>
 <p>Mapping deserves its own course, but a first state-level map can be made with almost no extra code using the <code>usmap</code> package. <code>plot_usmap()</code> handles the projection, state boundaries, and aesthetics in a single call — the only required inputs are a data frame with a <code>state</code> column (two-letter abbreviations or full names) and the name of the value column to shade by.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(usmap)</span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_usmap</span>(<span class="at">data =</span> cig_1995, <span class="at">values =</span> <span class="st">"tax"</span>, <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_continuous</span>(</span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">low =</span> <span class="st">"gray90"</span>,</span>
-<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">high =</span> <span class="st">"firebrick"</span>,</span>
-<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">"Cigarette tax</span><span class="sc">\n</span><span class="st">(cents per pack)"</span>,</span>
-<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">label =</span> scales<span class="sc">::</span><span class="fu">label_number</span>()</span>
-<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Cigarette Taxes By State In 1995"</span>,</span>
-<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Darker states have higher taxes"</span></span>
-<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"right"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(usmap)</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_usmap</span>(<span class="at">data =</span> cig_1995, <span class="at">values =</span> <span class="st">"real_tax"</span>, <span class="at">color =</span> <span class="st">"white"</span>,</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">exclude =</span> <span class="fu">c</span>(<span class="st">"AK"</span>, <span class="st">"HI"</span>)) <span class="sc">+</span></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_continuous</span>(</span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">low =</span> <span class="st">"gray90"</span>,</span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">high =</span> <span class="st">"firebrick"</span>,</span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">"Cigarette tax</span><span class="sc">\n</span><span class="st">(real cents per pack)"</span>,</span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">label =</span> scales<span class="sc">::</span><span class="fu">label_number</span>()</span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Cigarette Taxes By State In 1995"</span>,</span>
+<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Darker states have higher taxes"</span></span>
+<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"right"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>A few things are worth noting. <code>plot_usmap()</code> returns a regular <code>ggplot</code> object, so it can be extended with <code>scale_fill_continuous()</code>, <code>labs()</code>, and <code>theme()</code> exactly like any other plot built in this course. The <code>cigarettesSW</code> dataset does not include Alaska or Hawaii, so the map’s default lower-48 view happens to match the data. The chunk is marked <code>eval: false</code> so the book renders even when <code>usmap</code> is not yet installed; <code>install.packages("usmap")</code> enables it.</p>
+<p>A few things are worth noting. <code>plot_usmap()</code> returns a regular <code>ggplot</code> object, so it can be extended with <code>scale_fill_continuous()</code>, <code>labs()</code>, and <code>theme()</code> exactly like any other plot built in this course. Alaska and Hawaii are excluded explicitly with <code>exclude = c("AK", "HI")</code>, keeping the map to the contiguous 48 states. The chunk is marked <code>eval: false</code> so the book renders even when <code>usmap</code> is not yet installed; <code>install.packages("usmap")</code> enables it.</p>
 <p>For most research figures, the lesson from the rest of this chapter still applies: a labeled scatterplot usually answers a quantitative question better than a map. But a map is often the right choice when geographic pattern itself is the point — for example, whether high-tax states cluster regionally.</p>
 </section>
-<section id="extra-5-discussion-prompt" class="level3" data-number="6.16.5">
-<h3 data-number="6.16.5" class="anchored" data-anchor-id="extra-5-discussion-prompt"><span class="header-section-number">6.16.5</span> Extra 5: Discussion Prompt</h3>
+<section id="extra-3-a-hex-tile-version-of-the-same-map" class="level3" data-number="6.19.3">
+<h3 data-number="6.19.3" class="anchored" data-anchor-id="extra-3-a-hex-tile-version-of-the-same-map"><span class="header-section-number">6.19.3</span> Extra 3: A Hex-Tile Version Of The Same Map</h3>
+<p>A geographic choropleth has a well-known distortion problem: large low-population states (Alaska, Montana, Wyoming) dominate the visual field while small high-population states (Rhode Island, Connecticut) almost disappear. A hex-tile map assigns every state an equal-area hexagon, so the color patterns reflect policy variation rather than state size.</p>
+<p>The <code>statebins</code> package makes this straightforward. Its <code>geom_statebins()</code> works inside a standard <code>ggplot()</code> call with a <code>state</code> aesthetic, so the color scale, labels, and theme all work exactly as elsewhere in this course.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(statebins)</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(cig_1995, <span class="fu">aes</span>(<span class="at">state =</span> state, <span class="at">fill =</span> real_tax)) <span class="sc">+</span></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_statebins</span>() <span class="sc">+</span></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_continuous</span>(</span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">low =</span> <span class="st">"gray90"</span>,</span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">high =</span> <span class="st">"firebrick"</span>,</span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">"Cigarette tax</span><span class="sc">\n</span><span class="st">(real cents per pack)"</span></span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Cigarette Taxes By State In 1995"</span>,</span>
+<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Each tile is one state — equal area removes the large-state distortion"</span></span>
+<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_statebins</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Comparing this to the <code>usmap</code> choropleth for the same data is a good exercise: the geographic shape is gone, but the regional clustering (if any) is usually easier to read once every state occupies the same space. Install with <code>install.packages("statebins")</code>.</p>
+</section>
+<section id="extra-4-discussion-prompt" class="level3" data-number="6.19.4">
+<h3 data-number="6.19.4" class="anchored" data-anchor-id="extra-4-discussion-prompt"><span class="header-section-number">6.19.4</span> Extra 4: Discussion Prompt</h3>
 <ul>
 <li>What information does the scatterplot retain that the summary bar chart discards?</li>
 <li>When would the compressed summary be preferable anyway?</li>
@@ -963,8 +822,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 </section>
 </section>
-<section id="what-comes-next" class="level2" data-number="6.17">
-<h2 data-number="6.17" class="anchored" data-anchor-id="what-comes-next"><span class="header-section-number">6.17</span> What Comes Next</h2>
+<section id="what-comes-next" class="level2" data-number="6.20">
+<h2 data-number="6.20" class="anchored" data-anchor-id="what-comes-next"><span class="header-section-number">6.20</span> What Comes Next</h2>
 <p>The final chapter is an extra module on storytelling, light dashboards, export, and agentic AI.</p>
 <p>That material extends the workflow without changing its foundation: decide what deserves emphasis, then build the figure around that choice.</p>
 
@@ -1401,8 +1260,8 @@ document.addEventListener("DOMContentLoaded", function () {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./06-storytelling-dashboards-and-ai.html" class="pagination-link" aria-label="Extra: Dashboards and Agentic AI">
-        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Extra: Dashboards and Agentic AI</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./06-storytelling-dashboards-and-ai.html" class="pagination-link" aria-label="Dashboards, Slides, and Agentic AI">
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Dashboards, Slides, and Agentic AI</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
