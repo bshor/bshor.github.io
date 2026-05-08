@@ -2,23 +2,6 @@
 title: "Teaching"
 ---
 
-## Outside Teaching
-
-### Odum 2026 - Data Visualization in R
-::: {.grid}
-::: {.g-col-12 .g-col-md-12}
-[Course book](odum-2026/)
-
-[Paper example (PDF)](odum-2026/demos/paper-example.pdf)
-
-[Dashboard example (HTML)](odum-2026/demos/dashboard-demo-quarto.html)
-
-[Presentation example (HTML)](odum-2026/demos/presentation-demo.html)
-:::
-:::
-
----
-
 # University of Houston
 
 ## Undergraduate Courses
