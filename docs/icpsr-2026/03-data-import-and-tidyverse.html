@@ -171,60 +171,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Core ggplot2</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./05-separating-and-comparing-data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Separating and Comparing Data</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./06-distributions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Distributions</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./07-lines-bars-and-annotation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Lines, Bars, and Annotation</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./08-from-question-to-final-figure.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">From Question to Final Figure</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./09-interactivity-and-dashboards.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Interactivity And Dashboards</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./10-tables.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Tables</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./11-visualizing-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Visualizing Models</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./12-mapping.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Mapping</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./13-agentic-ai-and-next-steps.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Agentic AI and Next Steps</span></span></a>
-  </div>
-</li>
     </ul>
     </div>
 </nav>
@@ -257,7 +203,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#joins" id="toc-joins" class="nav-link" data-scroll-target="#joins"><span class="header-section-number">3.14</span> Joins</a></li>
   <li><a href="#short-exercise" id="toc-short-exercise" class="nav-link" data-scroll-target="#short-exercise"><span class="header-section-number">3.15</span> Short Exercise</a></li>
   <li><a href="#extras-google-sheets" id="toc-extras-google-sheets" class="nav-link" data-scroll-target="#extras-google-sheets"><span class="header-section-number">3.16</span> Extras: Google Sheets</a></li>
-  <li><a href="#extras-census-gss-and-state-policy-data" id="toc-extras-census-gss-and-state-policy-data" class="nav-link" data-scroll-target="#extras-census-gss-and-state-policy-data"><span class="header-section-number">3.17</span> Extras: Census, GSS, And State Policy Data</a></li>
+  <li><a href="#census-data-with-tidycensus" id="toc-census-data-with-tidycensus" class="nav-link" data-scroll-target="#census-data-with-tidycensus"><span class="header-section-number">3.17</span> Census Data With <code>tidycensus</code></a></li>
   <li><a href="#extras-qualtrics-and-canvas" id="toc-extras-qualtrics-and-canvas" class="nav-link" data-scroll-target="#extras-qualtrics-and-canvas"><span class="header-section-number">3.18</span> Extras: Qualtrics And Canvas</a></li>
   <li><a href="#what-comes-next" id="toc-what-comes-next" class="nav-link" data-scroll-target="#what-comes-next"><span class="header-section-number">3.19</span> What Comes Next</a></li>
   </ul>
@@ -806,8 +752,8 @@ $ gdpPercap &lt;dbl&gt; 779.4453, 820.8530, 853.1007, 836.1971, 739.9811, 786.11
 <span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sheet_write</span>(<span class="at">ss =</span> ss, <span class="at">sheet =</span> <span class="st">"mtcars"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="extras-census-gss-and-state-policy-data" class="level2" data-number="3.17">
-<h2 data-number="3.17" class="anchored" data-anchor-id="extras-census-gss-and-state-policy-data"><span class="header-section-number">3.17</span> Extras: Census, GSS, And State Policy Data</h2>
+<section id="census-data-with-tidycensus" class="level2" data-number="3.17">
+<h2 data-number="3.17" class="anchored" data-anchor-id="census-data-with-tidycensus"><span class="header-section-number">3.17</span> Census Data With <code>tidycensus</code></h2>
 <p>Some data sources are best accessed through specialized packages. These examples are templates, not automatically running chunks.</p>
 <p>The <code>tidycensus</code> package wraps the U.S. Census Bureau’s APIs. The two most common entry points are the American Community Survey (<code>get_acs()</code>) and the decennial census (<code>get_decennial()</code>). A free Census API key is required. Request one at <a href="https://api.census.gov/data/key_signup.html" class="uri">https://api.census.gov/data/key_signup.html</a>, then register it once on your machine with <code>census_api_key("YOUR_KEY", install = TRUE)</code>. After that, the key is available to every R session and the line can be removed from teaching files.</p>
 <div class="cell">
