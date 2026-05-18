@@ -7,9 +7,9 @@ title: "Teaching"
 ### ICPSR 2026 - Visualization 101
 ::: {.grid}
 ::: {.g-col-12 .g-col-md-12}
-[Course book, chapters 0-4](icpsr-2026/)
+[Course book, chapters 1-4](icpsr-2026/)
 
-[PDF, chapters 0-4](icpsr-2026/Visualization-101-2026.pdf)
+[PDF, chapters 1-4](icpsr-2026/Visualization-101-2026.pdf)
 :::
 :::
 
