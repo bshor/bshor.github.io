@@ -648,5 +648,385 @@
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Core ggplot2</span>"
     ]
+  },
+  {
+    "objectID": "05-separating-and-comparing-data.html",
+    "href": "05-separating-and-comparing-data.html",
+    "title": "5  Separating and Comparing Data",
+    "section": "",
+    "text": "5.1 Why separate data?\nMany plots become more useful when we separate the data into meaningful groups. The relationship between two variables might look simple overall, but the pattern can differ across continents, years, regions, parties, income groups, or other subgroups.\nThere are two common ggplot2 strategies:\nBoth approaches are useful. The question is not which one is always better. The question is which one makes the comparison easier.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Separating and Comparing Data</span>"
+    ]
+  },
+  {
+    "objectID": "05-separating-and-comparing-data.html#why-separate-data",
+    "href": "05-separating-and-comparing-data.html#why-separate-data",
+    "title": "5  Separating and Comparing Data",
+    "section": "",
+    "text": "Map a grouping variable to an aesthetic such as color, shape, fill, or linetype.\nUse facets to create small multiples: repeated panels that show the same plot for different subsets of the data.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Separating and Comparing Data</span>"
+    ]
+  },
+  {
+    "objectID": "05-separating-and-comparing-data.html#start-with-one-plot",
+    "href": "05-separating-and-comparing-data.html#start-with-one-plot",
+    "title": "5  Separating and Comparing Data",
+    "section": "5.2 Start with one plot",
+    "text": "5.2 Start with one plot\nWe will use Gapminder data to compare GDP per capita and life expectancy. First, filter to one year so that each point is one country.\n\ngap_1997 &lt;- gapminder |&gt;\n  filter(year == 1997)\n\nbase_gap &lt;- ggplot(\n  data = gap_1997,\n  mapping = aes(x = gdpPercap, y = lifeExp)\n) +\n  geom_point(alpha = 0.6) +\n  geom_smooth(method = \"lm\", formula = y ~ x, se = FALSE, color = \"gray25\") +\n  scale_x_log10(labels = dollar_format(accuracy = 1)) +\n  scale_y_continuous(breaks = seq(20, 90, by = 10)) +\n  labs(\n    title = \"Economic Growth and Life Expectancy\",\n    subtitle = \"Countries in 1997\",\n    x = \"GDP per capita\",\n    y = \"Life expectancy\",\n    caption = \"Source: Gapminder.\"\n  )\n\nbase_gap\n\n\n\n\n\n\n\n\nThe log scale on the x-axis helps because GDP per capita is very skewed. Without it, the lower-income countries would be compressed into a small part of the plot.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Separating and Comparing Data</span>"
+    ]
+  },
+  {
+    "objectID": "05-separating-and-comparing-data.html#color-as-separation",
+    "href": "05-separating-and-comparing-data.html#color-as-separation",
+    "title": "5  Separating and Comparing Data",
+    "section": "5.3 Color as separation",
+    "text": "5.3 Color as separation\nOne way to separate groups is to map a variable to color inside aes().\n\ngap_color &lt;- ggplot(\n  data = gap_1997,\n  mapping = aes(x = gdpPercap, y = lifeExp, color = continent)\n) +\n  geom_point(alpha = 0.75, size = 2) +\n  geom_smooth(method = \"lm\", formula = y ~ x, se = FALSE) +\n  scale_x_log10(labels = dollar_format(accuracy = 1)) +\n  labs(\n    title = \"Economic Growth and Life Expectancy by Continent\",\n    subtitle = \"Color separates continents on one set of axes\",\n    x = \"GDP per capita\",\n    y = \"Life expectancy\",\n    color = \"Continent\",\n    caption = \"Source: Gapminder.\"\n  ) +\n  theme_minimal()\n\ngap_color\n\n\n\n\n\n\n\n\nBecause continent is mapped inside aes(), ggplot2 treats color as part of the data mapping and creates a legend. If we wrote geom_point(color = \"steelblue\"), every point would be steel blue and no legend would be needed.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Separating and Comparing Data</span>"
+    ]
+  },
+  {
+    "objectID": "05-separating-and-comparing-data.html#facets-as-small-multiples",
+    "href": "05-separating-and-comparing-data.html#facets-as-small-multiples",
+    "title": "5  Separating and Comparing Data",
+    "section": "5.4 Facets as small multiples",
+    "text": "5.4 Facets as small multiples\nFaceting creates one panel for each level of a variable. This gives each group its own space.\n\nggplot(data = gap_1997, mapping = aes(x = gdpPercap, y = lifeExp)) +\n  geom_point(alpha = 0.6) +\n  geom_smooth(method = \"lm\", formula = y ~ x, se = FALSE) +\n  scale_x_log10(labels = dollar_format(accuracy = 1)) +\n  facet_wrap(~ continent) +\n  labs(\n    title = \"Economic Growth and Life Expectancy\",\n    subtitle = \"One panel per continent\",\n    x = \"GDP per capita\",\n    y = \"Life expectancy\",\n    caption = \"Source: Gapminder.\"\n  ) +\n  theme_minimal()\n\n\n\n\n\n\n\n\nThe default shared scales make comparisons across panels fair. Africa and Europe are plotted on the same x and y ranges, so differences in location and spread are visible.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Separating and Comparing Data</span>"
+    ]
+  },
+  {
+    "objectID": "05-separating-and-comparing-data.html#reordering-facets",
+    "href": "05-separating-and-comparing-data.html#reordering-facets",
+    "title": "5  Separating and Comparing Data",
+    "section": "5.5 Reordering facets",
+    "text": "5.5 Reordering facets\nFacet order is not always meaningful by default. We can reorder the continent variable by average life expectancy.\n\ngap_1997_ordered &lt;- gap_1997 |&gt;\n  mutate(\n    continent = fct_reorder(\n      .f = continent,\n      .x = lifeExp,\n      .fun = mean,\n      .desc = TRUE\n    )\n  )\n\nggplot(data = gap_1997_ordered, mapping = aes(x = gdpPercap, y = lifeExp)) +\n  geom_point(alpha = 0.6) +\n  geom_smooth(method = \"lm\", formula = y ~ x, se = FALSE) +\n  scale_x_log10(labels = dollar_format(accuracy = 1)) +\n  facet_wrap(~ continent, ncol = 2) +\n  labs(\n    title = \"Facets Ordered by Average Life Expectancy\",\n    x = \"GDP per capita\",\n    y = \"Life expectancy\",\n    caption = \"Source: Gapminder.\"\n  ) +\n  theme_minimal()\n\n\n\n\n\n\n\n\nfct_reorder() changes the order of the factor levels. That order is then used by facet_wrap().",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Separating and Comparing Data</span>"
+    ]
+  },
+  {
+    "objectID": "05-separating-and-comparing-data.html#free-scales",
+    "href": "05-separating-and-comparing-data.html#free-scales",
+    "title": "5  Separating and Comparing Data",
+    "section": "5.6 Free scales",
+    "text": "5.6 Free scales\nSometimes fixed scales make within-group patterns hard to see. Free scales let each panel use its own axis range.\n\nggplot(data = gap_1997_ordered, mapping = aes(x = gdpPercap, y = lifeExp)) +\n  geom_point(alpha = 0.6) +\n  geom_smooth(method = \"lm\", formula = y ~ x, se = FALSE) +\n  scale_x_log10(labels = dollar_format(accuracy = 1)) +\n  facet_wrap(~ continent, scales = \"free\") +\n  labs(\n    title = \"Free Scales Reveal Within-Continent Detail\",\n    subtitle = \"Use with care: cross-panel comparisons become harder\",\n    x = \"GDP per capita\",\n    y = \"Life expectancy\",\n    caption = \"Source: Gapminder.\"\n  ) +\n  theme_minimal()\n\n\n\n\n\n\n\n\nFree scales are not wrong, but they answer a different question. Fixed scales emphasize comparison across groups. Free scales emphasize detail within each group.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Separating and Comparing Data</span>"
+    ]
+  },
+  {
+    "objectID": "05-separating-and-comparing-data.html#direct-labels",
+    "href": "05-separating-and-comparing-data.html#direct-labels",
+    "title": "5  Separating and Comparing Data",
+    "section": "5.7 Direct labels",
+    "text": "5.7 Direct labels\nLegends require the reader to look back and forth between the data and the key. Direct labels can reduce that work.\n\ncontinent_summary &lt;- gap_1997 |&gt;\n  group_by(continent) |&gt;\n  summarize(\n    gdpPercap = median(gdpPercap),\n    lifeExp = median(lifeExp)\n  )\n\nggplot(data = gap_1997, mapping = aes(x = gdpPercap, y = lifeExp, color = continent)) +\n  geom_point(alpha = 0.45, show.legend = FALSE) +\n  geom_text_repel(\n    data = continent_summary,\n    mapping = aes(label = continent),\n    size = 4,\n    show.legend = FALSE\n  ) +\n  scale_x_log10(labels = dollar_format(accuracy = 1)) +\n  scale_color_brewer(palette = \"Set2\") +\n  labs(\n    title = \"Direct Labels Can Replace a Legend\",\n    x = \"GDP per capita\",\n    y = \"Life expectancy\",\n    caption = \"Source: Gapminder.\"\n  ) +\n  theme_minimal()\n\n\n\n\n\n\n\n\nDirect labels work best when there are not too many groups and there is enough space for the labels.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Separating and Comparing Data</span>"
+    ]
+  },
+  {
+    "objectID": "05-separating-and-comparing-data.html#facet_grid",
+    "href": "05-separating-and-comparing-data.html#facet_grid",
+    "title": "5  Separating and Comparing Data",
+    "section": "5.8 facet_grid()",
+    "text": "5.8 facet_grid()\nfacet_wrap() is usually the easiest choice for one grouping variable. facet_grid() is useful when the panel layout has rows and columns with substantive meaning.\n\ngap_recent &lt;- gapminder |&gt;\n  filter(year %in% c(1987, 1997, 2007))\n\nggplot(data = gap_recent, mapping = aes(x = gdpPercap, y = lifeExp)) +\n  geom_point(alpha = 0.5, size = 1.3) +\n  scale_x_log10(labels = dollar_format(accuracy = 1)) +\n  facet_grid(continent ~ year) +\n  labs(\n    title = \"Life Expectancy and GDP across Continents and Years\",\n    x = \"GDP per capita\",\n    y = \"Life expectancy\",\n    caption = \"Source: Gapminder.\"\n  ) +\n  theme_minimal()\n\n\n\n\n\n\n\n\nRead facet_grid(continent ~ year) as “continent defines the rows, year defines the columns.”",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Separating and Comparing Data</span>"
+    ]
+  },
+  {
+    "objectID": "05-separating-and-comparing-data.html#patchwork",
+    "href": "05-separating-and-comparing-data.html#patchwork",
+    "title": "5  Separating and Comparing Data",
+    "section": "5.9 Patchwork",
+    "text": "5.9 Patchwork\nFacets repeat the same plot structure across groups. Sometimes you want to combine different plots into one figure. The patchwork package lets you assemble separate ggplot objects.\n\nasia_scatter &lt;- gap_1997 |&gt;\n  filter(continent == \"Asia\") |&gt;\n  ggplot(mapping = aes(x = gdpPercap, y = lifeExp)) +\n  geom_point(aes(size = pop), color = \"steelblue\", alpha = 0.7) +\n  geom_text_repel(aes(label = country), size = 3, max.overlaps = 12) +\n  scale_x_log10(labels = dollar_format(accuracy = 1)) +\n  scale_size_continuous(labels = comma) +\n  labs(\n    title = \"Asia in 1997\",\n    x = \"GDP per capita\",\n    y = \"Life expectancy\",\n    size = \"Population\"\n  ) +\n  theme_minimal()\n\ncontinent_bar &lt;- gap_1997 |&gt;\n  group_by(continent) |&gt;\n  summarize(avg_life_exp = mean(lifeExp)) |&gt;\n  ggplot(mapping = aes(x = reorder(continent, avg_life_exp), y = avg_life_exp)) +\n  geom_col(fill = \"gray45\") +\n  coord_flip() +\n  labs(\n    title = \"Average Life Expectancy\",\n    x = NULL,\n    y = \"Years\"\n  ) +\n  theme_minimal()\n\nasia_scatter + continent_bar +\n  plot_layout(widths = c(2, 1)) +\n  plot_annotation(\n    title = \"Two Views of Gapminder Data\",\n    caption = \"Source: Gapminder.\"\n  )",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Separating and Comparing Data</span>"
+    ]
+  },
+  {
+    "objectID": "05-separating-and-comparing-data.html#extra-state-policy-snapshot",
+    "href": "05-separating-and-comparing-data.html#extra-state-policy-snapshot",
+    "title": "5  Separating and Comparing Data",
+    "section": "5.10 Extra: State Policy Snapshot",
+    "text": "5.10 Extra: State Policy Snapshot\nState-level political and policy data work well for comparison examples. This section uses a small local file from the course Data/ folder.\nThe inspection function glimpse() comes from dplyr, which is loaded as part of the tidyverse.\n\nstate_policy &lt;- read_csv(\n  \"Data/state_policy/state_data_sorted.csv\",\n  show_col_types = FALSE\n) |&gt;\n  mutate(\n    union_pct = 100 * union,\n    religion_pct = 100 * religion,\n    region = str_to_title(cregion)\n  )\n\nglimpse(state_policy)\n\nRows: 51\nColumns: 11\n$ abb          &lt;chr&gt; \"AK\", \"AL\", \"AR\", \"AZ\", \"CA\", \"CO\", \"CT\", \"DC\", \"DE\", \"FL…\n$ union        &lt;dbl&gt; 0.219, 0.097, 0.048, 0.063, 0.165, 0.084, 0.153, 0.127, 0…\n$ religion     &lt;dbl&gt; 0.1548637, 0.4104603, 0.4370625, 0.1438850, 0.0874711, 0.…\n$ cst          &lt;chr&gt; \"AK\", \"AL\", \"AR\", \"AZ\", \"CA\", \"CO\", \"CT\", \"DC\", \"DE\", \"FL…\n$ cregion      &lt;chr&gt; \"west\", \"south\", \"south\", \"west\", \"west\", \"west\", \"northe…\n$ region_num   &lt;dbl&gt; 4, 3, 3, 4, 4, 4, 2, 2, 3, 3, 3, 4, 1, 4, 1, 1, 1, 3, 3, …\n$ state_num    &lt;dbl&gt; 50, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 51, 11, 12, 13, 14, 15…\n$ pop          &lt;dbl&gt; 626932, 4447100, 2673400, 5130632, 33871648, 4301261, 340…\n$ union_pct    &lt;dbl&gt; 21.9, 9.7, 4.8, 6.3, 16.5, 8.4, 15.3, 12.7, 12.4, 6.0, 6.…\n$ religion_pct &lt;dbl&gt; 15.48637, 41.04603, 43.70625, 14.38850, 8.74711, 12.77672…\n$ region       &lt;chr&gt; \"West\", \"South\", \"South\", \"West\", \"West\", \"West\", \"Northe…\n\n\nThe two variables in the next plot are percentages. The point is not to make a causal claim. The point is to practice separating and comparing state-level observations.\n\nggplot(\n  state_policy,\n  aes(x = religion_pct, y = union_pct)\n) +\n  geom_point(size = 2.5, alpha = 0.75) +\n  labs(\n    title = \"Religion And Union Membership Across States\",\n    subtitle = \"Each point is one state\",\n    x = \"Religion measure\",\n    y = \"Union membership\"\n  ) +\n  theme_minimal()\n\n\n\n\n\n\n\n\nColor can separate regions without creating multiple panels. This is useful when the plot is still readable with all observations in one place.\n\nggplot(\n  state_policy,\n  aes(x = religion_pct, y = union_pct, color = region)\n) +\n  geom_point(size = 2.8, alpha = 0.8) +\n  scale_color_brewer(palette = \"Dark2\") +\n  labs(\n    title = \"State Differences By Region\",\n    x = \"Religion measure\",\n    y = \"Union membership\",\n    color = \"Region\"\n  ) +\n  theme_minimal()\n\n\n\n\n\n\n\n\nFacets split the same data into small multiples. This makes regional comparisons clearer when the color version starts to feel crowded.\n\nggplot(\n  state_policy,\n  aes(x = religion_pct, y = union_pct)\n) +\n  geom_point(color = \"#355c7d\", size = 2.5, alpha = 0.8) +\n  facet_wrap(~ region) +\n  labs(\n    title = \"State Differences By Region\",\n    subtitle = \"Facets separate the same scatterplot into regional panels\",\n    x = \"Religion measure\",\n    y = \"Union membership\"\n  ) +\n  theme_minimal()\n\n\n\n\n\n\n\n\nDirect labels are useful when a few cases matter. Labeling every state would crowd the figure, so the next example labels only selected states.\n\nlabel_states &lt;- c(\"CA\", \"MI\", \"NY\", \"TX\", \"UT\", \"WV\")\n\nggplot(\n  state_policy,\n  aes(x = religion_pct, y = union_pct)\n) +\n  geom_point(color = \"gray70\", size = 2.3) +\n  geom_point(\n    data = filter(state_policy, abb %in% label_states),\n    color = \"#c44d58\",\n    size = 3\n  ) +\n  geom_text_repel(\n    data = filter(state_policy, abb %in% label_states),\n    aes(label = abb),\n    size = 3.5,\n    min.segment.length = 0\n  ) +\n  labs(\n    title = \"Labeling Selected States\",\n    subtitle = \"Direct labels focus attention without labeling every point\",\n    x = \"Religion measure\",\n    y = \"Union membership\"\n  ) +\n  theme_minimal()",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Separating and Comparing Data</span>"
+    ]
+  },
+  {
+    "objectID": "05-separating-and-comparing-data.html#extra-pisa-international-scores",
+    "href": "05-separating-and-comparing-data.html#extra-pisa-international-scores",
+    "title": "5  Separating and Comparing Data",
+    "section": "5.11 Extra: PISA international scores",
+    "text": "5.11 Extra: PISA international scores\nThe PISA dataset contains results from the 2006 OECD Programme for International Student Assessment. Each of the roughly 152,000 rows is one student. Variables include country, gender, and average scores in math, reading, and science.\n\npisa &lt;- read_csv(\"Data/pisa/pisa_data_clean.csv\", show_col_types = FALSE) |&gt;\n  janitor::clean_names()\n\npisa |&gt;\n  select(country_code, gender, average_math_score, average_reading_score, average_science_score) |&gt;\n  slice_head(n = 6)\n\n\n  \n\n\n\nSummarize to country-gender means to reduce 152k rows to a manageable comparison dataset.\n\npisa_country &lt;- pisa |&gt;\n  group_by(country_code, gender) |&gt;\n  summarize(\n    math    = mean(average_math_score,    na.rm = TRUE),\n    reading = mean(average_reading_score, na.rm = TRUE),\n    science = mean(average_science_score, na.rm = TRUE),\n    .groups = \"drop\"\n  )\n\npisa_country |&gt; slice_head(n = 6)\n\n\n  \n\n\n\nA scatterplot of math against reading scores, colored by gender, shows how the two subjects correlate across countries. Faceting by gender lets us compare the pattern for male and female students side by side.\n\nggplot(pisa_country, aes(x = math, y = reading, color = gender)) +\n  geom_point(alpha = 0.7, size = 1.8) +\n  geom_abline(linetype = \"dashed\", color = \"gray60\") +\n  facet_wrap(~ gender) +\n  scale_color_manual(values = c(\"Female\" = \"#c44d58\", \"Male\" = \"#355c7d\")) +\n  labs(\n    title = \"Math vs Reading Scores by Country and Gender\",\n    subtitle = \"Each point is one country. Dashed line = equal scores.\",\n    x = \"Average math score\",\n    y = \"Average reading score\",\n    caption = \"Source: PISA 2006.\"\n  ) +\n  theme_minimal() +\n  theme(legend.position = \"none\")\n\n\n\n\n\n\n\n\nCountries cluster above the dashed line for female students (reading &gt; math) and below for male students (math &gt;= reading). The facet makes this systematic gender gap visible at a glance.\nWe can also rank countries by math score and look at the top and bottom performers.\n\npisa_overall &lt;- pisa |&gt;\n  group_by(country_code) |&gt;\n  summarize(\n    math    = mean(average_math_score,    na.rm = TRUE),\n    reading = mean(average_reading_score, na.rm = TRUE),\n    .groups = \"drop\"\n  )\n\ntop_bottom &lt;- pisa_overall |&gt;\n  slice_max(math, n = 10) |&gt;\n  bind_rows(pisa_overall |&gt; slice_min(math, n = 10)) |&gt;\n  mutate(group = if_else(math &gt;= median(pisa_overall$math), \"Top 10\", \"Bottom 10\"))\n\nggplot(top_bottom, aes(x = math, y = reorder(country_code, math), fill = group)) +\n  geom_col(show.legend = FALSE) +\n  scale_fill_manual(values = c(\"Top 10\" = \"#355c7d\", \"Bottom 10\" = \"#c44d58\")) +\n  labs(\n    title = \"Top and Bottom 10 Countries by Average Math Score\",\n    x = \"Average math score\",\n    y = NULL,\n    caption = \"Source: PISA 2006.\"\n  ) +\n  theme_minimal()",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Separating and Comparing Data</span>"
+    ]
+  },
+  {
+    "objectID": "05-separating-and-comparing-data.html#exercise",
+    "href": "05-separating-and-comparing-data.html#exercise",
+    "title": "5  Separating and Comparing Data",
+    "section": "5.12 Exercise",
+    "text": "5.12 Exercise\nUse gapminder to make a comparison plot for 2007.\n\nFilter the data to year == 2007.\nMake a scatterplot of GDP per capita and life expectancy.\nSeparate continents using color.\nMake a second version using facet_wrap(~ continent).\nDecide which version makes the comparison clearer and write one sentence explaining why.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Separating and Comparing Data</span>"
+    ]
+  },
+  {
+    "objectID": "06-distributions.html",
+    "href": "06-distributions.html",
+    "title": "6  Distributions",
+    "section": "",
+    "text": "6.1 Why distributions matter\nA distribution shows how values of a variable are spread out. Before comparing means, fitting models, or making polished charts, it is often useful to ask simpler questions:\nDistribution plots are especially useful during exploratory data analysis.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Distributions</span>"
+    ]
+  },
+  {
+    "objectID": "06-distributions.html#why-distributions-matter",
+    "href": "06-distributions.html#why-distributions-matter",
+    "title": "6  Distributions",
+    "section": "",
+    "text": "What values are common?\nAre there extreme values?\nIs the variable symmetric or skewed?\nDo groups have similar or different spreads?\nAre there gaps, clusters, or unusual cases?",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Distributions</span>"
+    ]
+  },
+  {
+    "objectID": "06-distributions.html#histograms",
+    "href": "06-distributions.html#histograms",
+    "title": "6  Distributions",
+    "section": "6.2 Histograms",
+    "text": "6.2 Histograms\nA histogram divides a continuous variable into bins and counts how many observations fall in each bin.\nThe midwest dataset is included with ggplot2. It has one row per county in five Midwestern states.\n\nmidwest |&gt;\n  select(state, county, percollege, poptotal, area) |&gt;\n  head(10)\n\n\n  \n\n\n\nWe will start with percollege, the percentage of adults in each county with a college degree.\n\nggplot(\n  data = midwest |&gt; filter(!is.na(percollege)),\n  mapping = aes(x = percollege)\n) +\n  geom_histogram() +\n  labs(\n    title = \"Distribution of County College Education Rates\",\n    x = \"Percent with college degree\",\n    y = \"Number of counties\"\n  ) +\n  theme_bw()\n\n\n\n\n\n\n\n\nWhen we do not set the number of bins, ggplot2 chooses a default. That default is not always the best choice, so it is worth trying several values.\n\nggplot(\n  data = midwest |&gt; filter(!is.na(percollege)),\n  mapping = aes(x = percollege)\n) +\n  geom_histogram(bins = 25, fill = \"steelblue\", color = \"white\") +\n  labs(\n    title = \"Distribution of County College Education Rates\",\n    subtitle = \"Using 25 bins\",\n    x = \"Percent with college degree\",\n    y = \"Number of counties\"\n  ) +\n  theme_minimal()\n\n\n\n\n\n\n\n\nChanging the number of bins changes the visual summary. Very few bins can hide structure. Too many bins can make the plot look noisy. Histograms are useful for seeing skew, clustering, and unusual tails.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Distributions</span>"
+    ]
+  },
+  {
+    "objectID": "06-distributions.html#comparing-histograms",
+    "href": "06-distributions.html#comparing-histograms",
+    "title": "6  Distributions",
+    "section": "6.3 Comparing histograms",
+    "text": "6.3 Comparing histograms\nWe can compare distributions across groups by mapping a group to fill and using transparency.\n\noh_wi &lt;- midwest |&gt;\n  filter(state %in% c(\"OH\", \"WI\"), !is.na(percollege))\n\nggplot(data = oh_wi, mapping = aes(x = percollege, fill = state, color = state)) +\n  geom_histogram(alpha = 0.3, bins = 25, position = \"identity\") +\n  labs(\n    title = \"County College Education Rates in Ohio and Wisconsin\",\n    x = \"Percent with college degree\",\n    y = \"Number of counties\",\n    fill = \"State\",\n    color = \"State\"\n  ) +\n  theme_minimal()\n\n\n\n\n\n\n\n\nOverlaid histograms are compact, but they can be difficult to read when the groups overlap.\nSmall multiples are often clearer.\n\nggplot(data = oh_wi, mapping = aes(x = percollege)) +\n  geom_histogram(bins = 25, fill = \"gray50\", color = \"white\") +\n  facet_wrap(~ state) +\n  labs(\n    title = \"County College Education Rates in Ohio and Wisconsin\",\n    subtitle = \"Same x and y scales in each panel\",\n    x = \"Percent with college degree\",\n    y = \"Number of counties\"\n  ) +\n  theme_minimal()\n\n\n\n\n\n\n\n\nBecause the panels share scales by default, the two histograms can be compared directly.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Distributions</span>"
+    ]
+  },
+  {
+    "objectID": "06-distributions.html#density-plots",
+    "href": "06-distributions.html#density-plots",
+    "title": "6  Distributions",
+    "section": "6.4 Density plots",
+    "text": "6.4 Density plots\nA density plot is a smoothed version of a distribution. Instead of showing counts in bins, it estimates the shape of the distribution.\n\nggplot(data = midwest, mapping = aes(x = area)) +\n  geom_density(fill = \"gray70\", color = \"gray20\", alpha = 0.6) +\n  labs(\n    title = \"Density of County Area\",\n    x = \"Area\",\n    y = \"Density\"\n  ) +\n  theme_minimal()\n\n\n\n\n\n\n\n\nDensity plots are useful for comparing shapes across groups.\n\nggplot(data = midwest, mapping = aes(x = area, fill = state, color = state)) +\n  geom_density(alpha = 0.25) +\n  labs(\n    title = \"County Area by State\",\n    x = \"Area\",\n    y = \"Density\",\n    fill = \"State\",\n    color = \"State\"\n  ) +\n  theme_minimal()\n\n\n\n\n\n\n\n\nWhen there are several groups, faceting can again reduce clutter.\n\nggplot(data = midwest, mapping = aes(x = area, fill = state)) +\n  geom_density(alpha = 0.5, show.legend = FALSE) +\n  facet_wrap(~ state) +\n  labs(\n    title = \"County Area by State\",\n    x = \"Area\",\n    y = \"Density\"\n  ) +\n  theme_minimal()",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Distributions</span>"
+    ]
+  },
+  {
+    "objectID": "06-distributions.html#boxplots",
+    "href": "06-distributions.html#boxplots",
+    "title": "6  Distributions",
+    "section": "6.5 Boxplots",
+    "text": "6.5 Boxplots\nBoxplots summarize a distribution with a median, interquartile range, whiskers, and outliers. They are compact and good for comparing many groups.\n\nggplot(data = mpg, mapping = aes(x = class, y = hwy)) +\n  geom_boxplot() +\n  labs(\n    title = \"Highway Fuel Economy by Vehicle Class\",\n    x = \"Vehicle class\",\n    y = \"Highway miles per gallon\"\n  ) +\n  theme_minimal()\n\n\n\n\n\n\n\n\nThe x-axis is crowded. We can reorder vehicle classes by median highway MPG and flip the coordinates.\n\nggplot(data = mpg, mapping = aes(x = reorder(class, hwy, FUN = median), y = hwy)) +\n  geom_boxplot(fill = \"steelblue\", alpha = 0.7) +\n  coord_flip() +\n  labs(\n    title = \"Highway Fuel Economy by Vehicle Class\",\n    subtitle = \"Classes ordered by median highway MPG\",\n    x = \"Vehicle class\",\n    y = \"Highway miles per gallon\"\n  ) +\n  theme_minimal()\n\n\n\n\n\n\n\n\nBoxplots hide individual observations, but they make the comparison of medians and spreads easy.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Distributions</span>"
+    ]
+  },
+  {
+    "objectID": "06-distributions.html#ridge-plots",
+    "href": "06-distributions.html#ridge-plots",
+    "title": "6  Distributions",
+    "section": "6.6 Ridge plots",
+    "text": "6.6 Ridge plots\nRidge plots stack density plots vertically. They are useful when you want to compare many distributions and still see the shape of each one. They use geom_density_ridges() from the ggridges package.\n\nggplot(mpg, aes(x = hwy, y = class, fill = class)) +\n  ggridges::geom_density_ridges(scale = 0.9, show.legend = FALSE) +\n  labs(\n    title = \"Highway Mileage by Vehicle Class\",\n    x = \"Highway miles per gallon\",\n    y = \"Vehicle class\"\n  ) +\n  theme_minimal()\n\n\n\n\n\n\n\n\nRidge plots work best when there are enough categories to make a single boxplot crowded, but few enough that each density still has room to be readable.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Distributions</span>"
+    ]
+  },
+  {
+    "objectID": "06-distributions.html#distributions-in-gapminder",
+    "href": "06-distributions.html#distributions-in-gapminder",
+    "title": "6  Distributions",
+    "section": "6.7 Distributions in Gapminder",
+    "text": "6.7 Distributions in Gapminder\nDistribution plots can also help before making cross-national comparisons.\n\ngap_2007 &lt;- gapminder |&gt;\n  filter(year == 2007)\n\nggplot(data = gap_2007, mapping = aes(x = lifeExp)) +\n  geom_histogram(bins = 25, fill = \"gray45\", color = \"white\") +\n  labs(\n    title = \"Distribution of Life Expectancy\",\n    subtitle = \"Countries in 2007\",\n    x = \"Life expectancy\",\n    y = \"Number of countries\",\n    caption = \"Source: Gapminder.\"\n  ) +\n  theme_minimal()\n\n\n\n\n\n\n\n\nNow separate by continent. Faceted histograms keep the same geom but split the data into panels.\n\nggplot(data = gap_2007, mapping = aes(x = lifeExp)) +\n  geom_histogram(bins = 15, fill = \"steelblue\", color = \"white\") +\n  facet_wrap(~ continent) +\n  labs(\n    title = \"Life Expectancy by Continent\",\n    subtitle = \"Countries in 2007\",\n    x = \"Life expectancy\",\n    y = \"Number of countries\",\n    caption = \"Source: Gapminder.\"\n  ) +\n  theme_minimal()\n\n\n\n\n\n\n\n\nA boxplot gives a more compact comparison.\n\nggplot(data = gap_2007, mapping = aes(x = reorder(continent, lifeExp, FUN = median), y = lifeExp)) +\n  geom_boxplot(aes(fill = continent), show.legend = FALSE, alpha = 0.8) +\n  coord_flip() +\n  labs(\n    title = \"Life Expectancy by Continent\",\n    subtitle = \"Countries in 2007\",\n    x = NULL,\n    y = \"Life expectancy\",\n    caption = \"Source: Gapminder.\"\n  ) +\n  theme_minimal()",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Distributions</span>"
+    ]
+  },
+  {
+    "objectID": "06-distributions.html#choosing-among-histograms-densities-and-boxplots",
+    "href": "06-distributions.html#choosing-among-histograms-densities-and-boxplots",
+    "title": "6  Distributions",
+    "section": "6.8 Choosing among histograms, densities, and boxplots",
+    "text": "6.8 Choosing among histograms, densities, and boxplots\nUse a histogram when you want to show counts and binning is meaningful.\nUse a density plot when you want to compare smooth distribution shapes.\nUse a boxplot when you want compact comparisons across many groups.\nNo single distribution plot is always best. It is normal to make several versions while exploring the data.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Distributions</span>"
+    ]
+  },
+  {
+    "objectID": "06-distributions.html#exercise-1-histogram",
+    "href": "06-distributions.html#exercise-1-histogram",
+    "title": "6  Distributions",
+    "section": "6.9 Exercise 1: histogram",
+    "text": "6.9 Exercise 1: histogram\nUse the built-in iris dataset.\n\nCreate a histogram of Sepal.Length.\nTry bins = 10, bins = 30, and bins = 50.\nAdd a title and readable axis labels.\nWrite one sentence explaining which bin choice is easiest to interpret.\n\n\ndata(iris)\n\nhead(iris)\n\n\n  \n\n\n\n\n# Write your plot here.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Distributions</span>"
+    ]
+  },
+  {
+    "objectID": "06-distributions.html#exercise-2-density-plot",
+    "href": "06-distributions.html#exercise-2-density-plot",
+    "title": "6  Distributions",
+    "section": "6.10 Exercise 2: density plot",
+    "text": "6.10 Exercise 2: density plot\nUse the built-in diamonds dataset.\n\nCreate a density plot of carat.\nMap cut to fill.\nUse alpha so the overlapping densities remain visible.\nTry a faceted version with facet_wrap(~ cut).\n\n\ndiamonds |&gt;\n  select(carat, cut, price) |&gt;\n  head(10)\n\n\n  \n\n\n\n\n# Write your plot here.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Distributions</span>"
+    ]
+  },
+  {
+    "objectID": "06-distributions.html#exercise-3-boxplot",
+    "href": "06-distributions.html#exercise-3-boxplot",
+    "title": "6  Distributions",
+    "section": "6.11 Exercise 3: boxplot",
+    "text": "6.11 Exercise 3: boxplot\nUse the built-in mpg dataset.\n\nCompare hwy across vehicle class.\nReorder the classes by median hwy.\nFlip the coordinates if the labels are hard to read.\n\n\n# Write your plot here.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Distributions</span>"
+    ]
+  },
+  {
+    "objectID": "06-distributions.html#extra-distribution-intervals-with-ggdist",
+    "href": "06-distributions.html#extra-distribution-intervals-with-ggdist",
+    "title": "6  Distributions",
+    "section": "6.12 Extra: distribution intervals with ggdist",
+    "text": "6.12 Extra: distribution intervals with ggdist\nThe ggdist package adds distribution geoms that combine several ideas at once. A half-eye plot shows the shape of a distribution while also marking a summary interval. It is useful when a boxplot feels too compressed but a full density plot takes too much space.\n\nif (requireNamespace(\"ggdist\", quietly = TRUE)) {\n  mpg |&gt;\n    mutate(class = fct_reorder(class, hwy, .fun = median)) |&gt;\n    ggplot(aes(x = hwy, y = class, fill = class)) +\n    ggdist::stat_halfeye(\n      adjust = 0.7,\n      width = 0.65,\n      point_interval = ggdist::median_qi,\n      show.legend = FALSE\n    ) +\n    labs(\n      title = \"Highway Mileage By Vehicle Class\",\n      subtitle = \"Half-eye plots show distribution shape and a median interval\",\n      x = \"Highway miles per gallon\",\n      y = NULL\n    ) +\n    theme_minimal()\n}\n\n\n\n\n\n\n\n\nThis is not a replacement for histograms, densities, or boxplots. It is another option when the goal is to show both distribution shape and uncertainty or spread in a compact display.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Distributions</span>"
+    ]
+  },
+  {
+    "objectID": "06-distributions.html#extra-worked-exercise-variants",
+    "href": "06-distributions.html#extra-worked-exercise-variants",
+    "title": "6  Distributions",
+    "section": "6.13 Extra: worked exercise variants",
+    "text": "6.13 Extra: worked exercise variants\nThe next three chunks are short exercise-style examples. Each uses a built-in dataset and changes only one or two plotting decisions at a time.\n\niris |&gt;\n  ggplot(aes(x = Sepal.Length)) +\n  geom_histogram(bins = 15, fill = \"#355c7d\", color = \"white\") +\n  labs(\n    title = \"Iris Sepal Length\",\n    x = \"Sepal length\",\n    y = \"Number of flowers\"\n  ) +\n  theme_minimal()\n\n\n\n\n\n\n\n\nThe same distribution can be separated by group. Here, fill = Species separates the histogram by species, while alpha makes overlapping bars partly transparent.\n\niris |&gt;\n  ggplot(aes(x = Sepal.Length, fill = Species)) +\n  geom_histogram(bins = 15, alpha = 0.65, position = \"identity\") +\n  labs(\n    title = \"Iris Sepal Length By Species\",\n    x = \"Sepal length\",\n    y = \"Number of flowers\",\n    fill = \"Species\"\n  ) +\n  theme_minimal()\n\n\n\n\n\n\n\n\nThe diamonds dataset is larger, so density plots are often easier to compare than overlapping histograms.\n\ndiamonds |&gt;\n  filter(carat &lt;= 2.5) |&gt;\n  ggplot(aes(x = carat, fill = cut)) +\n  geom_density(alpha = 0.35) +\n  labs(\n    title = \"Diamond Carat By Cut\",\n    subtitle = \"Filtered to diamonds up to 2.5 carats\",\n    x = \"Carat\",\n    y = \"Density\",\n    fill = \"Cut\"\n  ) +\n  theme_minimal()\n\n\n\n\n\n\n\n\nBoxplots are useful when the goal is a compact comparison of medians and spread across categories.\n\nmpg |&gt;\n  ggplot(aes(x = fct_reorder(class, hwy, .fun = median), y = hwy)) +\n  geom_boxplot(fill = \"#f6b44b\", color = \"gray30\") +\n  coord_flip() +\n  labs(\n    title = \"Highway Mileage By Vehicle Class\",\n    x = NULL,\n    y = \"Highway miles per gallon\"\n  ) +\n  theme_minimal()",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Distributions</span>"
+    ]
+  },
+  {
+    "objectID": "06-distributions.html#extra-pisa-score-distributions",
+    "href": "06-distributions.html#extra-pisa-score-distributions",
+    "title": "6  Distributions",
+    "section": "6.14 Extra: PISA score distributions",
+    "text": "6.14 Extra: PISA score distributions\nIndividual-level data like PISA is well suited for distribution plots because 152,000 students provide enough data to make the shape of each distribution clearly visible.\n\npisa &lt;- read_csv(\"Data/pisa/pisa_data_clean.csv\", show_col_types = FALSE) |&gt;\n  janitor::clean_names()\n\nA density plot comparing math score distributions by gender shows the shape of the gap rather than just the means.\n\nggplot(pisa, aes(x = average_math_score, fill = gender, color = gender)) +\n  geom_density(alpha = 0.35, linewidth = 0.8) +\n  scale_fill_manual(values  = c(\"Female\" = \"#c44d58\", \"Male\" = \"#355c7d\")) +\n  scale_color_manual(values = c(\"Female\" = \"#c44d58\", \"Male\" = \"#355c7d\")) +\n  labs(\n    title = \"Distribution of Math Scores by Gender\",\n    subtitle = \"PISA 2006, all countries combined\",\n    x = \"Average math score\",\n    y = \"Density\",\n    fill = NULL,\n    color = NULL,\n    caption = \"Source: PISA 2006.\"\n  ) +\n  theme_minimal()\n\n\n\n\n\n\n\n\nThe distributions overlap almost entirely. The male distribution sits slightly to the right, but the practical difference is small compared to the within-gender variation.\nTo compare all three subjects at once, pivot to long format and use facets.\n\npisa |&gt;\n  select(gender,\n         Math    = average_math_score,\n         Reading = average_reading_score,\n         Science = average_science_score) |&gt;\n  pivot_longer(-gender, names_to = \"subject\", values_to = \"score\") |&gt;\n  ggplot(aes(x = score, y = gender, fill = gender)) +\n  geom_boxplot(outliers = FALSE, alpha = 0.7) +\n  facet_wrap(~ subject) +\n  scale_fill_manual(values = c(\"Female\" = \"#c44d58\", \"Male\" = \"#355c7d\")) +\n  labs(\n    title = \"Score Distributions by Subject and Gender\",\n    subtitle = \"Outliers suppressed for readability\",\n    x = \"Score\",\n    y = NULL,\n    caption = \"Source: PISA 2006.\"\n  ) +\n  theme_minimal() +\n  theme(legend.position = \"none\")\n\n\n\n\n\n\n\n\nThe faceted boxplot reveals the subject-specific pattern: females score higher in reading, males score slightly higher in math, and science scores are nearly equal. Faceting makes this three-way comparison readable in one display.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Distributions</span>"
+    ]
+  },
+  {
+    "objectID": "06-distributions.html#extra-heatmaps-for-dense-two-variable-distributions",
+    "href": "06-distributions.html#extra-heatmaps-for-dense-two-variable-distributions",
+    "title": "6  Distributions",
+    "section": "6.15 Extra: heatmaps for dense two-variable distributions",
+    "text": "6.15 Extra: heatmaps for dense two-variable distributions\nWhen there are too many points, a scatterplot can turn into a cloud of overplotting. A two-dimensional bin plot counts observations inside rectangular bins.\n\nggplot(data = diamonds, mapping = aes(x = carat, y = price)) +\n  geom_bin2d(bins = 40) +\n  scale_fill_viridis_c(labels = comma) +\n  labs(\n    title = \"Diamond Price and Carat\",\n    subtitle = \"Color shows the number of diamonds in each bin\",\n    x = \"Carat\",\n    y = \"Price\",\n    fill = \"Count\"\n  ) +\n  theme_minimal()\n\n\n\n\n\n\n\n\nThis is a distribution plot for two variables at once. It is useful when individual points would overlap too much.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Distributions</span>"
+    ]
+  },
+  {
+    "objectID": "07-lines-bars-and-annotation.html",
+    "href": "07-lines-bars-and-annotation.html",
+    "title": "7  Lines, Bars, and Annotation",
+    "section": "",
+    "text": "7.1 Line charts\nLine charts are designed for ordered data, especially time. They work best when the x-axis has a meaningful sequence and the line connects observations that should be read as a path.\nWe will begin with GDP per capita over time in Gapminder.\nggplot(data = gapminder, mapping = aes(x = year, y = gdpPercap, group = country)) +\n  geom_line(alpha = 0.25) +\n  labs(\n    title = \"GDP per Capita over Time\",\n    subtitle = \"One line per country\",\n    x = \"Year\",\n    y = \"GDP per capita\",\n    caption = \"Source: Gapminder.\"\n  ) +\n  theme_minimal()\nThis plot has too many lines in one panel. We can separate continents with facets.\nggplot(data = gapminder, mapping = aes(x = year, y = gdpPercap, group = country)) +\n  geom_line(alpha = 0.25) +\n  facet_wrap(~ continent) +\n  labs(\n    title = \"GDP per Capita over Time\",\n    subtitle = \"One line per country, faceted by continent\",\n    x = \"Year\",\n    y = \"GDP per capita\",\n    caption = \"Source: Gapminder.\"\n  ) +\n  theme_minimal()\nKuwait is an extreme case in this dataset. A log scale makes the vertical comparison easier.\nggplot(data = gapminder, mapping = aes(x = year, y = gdpPercap, group = country)) +\n  geom_line(color = \"gray70\", alpha = 0.7) +\n  geom_smooth(\n    mapping = aes(group = continent),\n    method = \"loess\",\n    formula = y ~ x,\n    se = FALSE,\n    linewidth = 1\n  ) +\n  scale_y_log10(labels = dollar_format(accuracy = 1)) +\n  facet_wrap(~ continent, ncol = 5) +\n  labs(\n    title = \"GDP per Capita on Five Continents\",\n    subtitle = \"Gray lines are countries; smooth lines summarize continent trends\",\n    x = \"Year\",\n    y = \"GDP per capita\",\n    caption = \"Source: Gapminder.\"\n  ) +\n  theme_minimal() +\n  theme(axis.text.x = element_text(angle = 90, vjust = 0.5))",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Lines, Bars, and Annotation</span>"
+    ]
+  },
+  {
+    "objectID": "07-lines-bars-and-annotation.html#working-with-dates",
+    "href": "07-lines-bars-and-annotation.html#working-with-dates",
+    "title": "7  Lines, Bars, and Annotation",
+    "section": "7.2 Working with dates",
+    "text": "7.2 Working with dates\nSome datasets store time as actual dates. Others store years as numbers. The lubridate package helps convert text or numeric values into date objects.\n\nmake_date(2026)\n\n[1] \"2026-01-01\"\n\nymd(c(\"2009-01-02\", \"2009 01 03\", \"Created on 2009 1 6\"))\n\n[1] \"2009-01-02\" \"2009-01-03\" \"2009-01-06\"\n\n\nThe built-in economics dataset has monthly dates.\n\neconomics |&gt;\n  select(date, unemploy, psavert) |&gt;\n  slice_head(n = 10)\n\n\n  \n\n\n\n\nggplot(data = economics, mapping = aes(x = date, y = unemploy)) +\n  geom_line(color = \"steelblue\") +\n  scale_x_date(date_breaks = \"5 years\", date_labels = \"%Y\") +\n  labs(\n    title = \"U.S. Unemployment\",\n    subtitle = \"Monthly observations, 1967-2015\",\n    x = NULL,\n    y = \"Unemployed workers (thousands)\",\n    caption = \"Source: ggplot2 economics dataset.\"\n  ) +\n  theme_minimal()\n\n\n\n\n\n\n\n\nFor a shorter period, use denser date labels.\n\neconomics |&gt;\n  filter(date &gt;= \"2007-01-01\", date &lt;= \"2010-12-31\") |&gt;\n  ggplot(mapping = aes(x = date, y = unemploy)) +\n  geom_line(color = \"firebrick\") +\n  scale_x_date(date_breaks = \"3 months\", date_labels = \"%b %Y\") +\n  labs(\n    title = \"U.S. Unemployment during the Financial Crisis\",\n    x = NULL,\n    y = \"Unemployed workers (thousands)\",\n    caption = \"Source: ggplot2 economics dataset.\"\n  ) +\n  theme_minimal() +\n  theme(axis.text.x = element_text(angle = 45, hjust = 1))",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Lines, Bars, and Annotation</span>"
+    ]
+  },
+  {
+    "objectID": "07-lines-bars-and-annotation.html#highlighting-trends",
+    "href": "07-lines-bars-and-annotation.html#highlighting-trends",
+    "title": "7  Lines, Bars, and Annotation",
+    "section": "7.3 Highlighting trends",
+    "text": "7.3 Highlighting trends\nLine charts often need highlighting. A common strategy is to show all lines in gray and draw the important line in a stronger color.\nThe state policy dataset is useful for this because it has repeated state-year observations. The examples below use unemployment rates by state.\n\nstate_policy_panel &lt;- haven::read_dta(\"Data/state_policy/state_data_1993_2016.dta\") |&gt;\n  mutate(st = as.character(st)) |&gt;\n  filter(!is.na(unemploy))\n\nstate_policy_panel |&gt;\n  select(st, year, unemploy) |&gt;\n  head(10)\n\n\n  \n\n\n\n\nggplot(data = state_policy_panel, mapping = aes(x = year, y = unemploy, group = st)) +\n  geom_line(color = \"gray75\", alpha = 0.7) +\n  geom_line(\n    data = state_policy_panel |&gt; filter(st == \"MI\"),\n    color = \"black\",\n    linewidth = 1.6\n  ) +\n  labs(\n    title = \"Michigan Unemployment in Context\",\n    subtitle = \"Other states provide context\",\n    x = \"Year\",\n    y = \"Unemployment rate\",\n    caption = \"Source: State policy data.\"\n  ) +\n  theme_minimal()\n\n\n\n\n\n\n\n\nThe plot above identifies Michigan visually but not by name. Chapter 8 returns to manual direct labels in a fuller workflow. Here, the shorter option is gghighlight().\nThe gghighlight package automates highlighting and direct labeling when the highlighting rule can be stated as a logical condition.\n\nggplot(data = state_policy_panel, mapping = aes(x = year, y = unemploy, color = st)) +\n  geom_line(linewidth = 0.75) +\n  gghighlight(\n    st == \"MI\",\n    use_group_by = FALSE,\n    label_key = st,\n    unhighlighted_params = list(linewidth = 0.3, alpha = 0.5)\n  ) +\n  labs(\n    title = \"Michigan Unemployment in Context\",\n    subtitle = \"Highlighted with gghighlight()\",\n    x = \"Year\",\n    y = \"Unemployment rate\",\n    caption = \"Source: State policy data.\"\n  ) +\n  theme_minimal() +\n  theme(legend.position = \"none\")\n\n\n\n\n\n\n\n\nWe can also highlight a set of cases. The condition can name several states with %in%.\n\nggplot(data = state_policy_panel, mapping = aes(x = year, y = unemploy, color = st)) +\n  geom_line(linewidth = 0.75) +\n  gghighlight(\n    st %in% c(\"IL\", \"IN\", \"MI\", \"OH\", \"WI\"),\n    use_group_by = FALSE,\n    label_key = st,\n    unhighlighted_params = list(linewidth = 0.3, alpha = 0.5)\n  ) +\n  labs(\n    title = \"Unemployment in Five Midwestern States\",\n    x = \"Year\",\n    y = \"Unemployment rate\",\n    caption = \"Source: State policy data.\"\n  ) +\n  theme_minimal() +\n  theme(legend.position = \"none\")",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Lines, Bars, and Annotation</span>"
+    ]
+  },
+  {
+    "objectID": "07-lines-bars-and-annotation.html#bar-charts",
+    "href": "07-lines-bars-and-annotation.html#bar-charts",
+    "title": "7  Lines, Bars, and Annotation",
+    "section": "7.4 Bar charts",
+    "text": "7.4 Bar charts\nBar charts are useful for comparing quantities across categories. When the data is already summarized, use geom_col().\nThe midwest dataset has county-level observations. To compare average college education by state, we first summarize.\n\ncollege_by_state &lt;- midwest |&gt;\n  filter(!is.na(percollege)) |&gt;\n  group_by(state) |&gt;\n  summarize(\n    avg_college = round(mean(percollege), 1)\n  )\n\ncollege_by_state\n\n\n  \n\n\n\n\nggplot(data = college_by_state, mapping = aes(x = state, y = avg_college)) +\n  geom_col(fill = \"steelblue\") +\n  labs(\n    title = \"Average College Education by Midwest State\",\n    x = \"State\",\n    y = \"Percent with college degree\",\n    caption = \"Source: ggplot2 midwest dataset.\"\n  ) +\n  theme_minimal()\n\n\n\n\n\n\n\n\nOrdering the bars by value makes comparison easier.\n\nggplot(data = college_by_state, mapping = aes(x = reorder(state, avg_college), y = avg_college)) +\n  geom_col(fill = \"steelblue\") +\n  scale_y_continuous(labels = percent_format(scale = 1)) +\n  labs(\n    title = \"Average College Education by Midwest State\",\n    subtitle = \"Bars ordered by average\",\n    x = \"State\",\n    y = \"Percent with college degree\",\n    caption = \"Source: ggplot2 midwest dataset.\"\n  ) +\n  theme_minimal()\n\n\n\n\n\n\n\n\nIf category labels are long, coord_flip() often helps.\n\nggplot(data = college_by_state, mapping = aes(x = reorder(state, avg_college), y = avg_college)) +\n  geom_col(aes(fill = state), show.legend = FALSE) +\n  geom_text(aes(label = str_c(avg_college, \"%\")), hjust = -0.15, size = 3.5) +\n  coord_flip() +\n  scale_y_continuous(labels = percent_format(scale = 1), expand = expansion(mult = c(0, 0.12))) +\n  labs(\n    title = \"Average College Education by Midwest State\",\n    x = NULL,\n    y = \"Percent with college degree\",\n    caption = \"Source: ggplot2 midwest dataset.\"\n  ) +\n  theme_minimal()",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Lines, Bars, and Annotation</span>"
+    ]
+  },
+  {
+    "objectID": "07-lines-bars-and-annotation.html#geom_col-versus-geom_bar",
+    "href": "07-lines-bars-and-annotation.html#geom_col-versus-geom_bar",
+    "title": "7  Lines, Bars, and Annotation",
+    "section": "7.5 geom_col() versus geom_bar()",
+    "text": "7.5 geom_col() versus geom_bar()\nUse geom_col() when you already have the heights of the bars.\nUse geom_bar() when you want ggplot2 to count rows.\n\nggplot(data = midwest, mapping = aes(x = state)) +\n  geom_bar(fill = \"gray45\") +\n  labs(\n    title = \"Number of Counties by State\",\n    x = \"State\",\n    y = \"Number of counties\",\n    caption = \"Source: ggplot2 midwest dataset.\"\n  ) +\n  theme_minimal()\n\n\n\n\n\n\n\n\nHere, no y variable is mapped. geom_bar() counts the number of rows in each state.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Lines, Bars, and Annotation</span>"
+    ]
+  },
+  {
+    "objectID": "07-lines-bars-and-annotation.html#dodged-bars",
+    "href": "07-lines-bars-and-annotation.html#dodged-bars",
+    "title": "7  Lines, Bars, and Annotation",
+    "section": "7.6 Dodged bars",
+    "text": "7.6 Dodged bars\nDodged bars place bars side by side within each category. Here we compare metro and non-metro counties within states.\n\nggplot(data = midwest, mapping = aes(x = state, fill = factor(inmetro))) +\n  geom_bar(position = \"dodge\") +\n  scale_fill_manual(\n    values = c(\"0\" = \"coral\", \"1\" = \"navy\"),\n    labels = c(\"0\" = \"Non-metro\", \"1\" = \"Metro\")\n  ) +\n  labs(\n    title = \"Metro and Non-Metro Counties by State\",\n    x = \"State\",\n    y = \"Number of counties\",\n    fill = \"County type\",\n    caption = \"Source: ggplot2 midwest dataset.\"\n  ) +\n  theme_minimal()\n\n\n\n\n\n\n\n\nAdding labels to dodged bars requires the text to use the same dodging.\n\nggplot(data = midwest, mapping = aes(x = state, fill = factor(inmetro))) +\n  geom_bar(position = position_dodge(width = 0.9)) +\n  geom_text(\n    mapping = aes(label = after_stat(count), group = factor(inmetro)),\n    stat = \"count\",\n    position = position_dodge(width = 0.9),\n    vjust = -0.4,\n    size = 3\n  ) +\n  scale_fill_manual(\n    values = c(\"0\" = \"coral\", \"1\" = \"navy\"),\n    labels = c(\"0\" = \"Non-metro\", \"1\" = \"Metro\")\n  ) +\n  labs(\n    title = \"Metro and Non-Metro Counties by State\",\n    x = \"State\",\n    y = \"Number of counties\",\n    fill = \"County type\",\n    caption = \"Source: ggplot2 midwest dataset.\"\n  ) +\n  theme_minimal()",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Lines, Bars, and Annotation</span>"
+    ]
+  },
+  {
+    "objectID": "07-lines-bars-and-annotation.html#bar-chart-example-oecd-life-expectancy-gap",
+    "href": "07-lines-bars-and-annotation.html#bar-chart-example-oecd-life-expectancy-gap",
+    "title": "7  Lines, Bars, and Annotation",
+    "section": "7.7 Bar chart example: OECD life expectancy gap",
+    "text": "7.7 Bar chart example: OECD life expectancy gap\nA local copy of the oecd_sum summary lives at Data/oecd/oecd_sum.csv. Each row is one year, with columns for U.S. life expectancy, the OECD non-U.S. average, the difference, and a hi_lo indicator for whether the U.S. is above or below the average.\n\noecd_sum &lt;- read_csv(\"Data/oecd/oecd_sum.csv\", show_col_types = FALSE)\n\nggplot(data = oecd_sum, mapping = aes(x = year, y = diff, fill = hi_lo)) +\n  geom_col() +\n  guides(fill = \"none\") +\n  labs(\n    title = \"The U.S. Life Expectancy Gap\",\n    subtitle = \"Difference between U.S. and OECD average life expectancy\",\n    x = \"Year\",\n    y = \"Difference in years\",\n    caption = \"Data: OECD, summarized in Kieran Healy's socviz package.\"\n  ) +\n  theme_minimal()\n\n\n\n\n\n\n\n\nThis is a bar chart because the main comparison is the size and direction of a yearly difference.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Lines, Bars, and Annotation</span>"
+    ]
+  },
+  {
+    "objectID": "07-lines-bars-and-annotation.html#exercise",
+    "href": "07-lines-bars-and-annotation.html#exercise",
+    "title": "7  Lines, Bars, and Annotation",
+    "section": "7.8 Exercise",
+    "text": "7.8 Exercise\nCreate an ordered bar chart from a summarized dataset.\n\nUse midwest.\nGroup by state.\nCalculate the median of percollege.\nMake an ordered geom_col() chart.\nAdd value labels.\nRemove any redundant legend.\n\n\n# Write your plot here.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Lines, Bars, and Annotation</span>"
+    ]
+  },
+  {
+    "objectID": "07-lines-bars-and-annotation.html#extra-slopegraphs",
+    "href": "07-lines-bars-and-annotation.html#extra-slopegraphs",
+    "title": "7  Lines, Bars, and Annotation",
+    "section": "7.9 Extra: slopegraphs",
+    "text": "7.9 Extra: slopegraphs\nSlopegraphs compare the same units at a small number of time points. They are especially useful when the start and end values matter more than the intermediate path. The form was popularized by Edward Tufte in The Visual Display of Quantitative Information, but the design predates him by a century.\nA generic Tufte-style slopegraph:\n\n\n\nTufte slopegraph illustration\n\n\nBen Fry’s slopegraph of baseball salary per win:\n\n\n\nBaseball slopegraph by Ben Fry\n\n\nAnd one from Scribner’s Statistical Atlas of the United States in 1883, well before the modern term existed:\n\n\n\nScribner’s Statistical Atlas, 1883\n\n\nUnlike a traditional line chart, a slopegraph emphasizes the start and end values of each unit, so change is read as the slope of a line rather than as a path through many points.\nThe states table is a local snapshot of Correlates of State Policy data, originally fetched with cspp::get_cspp_data(). polconserv is policy conservatism (the negation of pollib_median), so larger values mean a more conservative policy environment.\n\nstates &lt;- read_csv(\"Data/state_policy/cspp_states.csv\", show_col_types = FALSE)\n\nlibrary(ggslopegraph)\n\nggslopegraph(\n  dataframe = states |&gt;\n    mutate(year = as.character(year)) |&gt;\n    filter(year %in% c(\"1980\", \"1990\", \"2000\", \"2010\"), region.name == \"midwest\"),\n  Times = year,\n  Measurement = polconserv,\n  Grouping = st,\n  Title = \"Tufte-style Slopegraph of Policy Conservatism\",\n  SubTitle = \"Midwest, 1980-2010\",\n  Caption = \"Source: Correlates of State Policy via the cspp package.\"\n)\n\n\n\n\n\n\n\n\nggslopegraph() requires the Times column to be a character or factor, which is why year is converted before filtering. If ggslopegraph is not available, the same plot can be built with plain geom_line() and geom_text().",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Lines, Bars, and Annotation</span>"
+    ]
   }
 ]
