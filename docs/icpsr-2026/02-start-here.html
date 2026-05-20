@@ -185,8 +185,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./06b-misc-density.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">6b: Misc Density</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./07-lines-bars-and-annotation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Lines, Bars, and Annotation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Lines, Bars, and Annotation</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-tables.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Tables</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-interactivity-and-dashboards.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Interactivity And Dashboards</span></span></a>
   </div>
 </li>
     </ul>
@@ -201,27 +219,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#learning-goals" id="toc-learning-goals" class="nav-link active" data-scroll-target="#learning-goals"><span class="header-section-number">2.1</span> Learning Goals</a></li>
   <li><a href="#the-course-workflow" id="toc-the-course-workflow" class="nav-link" data-scroll-target="#the-course-workflow"><span class="header-section-number">2.2</span> The Course Workflow</a></li>
-  <li><a href="#plain-r-scripts" id="toc-plain-r-scripts" class="nav-link" data-scroll-target="#plain-r-scripts"><span class="header-section-number">2.3</span> Plain R Scripts</a></li>
-  <li><a href="#the-console" id="toc-the-console" class="nav-link" data-scroll-target="#the-console"><span class="header-section-number">2.4</span> The Console</a></li>
-  <li><a href="#r-rstudio-posit-cloud-and-quarto" id="toc-r-rstudio-posit-cloud-and-quarto" class="nav-link" data-scroll-target="#r-rstudio-posit-cloud-and-quarto"><span class="header-section-number">2.5</span> R, RStudio, Posit Cloud, And Quarto</a></li>
-  <li><a href="#project-files-and-portable-paths" id="toc-project-files-and-portable-paths" class="nav-link" data-scroll-target="#project-files-and-portable-paths"><span class="header-section-number">2.6</span> Project Files And Portable Paths</a></li>
-  <li><a href="#the-rstudio-layout" id="toc-the-rstudio-layout" class="nav-link" data-scroll-target="#the-rstudio-layout"><span class="header-section-number">2.7</span> The RStudio Layout</a></li>
-  <li><a href="#source-mode-and-visual-mode" id="toc-source-mode-and-visual-mode" class="nav-link" data-scroll-target="#source-mode-and-visual-mode"><span class="header-section-number">2.8</span> Source Mode And Visual Mode</a></li>
-  <li><a href="#markdown-basics" id="toc-markdown-basics" class="nav-link" data-scroll-target="#markdown-basics"><span class="header-section-number">2.9</span> Markdown Basics</a></li>
-  <li><a href="#code-chunks" id="toc-code-chunks" class="nav-link" data-scroll-target="#code-chunks"><span class="header-section-number">2.10</span> Code Chunks</a></li>
-  <li><a href="#chunk-names-and-navigation" id="toc-chunk-names-and-navigation" class="nav-link" data-scroll-target="#chunk-names-and-navigation"><span class="header-section-number">2.11</span> Chunk Names And Navigation</a></li>
-  <li><a href="#chunk-options" id="toc-chunk-options" class="nav-link" data-scroll-target="#chunk-options"><span class="header-section-number">2.12</span> Chunk Options</a></li>
-  <li><a href="#rendering" id="toc-rendering" class="nav-link" data-scroll-target="#rendering"><span class="header-section-number">2.13</span> Rendering</a></li>
-  <li><a href="#a-first-reproducible-example" id="toc-a-first-reproducible-example" class="nav-link" data-scroll-target="#a-first-reproducible-example"><span class="header-section-number">2.14</span> A First Reproducible Example</a></li>
-  <li><a href="#reading-output-carefully" id="toc-reading-output-carefully" class="nav-link" data-scroll-target="#reading-output-carefully"><span class="header-section-number">2.15</span> Reading Output Carefully</a></li>
-  <li><a href="#short-exercise" id="toc-short-exercise" class="nav-link" data-scroll-target="#short-exercise"><span class="header-section-number">2.16</span> Short Exercise</a></li>
-  <li><a href="#extras-rstudio-settings" id="toc-extras-rstudio-settings" class="nav-link" data-scroll-target="#extras-rstudio-settings"><span class="header-section-number">2.17</span> Extras: RStudio Settings</a></li>
-  <li><a href="#extras-output-formats" id="toc-extras-output-formats" class="nav-link" data-scroll-target="#extras-output-formats"><span class="header-section-number">2.18</span> Extras: Output Formats</a>
+  <li><a href="#literate-programming" id="toc-literate-programming" class="nav-link" data-scroll-target="#literate-programming"><span class="header-section-number">2.3</span> Literate Programming</a></li>
+  <li><a href="#plain-r-scripts" id="toc-plain-r-scripts" class="nav-link" data-scroll-target="#plain-r-scripts"><span class="header-section-number">2.4</span> Plain R Scripts</a></li>
+  <li><a href="#the-console" id="toc-the-console" class="nav-link" data-scroll-target="#the-console"><span class="header-section-number">2.5</span> The Console</a></li>
+  <li><a href="#r-rstudio-posit-cloud-and-quarto" id="toc-r-rstudio-posit-cloud-and-quarto" class="nav-link" data-scroll-target="#r-rstudio-posit-cloud-and-quarto"><span class="header-section-number">2.6</span> R, RStudio, Posit Cloud, And Quarto</a></li>
+  <li><a href="#project-files-and-portable-paths" id="toc-project-files-and-portable-paths" class="nav-link" data-scroll-target="#project-files-and-portable-paths"><span class="header-section-number">2.7</span> Project Files And Portable Paths</a></li>
+  <li><a href="#the-rstudio-layout" id="toc-the-rstudio-layout" class="nav-link" data-scroll-target="#the-rstudio-layout"><span class="header-section-number">2.8</span> The RStudio Layout</a></li>
+  <li><a href="#rstudio-settings" id="toc-rstudio-settings" class="nav-link" data-scroll-target="#rstudio-settings"><span class="header-section-number">2.9</span> RStudio Settings</a></li>
+  <li><a href="#source-mode-and-visual-mode" id="toc-source-mode-and-visual-mode" class="nav-link" data-scroll-target="#source-mode-and-visual-mode"><span class="header-section-number">2.10</span> Source Mode And Visual Mode</a></li>
+  <li><a href="#markdown-basics" id="toc-markdown-basics" class="nav-link" data-scroll-target="#markdown-basics"><span class="header-section-number">2.11</span> Markdown Basics</a></li>
+  <li><a href="#code-chunks" id="toc-code-chunks" class="nav-link" data-scroll-target="#code-chunks"><span class="header-section-number">2.12</span> Code Chunks</a></li>
+  <li><a href="#chunk-names-and-navigation" id="toc-chunk-names-and-navigation" class="nav-link" data-scroll-target="#chunk-names-and-navigation"><span class="header-section-number">2.13</span> Chunk Names And Navigation</a></li>
+  <li><a href="#chunk-options" id="toc-chunk-options" class="nav-link" data-scroll-target="#chunk-options"><span class="header-section-number">2.14</span> Chunk Options</a></li>
+  <li><a href="#rendering" id="toc-rendering" class="nav-link" data-scroll-target="#rendering"><span class="header-section-number">2.15</span> Rendering</a></li>
+  <li><a href="#a-real-workflow-from-presentation-to-published-paper" id="toc-a-real-workflow-from-presentation-to-published-paper" class="nav-link" data-scroll-target="#a-real-workflow-from-presentation-to-published-paper"><span class="header-section-number">2.16</span> A Real Workflow: From Presentation to Published Paper</a></li>
+  <li><a href="#output-formats" id="toc-output-formats" class="nav-link" data-scroll-target="#output-formats"><span class="header-section-number">2.17</span> Output Formats</a>
   <ul class="collapse">
-  <li><a href="#presentation-demo" id="toc-presentation-demo" class="nav-link" data-scroll-target="#presentation-demo"><span class="header-section-number">2.18.1</span> Presentation Demo</a></li>
-  <li><a href="#paper-or-report-demo" id="toc-paper-or-report-demo" class="nav-link" data-scroll-target="#paper-or-report-demo"><span class="header-section-number">2.18.2</span> Paper Or Report Demo</a></li>
+  <li><a href="#presentation-demo" id="toc-presentation-demo" class="nav-link" data-scroll-target="#presentation-demo"><span class="header-section-number">2.17.1</span> Presentation Demo</a></li>
+  <li><a href="#paper-or-report-demo" id="toc-paper-or-report-demo" class="nav-link" data-scroll-target="#paper-or-report-demo"><span class="header-section-number">2.17.2</span> Paper Or Report Demo</a></li>
   </ul></li>
-  <li><a href="#what-comes-next" id="toc-what-comes-next" class="nav-link" data-scroll-target="#what-comes-next"><span class="header-section-number">2.19</span> What Comes Next</a></li>
+  <li><a href="#a-first-reproducible-example" id="toc-a-first-reproducible-example" class="nav-link" data-scroll-target="#a-first-reproducible-example"><span class="header-section-number">2.18</span> A First Reproducible Example</a></li>
+  <li><a href="#reading-output-carefully" id="toc-reading-output-carefully" class="nav-link" data-scroll-target="#reading-output-carefully"><span class="header-section-number">2.19</span> Reading Output Carefully</a></li>
+  <li><a href="#short-exercise" id="toc-short-exercise" class="nav-link" data-scroll-target="#short-exercise"><span class="header-section-number">2.20</span> Short Exercise</a></li>
+  <li><a href="#what-comes-next" id="toc-what-comes-next" class="nav-link" data-scroll-target="#what-comes-next"><span class="header-section-number">2.21</span> What Comes Next</a></li>
   </ul>
 </nav>
     </div>
@@ -264,18 +284,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>During class, most work will happen inside <code>.qmd</code> files like this one. A Quarto file is a plain-text document that can contain headings, paragraphs, lists, links, code chunks, tables, figures, and notes about interpretation. When Quarto renders the file, it runs the code chunks and combines the results with the surrounding text.</p>
 <p>This is different from working only in the console. The console is useful for quick tests, but it does not automatically preserve the reasoning around the command. A Quarto document keeps the analysis in order: what question was being asked, what data were used, what code was run, what output appeared, and what conclusion followed.</p>
 </section>
-<section id="plain-r-scripts" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="plain-r-scripts"><span class="header-section-number">2.3</span> Plain R Scripts</h2>
+<section id="literate-programming" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="literate-programming"><span class="header-section-number">2.3</span> Literate Programming</h2>
+<p>Donald Knuth — who wrote <em>The Art of Computer Programming</em> and built the TeX typesetting system — coined the term <em>literate programming</em> in 1984. The idea is to write code primarily for human readers rather than for computers. Explanation and code go in the same document, in the same order as the reasoning, so a reader can follow both at once.</p>
+<p>Most statistical work has not been done this way. The standard workflow for a long time has been: run the analysis in Stata or R, save the plots and tables to a folder somewhere, open Word, write the paper, load the figures in, open PowerPoint, build the slides, load the figures in again. Get a comment from a co-author, go back to Stata, re-run something, save a new version of the figure, find all the places it appears in Word and PowerPoint, replace them. Repeat. The analysis and the document are separate objects that have to be kept in sync by hand.</p>
+<p>This works, after a fashion, but it is slow, it is error-prone, and it makes replication hard. A table in the slides may not match the one in the paper. A figure may have been made with an earlier cut of the data. Six months later, you may not be able to reconstruct exactly which version of the code produced a given number.</p>
+<p>Quarto solves this by putting everything in one place. The prose, the code, the figures, and the tables all live in a single <code>.qmd</code> file. Render it and you get a paper, a slide deck, or a report — whatever the YAML specifies. Change the data or revise the analysis, render again, and all the outputs update at once. Nothing is pasted in from elsewhere and nothing gets out of sync.</p>
+<p>It is worth saying something about LaTeX here, because it has been the standard for scientific publishing for decades, and for good reason. LaTeX produces beautiful output. The typesetting is precise, the mathematical notation is unmatched, and the journal templates for economics, political science, sociology, psychology, statistics, and most other quantitative disciplines are built for it. Many journals still expect it.</p>
+<p>The problem is that LaTeX is genuinely hard to use and remarkably unforgiving. One missing brace and the document fails to compile with an error message that tells you very little. The syntax is arcane. Managing bibliographies, cross-references, and figure placement requires learning a small universe of packages. Collaborating on a LaTeX document means everyone needs a working installation and the patience to debug it. This is not like Word, where you type, save, and look at what you have.</p>
+<p>Quarto gives you most of what LaTeX offers without requiring you to write it directly. Quarto uses Markdown as its writing format — plain text with simple conventions for headings, bold, lists, and links — and is the successor to R Markdown, which many researchers in these fields will have encountered. R Markdown established the idea of mixing R code with prose in a single document; Quarto takes that further, adding support for Python and other languages, a more consistent syntax, and better tools for books, websites, and presentations. When you render a <code>.qmd</code> file to PDF, Quarto calls LaTeX under the hood — so the output looks like a LaTeX document, journal templates work, and equations render properly — but you write in Markdown. You get the output quality without the brittleness. When you need to go further into LaTeX directly, it is there, but for most purposes you will not need to.</p>
+<p>The tidyverse extends this thinking down to the code itself. Hadley Wickham designed <code>dplyr</code> and <code>ggplot2</code> to be read as well as run. A pipeline written with <code>|&gt;</code> reads left to right: take this data, filter it, reshape it, summarize it by group. A <code>ggplot2</code> call names explicitly what each variable does in the plot and why. The code is not just instructions for R — it is a record of the decisions made during the analysis, which is exactly what Knuth had in mind.</p>
+<p>The <code>Examples/Party Rolls</code> folder shows this in a real project, covered in more detail later in this chapter.</p>
+</section>
+<section id="plain-r-scripts" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="plain-r-scripts"><span class="header-section-number">2.4</span> Plain R Scripts</h2>
 <p>The simplest kind of R source file is a plain R script. A plain R script uses the <code>.R</code> extension and contains only R code. It is useful for setup tasks, repeated checks, helper functions, and other code that does not need surrounding prose or rendered output.</p>
 <p>This project includes a few plain R scripts:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>install_packages.R</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>install_extra_packages.R</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>check_setup.R</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>The file <code>check_setup.R</code> is a good example. It checks whether the main packages and course data files are available. Opening that file and clicking <strong>Source</strong> runs the whole script. The result is a quick setup check, not a rendered document.</p>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>check_setup.R</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The file <code>check_setup.R</code> is a good example. It checks whether the course packages and course data files are available. Opening that file and clicking <strong>Source</strong> runs the whole script. The result is a quick setup check, not a rendered document.</p>
 <p>Use <code>.R</code> scripts when the goal is to run code directly. Use <code>.qmd</code> files when the goal is to combine explanation, code, and output.</p>
 </section>
-<section id="the-console" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="the-console"><span class="header-section-number">2.4</span> The Console</h2>
+<section id="the-console" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="the-console"><span class="header-section-number">2.5</span> The Console</h2>
 <p>The console is the fastest place to test a command, inspect an object, or rerun something without rendering a document.</p>
 <p>Two console habits are especially helpful:</p>
 <ul>
@@ -284,8 +315,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <p>The console is not a replacement for a source file. If a command becomes part of the analysis, move it into a <code>.qmd</code> or <code>.R</code> file so it is preserved.</p>
 </section>
-<section id="r-rstudio-posit-cloud-and-quarto" class="level2" data-number="2.5">
-<h2 data-number="2.5" class="anchored" data-anchor-id="r-rstudio-posit-cloud-and-quarto"><span class="header-section-number">2.5</span> R, RStudio, Posit Cloud, And Quarto</h2>
+<section id="r-rstudio-posit-cloud-and-quarto" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="r-rstudio-posit-cloud-and-quarto"><span class="header-section-number">2.6</span> R, RStudio, Posit Cloud, And Quarto</h2>
 <p>These tools have different jobs:</p>
 <ul>
 <li>R is the programming language that reads data, transforms it, estimates models, and makes graphics.</li>
@@ -295,8 +326,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <p>R Markdown was the predecessor used in earlier versions of this course. Quarto keeps the same basic idea, but it is now the preferred format for this version of the workshop. If you have used <code>.Rmd</code> files before, the transition should feel familiar: a <code>.qmd</code> file still mixes text and code. The main difference is that Quarto uses a more general and consistent document system.</p>
 </section>
-<section id="project-files-and-portable-paths" class="level2" data-number="2.6">
-<h2 data-number="2.6" class="anchored" data-anchor-id="project-files-and-portable-paths"><span class="header-section-number">2.6</span> Project Files And Portable Paths</h2>
+<section id="project-files-and-portable-paths" class="level2" data-number="2.7">
+<h2 data-number="2.7" class="anchored" data-anchor-id="project-files-and-portable-paths"><span class="header-section-number">2.7</span> Project Files And Portable Paths</h2>
 <p>The examples in this course assume that the project has been opened in RStudio or Posit Cloud. Files are organized inside the project in folders such as <code>Data/</code>, <code>Demos/</code>, and <code>Exercises/</code>.</p>
 <p>The data examples use file names like these:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>Data<span class="sc">/</span>gapminder<span class="sc">/</span>gapminder.csv</span>
@@ -306,8 +337,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Avoid file names that depend on a personal Desktop, Downloads folder, or another location on one person’s computer.</p>
 <p>Keeping files inside the project matters because the course should work in Posit Cloud, on another computer, or after being archived for later use.</p>
 </section>
-<section id="the-rstudio-layout" class="level2" data-number="2.7">
-<h2 data-number="2.7" class="anchored" data-anchor-id="the-rstudio-layout"><span class="header-section-number">2.7</span> The RStudio Layout</h2>
+<section id="the-rstudio-layout" class="level2" data-number="2.8">
+<h2 data-number="2.8" class="anchored" data-anchor-id="the-rstudio-layout"><span class="header-section-number">2.8</span> The RStudio Layout</h2>
 <p>RStudio usually has four main panes:</p>
 <ul>
 <li>the source pane, where <code>.qmd</code> and <code>.R</code> files are edited</li>
@@ -317,15 +348,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <p>The exact pane arrangement can be changed under Global Options. The important habit is to know which pane is doing which job. The source pane is for durable work. The console is for quick tests. The environment pane shows what objects currently exist. The viewer pane is often where rendered HTML output appears.</p>
 </section>
-<section id="source-mode-and-visual-mode" class="level2" data-number="2.8">
-<h2 data-number="2.8" class="anchored" data-anchor-id="source-mode-and-visual-mode"><span class="header-section-number">2.8</span> Source Mode And Visual Mode</h2>
+<section id="rstudio-settings" class="level2" data-number="2.9">
+<h2 data-number="2.9" class="anchored" data-anchor-id="rstudio-settings"><span class="header-section-number">2.9</span> RStudio Settings</h2>
+<p>A few RStudio settings can make workshop work more comfortable:</p>
+<ul>
+<li>turn off restoring <code>.RData</code> into the workspace at startup</li>
+<li>set saving the workspace on exit to “Never”</li>
+<li>turn on rainbow parentheses if available</li>
+<li>use the document outline for long <code>.qmd</code> files</li>
+<li>choose a source editor font and size that are comfortable for several hours of reading</li>
+</ul>
+<p>These settings do not change the analysis, but they reduce friction. The main principle is that the project files should define the work, not a hidden workspace image from a previous session.</p>
+</section>
+<section id="source-mode-and-visual-mode" class="level2" data-number="2.10">
+<h2 data-number="2.10" class="anchored" data-anchor-id="source-mode-and-visual-mode"><span class="header-section-number">2.10</span> Source Mode And Visual Mode</h2>
 <p>RStudio can edit Quarto documents in source mode or visual mode.</p>
 <p>Source mode shows the underlying Markdown and code exactly as written. It is the most transparent mode for learning because it makes headings, chunks, chunk options, links, and lists visible.</p>
 <p>Visual mode is a more word-processor-like interface. It can be helpful for editing prose, tables, footnotes, and links. It is still editing the same <code>.qmd</code> file, but it hides some of the raw syntax while you write.</p>
 <p>Both modes are useful. During this course, source mode is usually the clearest mode for understanding how the document works. Visual mode can be helpful later when revising narrative text.</p>
 </section>
-<section id="markdown-basics" class="level2" data-number="2.9">
-<h2 data-number="2.9" class="anchored" data-anchor-id="markdown-basics"><span class="header-section-number">2.9</span> Markdown Basics</h2>
+<section id="markdown-basics" class="level2" data-number="2.11">
+<h2 data-number="2.11" class="anchored" data-anchor-id="markdown-basics"><span class="header-section-number">2.11</span> Markdown Basics</h2>
 <p>Quarto uses Markdown for ordinary text formatting. A few patterns cover most needs:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># First-level heading</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -343,8 +386,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Quarto website</span><span class="co">](https://quarto.org)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>The number of <code>#</code> symbols controls the heading level. Headings also create the document outline, which makes long lessons easier to navigate.</p>
 </section>
-<section id="code-chunks" class="level2" data-number="2.10">
-<h2 data-number="2.10" class="anchored" data-anchor-id="code-chunks"><span class="header-section-number">2.10</span> Code Chunks</h2>
+<section id="code-chunks" class="level2" data-number="2.12">
+<h2 data-number="2.12" class="anchored" data-anchor-id="code-chunks"><span class="header-section-number">2.12</span> Code Chunks</h2>
 <p>An R code chunk starts with three backticks and <code>{r}</code>. A useful chunk also has a short name after <code>r</code>, then ends with three backticks.</p>
 <p>In the source file, the opening line would be <code>```{r ch02-code-chunks-1}</code> and the closing line would be <code>```</code>. The R code between those lines could be:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -357,21 +400,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>x <span class="sc">+</span> y</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>The assignment operator <code>&lt;-</code> stores a value in an object. In the example above, <code>x</code> stores <code>10</code> and <code>y</code> stores <code>25</code>. After those objects exist, R can use them in later commands.</p>
 </section>
-<section id="chunk-names-and-navigation" class="level2" data-number="2.11">
-<h2 data-number="2.11" class="anchored" data-anchor-id="chunk-names-and-navigation"><span class="header-section-number">2.11</span> Chunk Names And Navigation</h2>
+<section id="chunk-names-and-navigation" class="level2" data-number="2.13">
+<h2 data-number="2.13" class="anchored" data-anchor-id="chunk-names-and-navigation"><span class="header-section-number">2.13</span> Chunk Names And Navigation</h2>
 <p>Most real code chunks in these course files have a name. The name appears in the opening line of the chunk. For example, this opening line names a chunk <code>ch02-first-calculation</code>:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># opening line in the source file:</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># ```{r ch02-first-calculation}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Chunk names make long documents easier to navigate. In RStudio, the document outline can show both section headings and code chunks, so a descriptive chunk name makes it easier to jump to a specific part of the file. Chunk names also make error messages easier to interpret because Quarto can report which chunk failed.</p>
 <p>Chunk names should be short, unique, and descriptive. A name such as <code>ch04-first-scatterplot</code> is more useful than a name such as <code>chunk1</code>.</p>
 </section>
-<section id="chunk-options" class="level2" data-number="2.12">
-<h2 data-number="2.12" class="anchored" data-anchor-id="chunk-options"><span class="header-section-number">2.12</span> Chunk Options</h2>
+<section id="chunk-options" class="level2" data-number="2.14">
+<h2 data-number="2.14" class="anchored" data-anchor-id="chunk-options"><span class="header-section-number">2.14</span> Chunk Options</h2>
 <p>Chunk options control how code behaves during rendering. In Quarto, options are often written as special comment lines at the top of the chunk.</p>
 <p>This chunk runs but hides the code:</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2026-05-14"</code></pre>
+<pre><code>[1] "2026-05-20"</code></pre>
 </div>
 </div>
 <p>This chunk displays code without running it:</p>
@@ -380,17 +423,70 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p><code>eval: false</code> is important for examples that require credentials, internet access, private files, or intentional manual action. The code remains visible as a template, but it does not run automatically.</p>
 </section>
-<section id="rendering" class="level2" data-number="2.13">
-<h2 data-number="2.13" class="anchored" data-anchor-id="rendering"><span class="header-section-number">2.13</span> Rendering</h2>
+<section id="rendering" class="level2" data-number="2.15">
+<h2 data-number="2.15" class="anchored" data-anchor-id="rendering"><span class="header-section-number">2.15</span> Rendering</h2>
 <p>Rendering turns a source <code>.qmd</code> file into an output document. For this course, HTML is the primary output because it is easy to view in a browser and works well for code, figures, tables, and links.</p>
 <p>When you render a document, Quarto starts from the top, runs the chunks in order, and inserts the output where it belongs. If a chunk fails, rendering stops. That is useful because it exposes broken code early.</p>
-<p>The render button in RStudio is the easiest way to start. Open the file and click <strong>Render</strong> to create the output document. PDF output is also useful for papers, handouts, and print-ready reports, but it depends on a working TeX installation. HTML will be the most reliable output during the workshop.</p>
+<p>The render button in RStudio is the easiest way to start. Open the file and click <strong>Render</strong> to create the output document. PDF output is also useful for papers, handouts, and print-ready reports, but it depends on a working TeX installation. Posit Cloud’s tidyverse template already has TeX installed, so PDF rendering works without any additional setup. On a local machine without TeX, the <code>tinytex</code> package provides a lightweight installation:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"tinytex"</span>)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>tinytex<span class="sc">::</span><span class="fu">install_tinytex</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 </section>
-<section id="a-first-reproducible-example" class="level2" data-number="2.14">
-<h2 data-number="2.14" class="anchored" data-anchor-id="a-first-reproducible-example"><span class="header-section-number">2.14</span> A First Reproducible Example</h2>
+<section id="a-real-workflow-from-presentation-to-published-paper" class="level2" data-number="2.16">
+<h2 data-number="2.16" class="anchored" data-anchor-id="a-real-workflow-from-presentation-to-published-paper"><span class="header-section-number">2.16</span> A Real Workflow: From Presentation to Published Paper</h2>
+<p>The <code>Examples/Party Rolls</code> folder shows this in practice. The files trace one research project from early results to publication:</p>
+<ul>
+<li><code>rolls23.Rmd</code> — a presentation written in R Markdown. Rendering it produces <code>rolls23.pdf</code>, a slide deck.</li>
+<li><code>agenda_leviathan23.Rmd</code> — the manuscript version of the same project, with different formatting and tables. Rendering it produces <code>agenda_leviathan23.pdf</code>, the submitted manuscript.</li>
+<li><code>shor and kistner 2023.pdf</code> — the final published version, typeset by the journal.</li>
+</ul>
+<p>The presentation and the manuscript share the same underlying code. When the analysis changed, it changed in one place and both outputs updated.</p>
+</section>
+<section id="output-formats" class="level2" data-number="2.17">
+<h2 data-number="2.17" class="anchored" data-anchor-id="output-formats"><span class="header-section-number">2.17</span> Output Formats</h2>
+<p>Quarto can produce many output formats from the same source file:</p>
+<ul>
+<li>HTML documents and books</li>
+<li>PDF reports</li>
+<li>Word documents</li>
+<li>RevealJS slides</li>
+<li>dashboards</li>
+<li>websites</li>
+</ul>
+<section id="presentation-demo" class="level3" data-number="2.17.1">
+<h3 data-number="2.17.1" class="anchored" data-anchor-id="presentation-demo"><span class="header-section-number">2.17.1</span> Presentation Demo</h3>
+<p>A presentation file uses a <code>revealjs</code> format in the YAML header. Second-level headings become slides.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Presentation Demo"</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">revealjs</span><span class="kw">:</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> simple</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## Slide Title</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>Slide text goes here.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The course includes a standalone demo at <code>Demos/presentation-demo.qmd</code>. Code chunks work the same way as in a chapter, but slides usually hide the code and show the output.</p>
+</section>
+<section id="paper-or-report-demo" class="level3" data-number="2.17.2">
+<h3 data-number="2.17.2" class="anchored" data-anchor-id="paper-or-report-demo"><span class="header-section-number">2.17.2</span> Paper Or Report Demo</h3>
+<p>A paper-style document adds a bibliography file and uses <code>article</code> as the document class. Citations use keys from the <code>.bib</code> file.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Paper Demo"</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">"Name"</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="fu">bibliography</span><span class="kw">:</span><span class="at"> paper-example.bib</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span><span class="at"> default</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">pdf</span><span class="kw">:</span><span class="at"> default</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The course includes <code>Demos/paper-example.qmd</code> and <code>Demos/paper-example.bib</code>. Citations are written as <code>[@wickham_ggplot2_2016]</code>.</p>
+</section>
+</section>
+<section id="a-first-reproducible-example" class="level2" data-number="2.18">
+<h2 data-number="2.18" class="anchored" data-anchor-id="a-first-reproducible-example"><span class="header-section-number">2.18</span> A First Reproducible Example</h2>
 <p>The built-in <code>mtcars</code> dataset is available in base R, so it is useful for a first test that does not depend on course data files.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(mtcars)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(mtcars)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div data-pagedtable="false">
   <script data-pagedtable-source="" type="application/json">
@@ -401,7 +497,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>This command creates a simple base R plot:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mtcars<span class="sc">$</span>wt, mtcars<span class="sc">$</span>mpg)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mtcars<span class="sc">$</span>wt, mtcars<span class="sc">$</span>mpg)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -412,13 +508,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>The plot is not polished, but it confirms that R is running, code chunks are executing, and graphical output appears in the document.</p>
 </section>
-<section id="reading-output-carefully" class="level2" data-number="2.15">
-<h2 data-number="2.15" class="anchored" data-anchor-id="reading-output-carefully"><span class="header-section-number">2.15</span> Reading Output Carefully</h2>
+<section id="reading-output-carefully" class="level2" data-number="2.19">
+<h2 data-number="2.19" class="anchored" data-anchor-id="reading-output-carefully"><span class="header-section-number">2.19</span> Reading Output Carefully</h2>
 <p>A rendered document is not automatically correct just because it renders. Rendering answers one question: did the code run from top to bottom? You still have to ask whether the data are the right data, whether the variables mean what you think they mean, whether missing values were handled correctly, and whether the plot supports the claim being made.</p>
 <p>This course will return to that distinction throughout the week. Reproducibility is necessary, but it is not enough. A reproducible mistake is still a mistake.</p>
 </section>
-<section id="short-exercise" class="level2" data-number="2.16">
-<h2 data-number="2.16" class="anchored" data-anchor-id="short-exercise"><span class="header-section-number">2.16</span> Short Exercise</h2>
+<section id="short-exercise" class="level2" data-number="2.20">
+<h2 data-number="2.20" class="anchored" data-anchor-id="short-exercise"><span class="header-section-number">2.20</span> Short Exercise</h2>
 <p>Create a new code chunk below this paragraph. In that chunk:</p>
 <ol type="1">
 <li>store the number <code>100</code> in an object named <code>start_value</code></li>
@@ -426,64 +522,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>subtract <code>change_value</code> from <code>start_value</code></li>
 </ol>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Write your code here.</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Write your code here.</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="extras-rstudio-settings" class="level2" data-number="2.17">
-<h2 data-number="2.17" class="anchored" data-anchor-id="extras-rstudio-settings"><span class="header-section-number">2.17</span> Extras: RStudio Settings</h2>
-<p>A few RStudio settings can make workshop work more comfortable:</p>
-<ul>
-<li>turn off restoring <code>.RData</code> into the workspace at startup</li>
-<li>set saving the workspace on exit to “Never”</li>
-<li>turn on rainbow parentheses if available</li>
-<li>use the document outline for long <code>.qmd</code> files</li>
-<li>choose a source editor font and size that are comfortable for several hours of reading</li>
-</ul>
-<p>These settings do not change the analysis, but they reduce friction. The main principle is that the project files should define the work, not a hidden workspace image from a previous session.</p>
-</section>
-<section id="extras-output-formats" class="level2" data-number="2.18">
-<h2 data-number="2.18" class="anchored" data-anchor-id="extras-output-formats"><span class="header-section-number">2.18</span> Extras: Output Formats</h2>
-<p>Quarto can produce many output formats from similar source files:</p>
-<ul>
-<li>HTML documents and books</li>
-<li>PDF reports</li>
-<li>Word documents</li>
-<li>RevealJS slides</li>
-<li>dashboards</li>
-<li>websites</li>
-</ul>
-<p>The same analysis can therefore be adapted for different audiences. A rough exploration may become a class exercise. A refined figure may become part of a report. A report may become a short presentation. Quarto is useful because those outputs can remain connected to the same source code and data workflow.</p>
-<section id="presentation-demo" class="level3" data-number="2.18.1">
-<h3 data-number="2.18.1" class="anchored" data-anchor-id="presentation-demo"><span class="header-section-number">2.18.1</span> Presentation Demo</h3>
-<p>Quarto can render slides. A presentation file uses a different YAML header:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Presentation Demo"</span></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">revealjs</span><span class="kw">:</span></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> simple</span></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>The course includes a standalone revealjs demo at <code>Demos/presentation-demo.qmd</code>. The main difference from a book chapter is that second-level headings become slides. Code chunks work the same way, but slides usually hide more code and show more finished output.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## Slide Title</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>Slide text goes here.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="paper-or-report-demo" class="level3" data-number="2.18.2">
-<h3 data-number="2.18.2" class="anchored" data-anchor-id="paper-or-report-demo"><span class="header-section-number">2.18.2</span> Paper Or Report Demo</h3>
-<p>A paper-style Quarto document emphasizes prose, citations, figures, tables, and cross-references. The course includes <code>Demos/paper-example.qmd</code> and <code>Demos/paper-example.bib</code>. The <code>.bib</code> file stores citation records; the <code>.qmd</code> file cites them with keys such as <code>[@wickham_ggplot2_2016]</code>.</p>
-<p>A minimal paper-style header looks like this:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Paper Demo"</span></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">"Name"</span></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="fu">bibliography</span><span class="kw">:</span><span class="at"> paper-example.bib</span></span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span><span class="at"> default</span></span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">pdf</span><span class="kw">:</span><span class="at"> default</span></span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Paper-style files usually keep more prose visible than slides or dashboards. They also make more use of citations, captions, footnotes, and cross-references.</p>
-</section>
-</section>
-<section id="what-comes-next" class="level2" data-number="2.19">
-<h2 data-number="2.19" class="anchored" data-anchor-id="what-comes-next"><span class="header-section-number">2.19</span> What Comes Next</h2>
+<section id="what-comes-next" class="level2" data-number="2.21">
+<h2 data-number="2.21" class="anchored" data-anchor-id="what-comes-next"><span class="header-section-number">2.21</span> What Comes Next</h2>
 <p>The next chapter begins the data workflow: importing files, inspecting tibbles, reshaping data, and using the core tidyverse verbs that prepare data for visualization.</p>
 
 
