@@ -2,19 +2,6 @@
 title: "Teaching"
 ---
 
-## Outside Teaching
-
-### ICPSR 2026 - Visualization 101
-::: {.grid}
-::: {.g-col-12 .g-col-md-12}
-[Course book, chapters 1-9](icpsr-2026/)
-
-[PDF, chapters 1-9](icpsr-2026/Visualization-101-2026.pdf)
-:::
-:::
-
----
-
 # University of Houston
 
 ## Undergraduate Courses
