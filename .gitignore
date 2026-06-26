@@ -3,7 +3,7 @@
 *.Rproj
 .Rhistory
 **/*.quarto_ipynb
+*.md
 
 # Agent context files
-GEMINI.md
 docs/GEMINI.html
